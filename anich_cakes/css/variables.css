@@ -1,13 +1,7 @@
-/* ============================================
-   CSS Custom Properties (Design Tokens)
-   Anich Cakes — семантические переменные
-   ============================================ */
-
 :root {
-  /* === Цветовая палитра === */
-  --color-bg-primary: #F7DCCB;         /* Цвет активного буллета */
+  --color-bg-primary: #F7DCCB;
+  --color-text-white: #FFFFFF;
 
-  /* === Типографика === */
   --font-family-primary: 'Gilroy', 'Montserrat', Arial, sans-serif;
   --font-family-heading: 'Gilroy', 'Montserrat', Arial, sans-serif;
 
