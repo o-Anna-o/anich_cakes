@@ -11,15 +11,57 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
+  /*
+   * Пропорция карточки: ширина/высота = 106/99 = 1.0707070707
+   * При 393px: ширина карточки = 106px, высота = 99px
+   *
+   * Базовый расчёт (2 колонки, < 720px):
+   *   card-width ≈ (100vw - 64px) / 2
+   *   При 393px: (393 - 64) / 2 = 164.5px
+   *   Но нужно 106px, поэтому коэффициент = 106 / 164.5 = 0.6444
+   *
+   *   Минимальный шрифт 8px при card-width 106px: 8 / 106 = 0.07547
+   *   Фактический коэффициент в формуле: 0.07547 * 0.6444 = 0.04864
+   *
+   *   Проверка при 393px: (393 - 64) / 2 * 0.04864 = 164.5 * 0.04864 = 8px ✓
+   *
+   * 3 колонки (>= 720px):
+   *   card-width ≈ (min(100vw, 1008px) - 72px) / 3
+   *   При 1008px: (1008 - 72) / 3 = 312px
+   *   max font-size title: 312 * 0.07547 = 23.5px ≈ 24px
+   */
+
+  /* Gap между карточками */
+  --gap-card: clamp(16px, (100vw - 64px) * 0.0486, 32px);
+
   /* Размеры шрифтов карточек */
-  /* Базовый расчёт: при 393px ширина карточки 164.5px, шрифт 8px (4.86% от ширины карточки) */
-  --font-size-card-title: clamp(8px, (100vw - 64px) / 2 * 0.0486, 16px);
-  --font-size-card-desc: clamp(7px, (100vw - 64px) / 2 * 0.0425, 14px);
-  --font-size-card-btn: clamp(7px, (100vw - 64px) / 2 * 0.0425, 14px);
+  --font-size-card-title: clamp(8px, (100vw - 64px) / 2 * 0.04864, 24px);
+  --font-size-card-desc: clamp(8px, (100vw - 64px) / 2 * 0.04864, 14px);
+  --font-size-card-btn: clamp(8px, (100vw - 64px) / 2 * 0.04864, 14px);
 
-  /* Размеры кнопки карточки */
-  --width-card-btn: clamp(50px, (100vw - 64px) / 2 * 0.346, 110px);
+  /* Размеры кнопки карточки — 57px при 106px = 53.77% */
+  --width-card-btn: clamp(57px, (100vw - 64px) / 2 * 0.3465, 168px);
 
-  /* Скругление карточек */
-  --radius-card: clamp(15px, (100vw - 64px) / 2 * 0.091, 40px);
+  /* Скругление карточек — 15px при 106px = 14.15% */
+  --radius-card: clamp(15px, (100vw - 64px) / 2 * 0.0912, 44px);
+
+  /* Отступ body от верха карточки — 35px при 106px = 33.02% */
+  --padding-card-body-top: clamp(35px, (100vw - 64px) / 2 * 0.2128, 103px);
+}
+
+/* 3 колонки — от 720px */
+@media (min-width: 720px) {
+  :root {
+    --gap-card: clamp(24px, (min(100vw, 1008px) - 72px) * 0.0256, 32px);
+
+    --font-size-card-title: clamp(16px, (min(100vw, 1008px) - 72px) / 3 * 0.07547, 24px);
+    --font-size-card-desc: clamp(10px, (min(100vw, 1008px) - 72px) / 3 * 0.07547, 14px);
+    --font-size-card-btn: clamp(10px, (min(100vw, 1008px) - 72px) / 3 * 0.07547, 14px);
+
+    --width-card-btn: clamp(86px, (min(100vw, 1008px) - 72px) / 3 * 0.5377, 168px);
+
+    --radius-card: clamp(23px, (min(100vw, 1008px) - 72px) / 3 * 0.1415, 44px);
+
+    --padding-card-body-top: clamp(53px, (min(100vw, 1008px) - 72px) / 3 * 0.3302, 103px);
+  }
 }

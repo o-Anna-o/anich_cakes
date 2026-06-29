@@ -44,13 +44,15 @@ button {
   font-family: inherit;
 }
 
-.hero-banner {
+/* ===== Banner ===== */
+
+.banner {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-.hero-banner__header {
+.banner__header {
   position: absolute;
   top: 0;
   left: 0;
@@ -62,28 +64,38 @@ button {
   z-index: 1;
 }
 
-.hero-banner__logo {
+.banner__logo {
   width: 24px;
   height: auto;
 }
 
-.hero-banner__title {
+.banner__title {
   font-size: 30px;
   color: var(--color-bg-primary);
 }
 
-.hero-banner__image {
+.banner__image {
   width: 100%;
   line-height: 0;
 }
 
-.hero-banner__image img {
+.banner__img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
-  max-height: 1500px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
+
+/* Широкий баннер для экранов больше 600px */
+@media (min-width: 601px) {
+  .banner__img {
+    content: url('../img/berry_header_wide.jpg');
+  }
+}
+
+/* ===== Intro ===== */
 
 .intro {
   margin-top: 100px;
@@ -101,6 +113,8 @@ button {
   margin-bottom: 16px;
 }
 
+/* ===== Products ===== */
+
 .products {
   margin-top: 100px;
   padding: 32px 24px 40px;
@@ -108,14 +122,14 @@ button {
   background-image: url('../img/choco-back.jpg');
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 .products__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  max-width: 480px;
+  gap: var(--gap-card);
+  max-width: clamp(228px, 100vw - 165px, 1008px);
   margin: 0 auto;
 }
 
@@ -128,6 +142,7 @@ button {
   overflow: hidden;
   border-radius: var(--radius-card);
   aspect-ratio: 106 / 99;
+  width: 100%;
 }
 
 .product-card__img {
@@ -148,6 +163,8 @@ button {
   align-items: center;
   justify-content: center;
   width: 85%;
+  height: 100%;
+  padding-top: 0;
 }
 
 .product-card__title,
@@ -158,13 +175,13 @@ button {
 .product-card__title {
   width: 100%;
   font-weight: var(--font-weight-semibold);
-  margin-bottom: 0.3em;
+  margin-bottom: 8px;
   font-size: var(--font-size-card-title);
 }
 
 .product-card__description {
   width: 100%;
-  margin-bottom: 0.6em;
+  margin-bottom: 8px;
   line-height: 1.3;
   font-size: var(--font-size-card-desc);
 }
@@ -179,6 +196,8 @@ button {
   font-size: var(--font-size-card-btn);
 }
 
+/* ===== Footer ===== */
+
 .footer__inner {
   display: flex;
   flex-direction: column;
@@ -186,27 +205,12 @@ button {
   justify-content: center;
 }
 
+/* ===== Media Queries ===== */
+
 /* 3 колонки — от 720px */
 @media (min-width: 720px) {
-  :root {
-    --font-size-card-title: clamp(10px, (100vw - 80px) / 3 * 0.0486, 16px);
-    --font-size-card-desc: clamp(9px, (100vw - 80px) / 3 * 0.0425, 14px);
-    --font-size-card-btn: clamp(9px, (100vw - 80px) / 3 * 0.0425, 14px);
-    --width-card-btn: clamp(65px, (100vw - 80px) / 3 * 0.346, 110px);
-    --radius-card: clamp(19px, (100vw - 80px) / 3 * 0.091, 40px);
-  }
-
   .products__grid {
     grid-template-columns: repeat(3, 1fr);
-    max-width: 1008px;
-  }
-}
-
-/* 2 колонки — от 393px до 719px */
-@media (min-width: 393px) and (max-width: 719px) {
-  .products__grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 480px;
   }
 }
 
@@ -214,6 +218,5 @@ button {
 @media (max-width: 392px) {
   .products__grid {
     grid-template-columns: 1fr;
-    max-width: 280px;
   }
 }
