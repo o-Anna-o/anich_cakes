@@ -1,0 +1,22 @@
+/* ============================================
+   Typography — типографика
+   ============================================ */
+
+/* === Заголовки === */
+.heading {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* === Адаптив === */
+@media (max-width: 1199px) {
+  .heading--hero { font-size: var(--font-size-6xl); }
+  .heading--section { font-size: var(--font-size-5xl); }
+}
+
+@media (max-width: 393px) {
+  .heading--hero { font-size: var(--font-size-3xl); }
+  .heading--section { font-size: var(--font-size-3xl); }
+  .heading--section-sm { font-size: var(--font-size-3xl); }
+}
