@@ -217,7 +217,7 @@ button {
 
 @media (min-width: 392px) {
   .products {
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 100px 24px 40px;
     background-color: #F7DCCB;
     background-image: url('../img/choco-back.jpg');
