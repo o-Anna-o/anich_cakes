@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anich Cakes — натуральные десерты без сахара</title>
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="anich_cakes/css/variables.css">
+  <link rel="stylesheet" href="anich_cakes/css/style.css">
+  <link rel="stylesheet" href="anich_cakes/css/typography.css">
 </head>
 <body>
   <main class="page">
 
     <section class="banner" aria-label="Hero image">
       <div class="banner__image">
-        <img class="banner__img" src="img/berry_header.jpg" alt="Berry dessert background">
+        <img class="banner__img" src="anich_cakes/img/berry_header.jpg" alt="Berry dessert background">
       </div>
       <header class="banner__header">
-        <img class="banner__logo" src="img/burger.svg" alt="menu">
+        <img class="banner__logo" src="anich_cakes/img/burger.svg" alt="menu">
         <h1 class="banner__title">Anich Cakes</h1>
       </header>
     </section>
@@ -31,7 +31,7 @@
     <section class="products">
       <div class="products__grid">
         <article class="product-card">
-          <img class="product-card__img" src="img/card-img-1.jpg" alt="">
+          <img class="product-card__img" src="anich_cakes/img/card-img-1.jpg" alt="">
           <div class="product-card__body">
             <div class="product-card__title">НИЗКОКАЛОРИЙНЫЕ</div>
             <div class="product-card__description">Полезные ПП десерты без белой муки, белого сахара</div>
@@ -39,7 +39,7 @@
           </div>
         </article>
         <article class="product-card">
-          <img class="product-card__img" src="img/card-img-2.jpg" alt="">
+          <img class="product-card__img" src="anich_cakes/img/card-img-2.jpg" alt="">
           <div class="product-card__body title-white">
             <div class="product-card__title">ЖИВЫЕ</div>
             <div class="product-card__description">Raw десерты без термической обработки</div>
@@ -47,7 +47,7 @@
           </div>
         </article>
         <article class="product-card">
-          <img class="product-card__img" src="img/card-img-3.jpg" alt="">
+          <img class="product-card__img" src="anich_cakes/img/card-img-3.jpg" alt="">
           <div class="product-card__body title-white">
             <div class="product-card__title">ВЕГАНСКИЕ</div>
             <div class="product-card__description">Для вегетарианцев и веганов, без продуктов животного происхождения</div>
@@ -55,7 +55,7 @@
           </div>
         </article>
         <article class="product-card">
-          <img class="product-card__img" src="img/card-img-4.jpg" alt="">
+          <img class="product-card__img" src="anich_cakes/img/card-img-4.jpg" alt="">
           <div class="product-card__body title-white">
             <div class="product-card__title">ТРАДИЦИОННЫЕ</div>
             <div class="product-card__description">Знакомые с детства и классические вкусы</div>
@@ -63,7 +63,7 @@
           </div>
         </article>
         <article class="product-card">
-          <img class="product-card__img" src="img/card-img-5.jpg" alt="">
+          <img class="product-card__img" src="anich_cakes/img/card-img-5.jpg" alt="">
           <div class="product-card__body title-white">
             <div class="product-card__title">ТЕМАТИЧЕСКИЕ</div>
             <div class="product-card__description">Десерты с украшением к праздникам</div>
@@ -71,7 +71,7 @@
           </div>
         </article>
         <article class="product-card">
-          <img class="product-card__img" src="img/card-img-6.jpg" alt="">
+          <img class="product-card__img" src="anich_cakes/img/card-img-6.jpg" alt="">
           <div class="product-card__body title-white">
             <div class="product-card__title">ШОКОЛАДНЫЕ</div>
             <div class="product-card__description">Шоколад и шоколадные вкусы</div>
@@ -87,5 +87,25 @@
       </div>
     </footer>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var pages = [
+        'low_calories.html',
+        'raw.html',
+        'vegan.html',
+        'traditional.html',
+        'thematical.html',
+        'chocolate.html'
+      ];
+      var buttons = document.querySelectorAll('.product-card__button');
+      buttons.forEach(function(btn, index) {
+        btn.addEventListener('click', function() {
+          if (pages[index]) {
+            location.href = pages[index];
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
