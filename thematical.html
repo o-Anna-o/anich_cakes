@@ -15,12 +15,35 @@
       <img class="low-calories__banner-img" src="anich_cakes/img/berry_header.jpg" alt="Thematic desserts">
     </div>
     <header class="low-calories__banner-header">
+      <div class="low-calories__banner-left">
+        <a href="#" class="low-calories__banner-burger" id="burgerBtn">
+          <img class="low-calories__banner-logo" src="anich_cakes/img/burger.svg" alt="menu">
+        </a>
+        <nav class="low-calories__breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Главная</a>
+          <span class="low-calories__breadcrumbs-sep">/</span>
+          <span>Тематические</span>
+        </nav>
+      </div>
       <a href="index.html">
-        <img class="low-calories__banner-logo" src="anich_cakes/img/burger.svg" alt="menu">
+        <h1 class="low-calories__banner-title">Anich Cakes</h1>
       </a>
-      <h1 class="low-calories__banner-title">Anich Cakes</h1>
     </header>
   </section>
+
+  <!-- Burger Menu -->
+  <div class="low-calories__menu-overlay" id="menuOverlay"></div>
+  <nav class="low-calories__menu" id="menuNav">
+    <ul class="low-calories__menu-list">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="low_calories.html">Низкокалорийные</a></li>
+      <li><a href="raw.html">Живые</a></li>
+      <li><a href="vegan.html">Веганские</a></li>
+      <li><a href="traditional.html">Традиционные</a></li>
+      <li><a href="thematical.html">Тематические</a></li>
+      <li><a href="chocolate.html">Шоколадные</a></li>
+    </ul>
+  </nav>
 
   <!-- Intro -->
   <section class="low-calories__intro">
@@ -45,6 +68,34 @@
   <footer class="low-calories__footer">
     <p class="low-calories__footer-copyright">© 2022 Anich Cakes</p>
   </footer>
+
+  <script>
+    // Burger menu functionality
+    var burgerBtn = document.getElementById('burgerBtn');
+    var menuOverlay = document.getElementById('menuOverlay');
+    var menuNav = document.getElementById('menuNav');
+
+    function openMenu() {
+      menuNav.classList.add('low-calories__menu--open');
+      menuOverlay.classList.add('low-calories__menu-overlay--visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      menuNav.classList.remove('low-calories__menu--open');
+      menuOverlay.classList.remove('low-calories__menu-overlay--visible');
+      document.body.style.overflow = '';
+    }
+
+    burgerBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openMenu();
+    });
+
+    menuOverlay.addEventListener('click', function () {
+      closeMenu();
+    });
+  </script>
 
 </body>
 </html>

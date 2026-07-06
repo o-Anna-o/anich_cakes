@@ -44,6 +44,12 @@ button {
   font-family: inherit;
 }
 
+/* Убираем подчеркивание у всех ссылок и цвет #551A8B */
+a, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ===== Banner ===== */
 
 .banner {
@@ -64,14 +70,33 @@ button {
   z-index: 1;
 }
 
+.banner__header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.banner__burger {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 .banner__logo {
-  width: 24px;
-  height: auto;
+  width: 38.49px;
+  height: 37.76px;
 }
 
 .banner__title {
   font-size: 30px;
   color: var(--color-bg-primary);
+  text-decoration: none;
+}
+
+.banner__title a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .banner__image {
@@ -93,6 +118,96 @@ button {
   .banner__img {
     content: url('../img/berry_header_wide.jpg');
   }
+}
+
+/* ===== Breadcrumbs (index page) ===== */
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #F7DCCB;
+  font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
+}
+
+.breadcrumbs a {
+  color: #F7DCCB;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.breadcrumbs a:hover {
+  opacity: 1;
+}
+
+.breadcrumbs-sep {
+  opacity: 0.6;
+}
+
+/* ===== Menu Overlay (index page) ===== */
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Menu Panel (index page) ===== */
+
+.menu-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background-color: #4B2518;
+  z-index: 11;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.menu-nav--open {
+  transform: translateX(0);
+}
+
+.menu-nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menu-nav__list li a {
+  color: #F7DCCB;
+  font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  text-decoration: none;
+  display: block;
+  padding: 4px 0;
+  transition: opacity 0.2s;
+}
+
+.menu-nav__list li a:hover {
+  opacity: 0.8;
 }
 
 /* ===== Intro ===== */
@@ -212,6 +327,15 @@ button {
 @media (min-width: 720px) {
   .products__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .products {
+    margin-top: 50px;
+    padding: 100px 24px 40px;
+    background-color: #F7DCCB;
+    background-image: url('../img/choco-back-PC.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 

@@ -16,10 +16,33 @@
         <img class="banner__img" src="anich_cakes/img/berry_header.jpg" alt="Berry dessert background">
       </div>
       <header class="banner__header">
-        <img class="banner__logo" src="anich_cakes/img/burger.svg" alt="menu">
-        <h1 class="banner__title">Anich Cakes</h1>
+        <div class="banner__header-left">
+          <a href="#" class="banner__burger" id="burgerBtn">
+            <img class="banner__logo" src="anich_cakes/img/burger.svg" alt="menu">
+          </a>
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <span>Главная</span>
+          </nav>
+        </div>
+        <a href="index.html">
+          <h1 class="banner__title">Anich Cakes</h1>
+        </a>
       </header>
     </section>
+
+    <!-- Burger Menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <nav class="menu-nav" id="menuNav">
+      <ul class="menu-nav__list">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="low_calories.html">Низкокалорийные</a></li>
+        <li><a href="raw.html">Живые</a></li>
+        <li><a href="vegan.html">Веганские</a></li>
+        <li><a href="traditional.html">Традиционные</a></li>
+        <li><a href="thematical.html">Тематические</a></li>
+        <li><a href="chocolate.html">Шоколадные</a></li>
+      </ul>
+    </nav>
 
     <section class="intro">
       <div class="intro__inner">
@@ -105,6 +128,32 @@
           }
         });
       });
+    });
+
+    // Burger menu functionality
+    var burgerBtn = document.getElementById('burgerBtn');
+    var menuOverlay = document.getElementById('menuOverlay');
+    var menuNav = document.getElementById('menuNav');
+
+    function openMenu() {
+      menuNav.classList.add('menu-nav--open');
+      menuOverlay.classList.add('menu-overlay--visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      menuNav.classList.remove('menu-nav--open');
+      menuOverlay.classList.remove('menu-overlay--visible');
+      document.body.style.overflow = '';
+    }
+
+    burgerBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openMenu();
+    });
+
+    menuOverlay.addEventListener('click', function () {
+      closeMenu();
     });
   </script>
 </body>
