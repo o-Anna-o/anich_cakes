@@ -199,11 +199,13 @@ a, a:visited, a:hover, a:active {
   color: #F7DCCB;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
   font-weight: 700;
-  font-size: 30px;
+  font-size: clamp(18px, 5.5vw, 30px);
   text-decoration: none;
   display: block;
   padding: 4px 0;
   transition: opacity 0.2s;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .menu-nav__list li a:hover {
@@ -339,7 +341,8 @@ a, a:visited, a:hover, a:active {
   }
 }
 
-@media (min-width: 392px) {
+/* 2 колонки — от 392px до 719px */
+@media (min-width: 392px) and (max-width: 719px) {
   .products {
     margin-top: 50px;
     padding: 100px 24px 40px;
