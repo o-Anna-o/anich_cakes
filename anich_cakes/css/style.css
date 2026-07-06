@@ -120,32 +120,6 @@ a, a:visited, a:hover, a:active {
   }
 }
 
-/* ===== Breadcrumbs (index page) ===== */
-
-.breadcrumbs {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 14px;
-  color: #F7DCCB;
-  font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
-}
-
-.breadcrumbs a {
-  color: #F7DCCB;
-  text-decoration: none;
-  opacity: 0.8;
-  transition: opacity 0.2s;
-}
-
-.breadcrumbs a:hover {
-  opacity: 1;
-}
-
-.breadcrumbs-sep {
-  opacity: 0.6;
-}
-
 /* ===== Menu Overlay (index page) ===== */
 
 .menu-overlay {
@@ -199,13 +173,12 @@ a, a:visited, a:hover, a:active {
   color: #F7DCCB;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(18px, 5.5vw, 30px);
+  font-size: 24px;
   text-decoration: none;
   display: block;
   padding: 4px 0;
   transition: opacity 0.2s;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  white-space: nowrap;
 }
 
 .menu-nav__list li a:hover {
@@ -307,7 +280,7 @@ a, a:visited, a:hover, a:active {
 .product-card__button {
   width: var(--width-card-btn);
   padding: 0.4em 0;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: var(--font-weight-bold);
   background-color: var(--color-bg-primary);
   border: none;

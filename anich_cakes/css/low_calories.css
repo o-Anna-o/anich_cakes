@@ -165,13 +165,12 @@
   color: #F7DCCB;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(18px, 5.5vw, 30px);
+  font-size: 24px;
   text-decoration: none;
   display: block;
   padding: 4px 0;
   transition: opacity 0.2s;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  white-space: nowrap;
 }
 
 .low-calories__menu-list li a:hover {
@@ -338,7 +337,7 @@
 }
 
 .low-calories__card-name {
-  font-size: 13px;
+  font-size: var(--font-size-category-card-name);
   font-weight: 600;
   color: #000000;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
@@ -350,14 +349,14 @@
 }
 
 .low-calories__card-calories {
-  font-size: 13px;
+  font-size: var(--font-size-category-card-calories);
   font-weight: 400;
   color: #000000;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
 }
 
 .low-calories__card-description {
-  font-size: 13px;
+  font-size: var(--font-size-category-card-desc);
   font-weight: 400;
   color: #000000;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;

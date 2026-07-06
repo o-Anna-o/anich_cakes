@@ -12,56 +12,68 @@
   --font-weight-bold: 700;
 
   /*
-   * Пропорция карточки: ширина/высота = 106/99 = 1.0707070707
-   * При 393px: ширина карточки = 106px, высота = 99px
+   * ========================================
+   * Глобальные размеры шрифтов по брейкпоинтам
+   * ========================================
    *
-   * Базовый расчёт (2 колонки, < 720px):
-   *   card-width ≈ (100vw - 64px) / 2
-   *   При 393px: (393 - 64) / 2 = 164.5px
-   *   Но нужно 106px, поэтому коэффициент = 106 / 164.5 = 0.6444
+   * Брейкпоинты:
+   *   < 391px  — мобильные (1 колонка)
+   *   391-719px — планшеты (2 колонки)
+   *   >= 720px  — десктоп (3 колонки)
    *
-   *   Минимальный шрифт 8px при card-width 106px: 8 / 106 = 0.07547
-   *   Фактический коэффициент в формуле: 0.07547 * 0.6444 = 0.04864
-   *
-   *   Проверка при 393px: (393 - 64) / 2 * 0.04864 = 164.5 * 0.04864 = 8px ✓
-   *
-   * 3 колонки (>= 720px):
-   *   card-width ≈ (min(100vw, 1008px) - 72px) / 3
-   *   При 1008px: (1008 - 72) / 3 = 312px
-   *   max font-size title: 312 * 0.07547 = 23.5px ≈ 24px
+   * Переменные переопределяются в @media блоках ниже.
+   * Значения подобраны для комфортного чтения на каждом диапазоне.
    */
 
-  /* Gap между карточками */
-  --gap-card: clamp(16px, (100vw - 64px) * 0.0486, 32px);
+  /* --- Карточки на главной (index.html) --- */
+  --font-size-card-title: 10px;
+  --font-size-card-desc: 8px;
+  --font-size-card-btn: 8px;
 
-  /* Размеры шрифтов карточек */
-  --font-size-card-title: clamp(8px, (100vw - 64px) / 2 * 0.04864, 24px);
-  --font-size-card-desc: clamp(8px, (100vw - 64px) / 2 * 0.04864, 14px);
-  --font-size-card-btn: clamp(8px, (100vw - 64px) / 2 * 0.04864, 14px);
+  /* --- Карточки на страницах категорий (low_calories и др.) --- */
+  --font-size-category-card-name: 11px;
+  --font-size-category-card-calories: 11px;
+  --font-size-category-card-desc: 11px;
 
-  /* Размеры кнопки карточки — 57px при 106px = 53.77% */
-  --width-card-btn: clamp(57px, (100vw - 64px) / 2 * 0.3465, 168px);
-
-  /* Скругление карточек — 15px при 106px = 14.15% */
-  --radius-card: clamp(15px, (100vw - 64px) / 2 * 0.0912, 44px);
-
-  /* Отступ body от верха карточки — 35px при 106px = 33.02% */
-  --padding-card-body-top: clamp(35px, (100vw - 64px) / 2 * 0.2128, 103px);
+  /* --- Отступы и размеры --- */
+  --gap-card: 16px;
+  --width-card-btn: 57px;
+  --radius-card: 15px;
+  --padding-card-body-top: 35px;
 }
 
-/* 3 колонки — от 720px */
+/* ===== Планшеты (391px — 719px) ===== */
+@media (min-width: 391px) and (max-width: 719px) {
+  :root {
+    --font-size-card-title: 14px;
+    --font-size-card-desc: 10px;
+    --font-size-card-btn: 10px;
+
+    --font-size-category-card-name: 13px;
+    --font-size-category-card-calories: 13px;
+    --font-size-category-card-desc: 13px;
+
+    --gap-card: clamp(16px, 3vw, 24px);
+    --width-card-btn: clamp(80px, 18vw, 120px);
+    --radius-card: clamp(18px, 3vw, 28px);
+    --padding-card-body-top: clamp(40px, 8vw, 60px);
+  }
+}
+
+/* ===== Десктоп (>= 720px) ===== */
 @media (min-width: 720px) {
   :root {
-    --gap-card: clamp(24px, (min(100vw, 1008px) - 72px) * 0.0256, 32px);
+    --font-size-card-title: 20px;
+    --font-size-card-desc: 16px;
+    --font-size-card-btn: 16px;
 
-    --font-size-card-title: clamp(16px, (min(100vw, 1008px) - 72px) / 3 * 0.07547, 24px);
-    --font-size-card-desc: clamp(10px, (min(100vw, 1008px) - 72px) / 3 * 0.07547, 14px);
-    --font-size-card-btn: clamp(10px, (min(100vw, 1008px) - 72px) / 3 * 0.07547, 14px);
+    --font-size-category-card-name: 16px;
+    --font-size-category-card-calories: 16px;
+    --font-size-category-card-desc: 16px;
 
-    --width-card-btn: clamp(86px, (min(100vw, 1008px) - 72px) / 3 * 0.5377, 168px);
-
-    --radius-card: clamp(23px, (min(100vw, 1008px) - 72px) / 3 * 0.1415, 44px);
-
-    --padding-card-body-top: clamp(53px, (min(100vw, 1008px) - 72px) / 3 * 0.3302, 103px);
+    --gap-card: clamp(24px, 2.5vw, 32px);
+    --width-card-btn: clamp(120px, 14vw, 168px);
+    --radius-card: clamp(28px, 3vw, 44px);
+    --padding-card-body-top: clamp(60px, 8vw, 103px);
   }
 }
