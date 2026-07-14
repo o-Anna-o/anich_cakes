@@ -26,14 +26,14 @@
    */
 
   /* --- Карточки на главной (index.html) --- */
-  --font-size-card-title: 10px;
-  --font-size-card-desc: 8px;
-  --font-size-card-btn: 8px;
+  --font-size-card-title: 11px;
+  --font-size-card-desc: 11px;
+  --font-size-card-btn: 11px;
 
   /* --- Карточки на страницах категорий (low_calories и др.) --- */
-  --font-size-category-card-name: 11px;
-  --font-size-category-card-calories: 11px;
-  --font-size-category-card-desc: 11px;
+  --font-size-category-card-name: 16px;
+  --font-size-category-card-calories: 16px;
+  --font-size-category-card-desc: 16px;
 
   /* --- Отступы и размеры --- */
   --gap-card: 16px;
@@ -45,13 +45,13 @@
 /* ===== Планшеты (391px — 719px) ===== */
 @media (min-width: 391px) and (max-width: 719px) {
   :root {
-    --font-size-card-title: 14px;
-    --font-size-card-desc: 10px;
-    --font-size-card-btn: 10px;
+    --font-size-card-title: 15px;
+    --font-size-card-desc: 15px;
+    --font-size-card-btn: 15px;
 
-    --font-size-category-card-name: 13px;
-    --font-size-category-card-calories: 13px;
-    --font-size-category-card-desc: 13px;
+    --font-size-category-card-name: 16px;
+    --font-size-category-card-calories: 16px;
+    --font-size-category-card-desc: 16px;
 
     --gap-card: clamp(16px, 3vw, 24px);
     --width-card-btn: clamp(80px, 18vw, 120px);
