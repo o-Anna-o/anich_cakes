@@ -193,15 +193,15 @@
 .low-calories__intro-title {
   font-size: 32px;
   line-height: 1.1;
-  color: #000000;
+  color: #3A1409;
   margin-bottom: 16px;
   font-weight: 600;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
 }
 
 .low-calories__intro-text {
-  font-size: 18px;
-  color: #000000;
+  font-size: var(--font-size-category-card-desc);
+  color: #3A1409;
   font-weight: 400;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
 }
@@ -339,7 +339,7 @@
 .low-calories__card-name {
   font-size: var(--font-size-category-card-name);
   font-weight: 600;
-  color: #000000;
+  color: #3A1409;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -351,14 +351,14 @@
 .low-calories__card-calories {
   font-size: var(--font-size-category-card-calories);
   font-weight: 400;
-  color: #000000;
+  color: #3A1409;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
 }
 
 .low-calories__card-description {
   font-size: var(--font-size-category-card-desc);
   font-weight: 400;
-  color: #000000;
+  color: #3A1409;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
   line-height: 1.3;
 }
@@ -372,6 +372,6 @@
 
 .low-calories__footer-copyright {
   font-size: 14px;
-  color: #000000;
+  color: #3A1409;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
 }
