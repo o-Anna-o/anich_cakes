@@ -206,6 +206,7 @@ a, a:visited, a:hover, a:active {
 
 .intro__inner {
   max-width: 720px;
+  margin: 0 auto;
 }
 
 .intro__title {

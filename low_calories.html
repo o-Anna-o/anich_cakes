@@ -200,11 +200,7 @@
             <img src="anich_cakes/img/low_calories/low_cal-6-1.jpg" alt="Десерт 6-1">
           </div>
         </div>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
-        <div class="low-calories__carousel-dots">
-          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
-        </div>
+        <div class="low-calories__carousel-dots"></div>
       </div>
       <div class="low-calories__card-body">
         <div class="low-calories__card-name">Муссовый <br>Облипиха-карамель</div>
@@ -308,6 +304,13 @@
       var nextBtn = carousel.querySelector('.low-calories__carousel-btn--next');
       var current = 0;
 
+      // Если только один слайд — скрываем кнопки и не добавляем обработчики
+      if (slides.length <= 1) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        return;
+      }
+
       function updateCarousel() {
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
         dots.forEach(function (dot, i) {
@@ -315,15 +318,19 @@
         });
       }
 
-      prevBtn.addEventListener('click', function () {
-        current = (current - 1 + slides.length) % slides.length;
-        updateCarousel();
-      });
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          current = (current - 1 + slides.length) % slides.length;
+          updateCarousel();
+        });
+      }
 
-      nextBtn.addEventListener('click', function () {
-        current = (current + 1) % slides.length;
-        updateCarousel();
-      });
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          current = (current + 1) % slides.length;
+          updateCarousel();
+        });
+      }
 
       dots.forEach(function (dot, i) {
         dot.addEventListener('click', function () {

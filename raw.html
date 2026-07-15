@@ -101,7 +101,7 @@
       </div>
       <div class="low-calories__card-body">
         <div class="low-calories__card-name">Веган-raw<br>Nutella</div>
-        <div class="low-calories__card-calories">~ 150 ккал</div>
+        <div class="low-calories__card-calories">150 ккал</div>
         <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
@@ -114,15 +114,11 @@
             <img src="anich_cakes/img/raw/raw-3-1.jpg" alt="Десерт 3-1">
           </div>
         </div>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
-        <div class="low-calories__carousel-dots">
-          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
-        </div>
+        <div class="low-calories__carousel-dots"></div>
       </div>
       <div class="low-calories__card-body">
         <div class="low-calories__card-name">Веган-raw<br>Брауни</div>
-        <div class="low-calories__card-calories">~ 150 ккал</div>
+        <div class="low-calories__card-calories">150 ккал</div>
         <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
@@ -137,14 +133,11 @@
         </div>
         <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
         <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
-        <div class="low-calories__carousel-dots">
-          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
-          <button class="low-calories__carousel-dot" type="button"></button>
-        </div>
+      
       </div>
       <div class="low-calories__card-body">
         <div class="low-calories__card-name">Веган-raw<br>Nutella</div>
-        <div class="low-calories__card-calories">~ 150 ккал</div>
+        <div class="low-calories__card-calories">150 ккал</div>
         <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
@@ -157,15 +150,11 @@
             <img src="anich_cakes/img/raw/raw-5-1.jpg" alt="Десерт 5-1">
           </div>
         </div>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
-        <div class="low-calories__carousel-dots">
-          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
-        </div>
+        <div class="low-calories__carousel-dots"></div>
       </div>
       <div class="low-calories__card-body">
         <div class="low-calories__card-name">Кешью-кейк<br>Несливочная вишня</div>
-        <div class="low-calories__card-calories">~ 150 ккал</div>
+        <div class="low-calories__card-calories">150 ккал</div>
         <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
@@ -190,7 +179,7 @@
       </div>
       <div class="low-calories__card-body">
         <div class="low-calories__card-name">Кешью-кейк<br>Черничный</div>
-        <div class="low-calories__card-calories">~ 150 ккал</div>
+        <div class="low-calories__card-calories">150 ккал</div>
         <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
@@ -203,15 +192,11 @@
             <img src="anich_cakes/img/raw/raw-7-1.jpg" alt="Десерт 7-1">
           </div>
         </div>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
-        <div class="low-calories__carousel-dots">
-          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
-        </div>
+        <div class="low-calories__carousel-dots"></div>
       </div>
       <div class="low-calories__card-body">
         <div class="low-calories__card-name">Кешью-кейк<br>Клубничная элегия</div>
-        <div class="low-calories__card-calories">~ 150 ккал</div>
+        <div class="low-calories__card-calories">150 ккал</div>
         <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
@@ -224,15 +209,11 @@
             <img src="anich_cakes/img/raw/raw-8-1.jpg" alt="Десерт 8-1">
           </div>
         </div>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
-        <div class="low-calories__carousel-dots">
-          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
-        </div>
+        <div class="low-calories__carousel-dots"></div>
       </div>
       <div class="low-calories__card-body">
         <div class="low-calories__card-name">Raw Трюфель</div>
-        <div class="low-calories__card-calories">~ 150 ккал</div>
+        <div class="low-calories__card-calories">150 ккал</div>
         <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>  
@@ -254,6 +235,13 @@
       var nextBtn = carousel.querySelector('.low-calories__carousel-btn--next');
       var current = 0;
 
+      // Если только один слайд — скрываем кнопки и не добавляем обработчики
+      if (slides.length <= 1) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        return;
+      }
+
       function updateCarousel() {
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
         dots.forEach(function (dot, i) {
@@ -261,15 +249,19 @@
         });
       }
 
-      prevBtn.addEventListener('click', function () {
-        current = (current - 1 + slides.length) % slides.length;
-        updateCarousel();
-      });
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          current = (current - 1 + slides.length) % slides.length;
+          updateCarousel();
+        });
+      }
 
-      nextBtn.addEventListener('click', function () {
-        current = (current + 1) % slides.length;
-        updateCarousel();
-      });
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          current = (current + 1) % slides.length;
+          updateCarousel();
+        });
+      }
 
       dots.forEach(function (dot, i) {
         dot.addEventListener('click', function () {
