@@ -1,0 +1,62 @@
+/* ===== Thematical Page Styles ===== */
+
+/* Banner header link reset */
+.thematical .banner__header > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.thematical .banner__header > a:hover,
+.thematical .banner__header > a:visited,
+.thematical .banner__header > a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Override card body text to 13px as requested */
+.thematical .low-calories__card-name {
+  font-size: 13px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #000000;
+  font-family: 'Gilroy', sans-serif;
+}
+
+.thematical .low-calories__card-calories {
+  font-size: 13px;
+  font-weight: 400;
+  color: #000000;
+  font-family: 'Gilroy', sans-serif;
+}
+
+.thematical .low-calories__card-description {
+  font-size: 13px;
+  font-weight: 400;
+  color: #000000;
+  font-family: 'Gilroy', sans-serif;
+  line-height: 1.3;
+}
+
+/* Center images horizontally in carousel slides */
+.thematical .low-calories__carousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thematical .low-calories__carousel-slide img,
+.thematical .low-calories__carousel-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Video autoplay loop styling */
+.thematical .low-calories__carousel-slide video {
+  object-fit: cover;
+}

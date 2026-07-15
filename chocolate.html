@@ -90,17 +90,20 @@
     var burgerBtn = document.getElementById('burgerBtn');
     var menuOverlay = document.getElementById('menuOverlay');
     var menuNav = document.getElementById('menuNav');
+    var header = document.querySelector('.low-calories__banner-header');
 
     function openMenu() {
       menuNav.classList.add('low-calories__menu--open');
       menuOverlay.classList.add('low-calories__menu-overlay--visible');
       document.body.style.overflow = 'hidden';
+      if (header) header.classList.add('low-calories__banner-header--hidden');
     }
 
     function closeMenu() {
       menuNav.classList.remove('low-calories__menu--open');
       menuOverlay.classList.remove('low-calories__menu-overlay--visible');
       document.body.style.overflow = '';
+      if (header) header.classList.remove('low-calories__banner-header--hidden');
     }
 
     burgerBtn.addEventListener('click', function (e) {

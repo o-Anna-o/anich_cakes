@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Тематические десерты — Anich Cakes</title>
   <link rel="stylesheet" href="anich_cakes/css/variables.css">
   <link rel="stylesheet" href="anich_cakes/css/low_calories.css">
+  <link rel="stylesheet" href="anich_cakes/css/thematical.css">
+  <link rel="stylesheet" href="anich_cakes/css/style.css">
 </head>
-<body class="low-calories">
 
-  <!-- Banner -->
-  <section class="low-calories__banner" aria-label="Hero image">
-    <div class="low-calories__banner-image">
-      <img class="low-calories__banner-img" src="anich_cakes/img/berry_header.jpg" alt="Thematic desserts">
-    </div>
-    <header class="low-calories__banner-header">
-      <div class="low-calories__banner-left">
-        <a href="#" class="low-calories__banner-burger" id="burgerBtn">
-          <img class="low-calories__banner-logo" src="anich_cakes/img/burger.svg" alt="menu">
-        </a>
+<body class="low-calories thematical">
+
+  <section class="banner" aria-label="Hero image">
+      <div class="banner__image">
+        <img class="banner__img" src="anich_cakes/img/berry_header.jpg" alt="Thematic desserts background">
+      </div>
+      <header class="banner__header">
+        <div class="banner__header-left">
+          <a href="#" class="banner__burger" id="burgerBtn">
+            <img class="banner__logo" src="anich_cakes/img/burger.svg" alt="menu">
+          </a>
         <nav class="low-calories__breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Главная</a>
           <span class="low-calories__breadcrumbs-sep">/</span>
           <span>Тематические</span>
         </nav>
-      </div>
-      <a href="index.html">
-        <h1 class="low-calories__banner-title">Anich Cakes</h1>
-      </a>
-    </header>
-  </section>
+        </div>
+        <a href="index.html">
+          <h1 class="banner__title">Anich Cakes</h1>
+        </a>
+      </header>
+    </section>
 
   <!-- Burger Menu -->
   <div class="low-calories__menu-overlay" id="menuOverlay"></div>
@@ -55,13 +58,133 @@
 
   <!-- Cards -->
   <section class="low-calories__cards">
+
+    <!-- Card 1 -->
     <article class="low-calories__card">
+      <div class="low-calories__carousel" data-current="0">
+        <div class="low-calories__carousel-track">
+          <div class="low-calories__carousel-slide">
+            <img src="anich_cakes/img/thematical/thematical-1-1.jpg" alt="Тематический десерт 1-1">
+          </div>
+        </div>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
+        <div class="low-calories__carousel-dots">
+          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
+        </div>
+      </div>
       <div class="low-calories__card-body">
-        <div class="low-calories__card-name">Название десерта</div>
-        <div class="low-calories__card-calories">~ 150 ккал</div>
+        <div class="low-calories__card-name">Шоколадный<br>муссовый торт</div>
+        <div class="low-calories__card-calories">150 ккал</div>
         <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
+
+    <!-- Card 2 -->
+    <article class="low-calories__card">
+      <div class="low-calories__carousel" data-current="0">
+        <div class="low-calories__carousel-track">
+          <div class="low-calories__carousel-slide">
+            <img src="anich_cakes/img/thematical/thematical-2-1.jpg" alt="Тематический десерт 2-1">
+          </div>
+        </div>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
+        <div class="low-calories__carousel-dots">
+          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
+        </div>
+      </div>
+      <div class="low-calories__card-body">
+        <div class="low-calories__card-name">Низкокалорийный<br>Черничные ночи</div>
+        <div class="low-calories__card-calories">150 ккал</div>
+        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="low-calories__card">
+      <div class="low-calories__carousel" data-current="0">
+        <div class="low-calories__carousel-track">
+          <div class="low-calories__carousel-slide">
+            <img src="anich_cakes/img/thematical/thematical-3-1.jpg" alt="Тематический десерт 3-1">
+          </div>
+        </div>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
+        <div class="low-calories__carousel-dots">
+          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
+        </div>
+      </div>
+      <div class="low-calories__card-body">
+        <div class="low-calories__card-name">Красный бархат</div>
+        <div class="low-calories__card-calories">150 ккал</div>
+        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="low-calories__card">
+      <div class="low-calories__carousel" data-current="0">
+        <div class="low-calories__carousel-track">
+          <div class="low-calories__carousel-slide">
+            <img src="anich_cakes/img/thematical/thematical-4-1.jpg" alt="Тематический десерт 4-1">
+          </div>
+        </div>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
+        <div class="low-calories__carousel-dots">
+          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
+        </div>
+      </div>
+      <div class="low-calories__card-body">
+        <div class="low-calories__card-name">Шоколадный<br>муссовый торт</div>
+        <div class="low-calories__card-calories">150 ккал</div>
+        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="low-calories__card">
+      <div class="low-calories__carousel" data-current="0">
+        <div class="low-calories__carousel-track">
+          <div class="low-calories__carousel-slide">
+            <img src="anich_cakes/img/thematical/thematical-5-1.jpg" alt="Тематический десерт 5-1">
+          </div>
+        </div>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
+        <div class="low-calories__carousel-dots">
+          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
+        </div>
+      </div>
+      <div class="low-calories__card-body">
+        <div class="low-calories__card-name">Веганский муравейник</div>
+        <div class="low-calories__card-calories">150 ккал</div>
+        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 6 -->
+    <article class="low-calories__card">
+      <div class="low-calories__carousel" data-current="0">
+        <div class="low-calories__carousel-track">
+          <div class="low-calories__carousel-slide">
+            <img src="anich_cakes/img/thematical/thematical-6-1.jpg" alt="Тематический десерт 6-1">
+          </div>
+        </div>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
+        <div class="low-calories__carousel-dots">
+          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
+        </div>
+      </div>
+      <div class="low-calories__card-body">
+        <div class="low-calories__card-name">Красный бархат</div>
+        <div class="low-calories__card-calories">150 ккал</div>
+        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
   </section>
 
   <!-- Footer -->
@@ -70,17 +193,71 @@
   </footer>
 
   <script>
+    // Carousel functionality
+    document.querySelectorAll('.low-calories__carousel').forEach(function (carousel) {
+      var track = carousel.querySelector('.low-calories__carousel-track');
+      var slides = carousel.querySelectorAll('.low-calories__carousel-slide');
+      var dots = carousel.querySelectorAll('.low-calories__carousel-dot');
+      var prevBtn = carousel.querySelector('.low-calories__carousel-btn--prev');
+      var nextBtn = carousel.querySelector('.low-calories__carousel-btn--next');
+      var current = 0;
+
+      function updateCarousel() {
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('low-calories__carousel-dot--active', i === current);
+        });
+      }
+
+      prevBtn.addEventListener('click', function () {
+        current = (current - 1 + slides.length) % slides.length;
+        updateCarousel();
+      });
+
+      nextBtn.addEventListener('click', function () {
+        current = (current + 1) % slides.length;
+        updateCarousel();
+      });
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          current = i;
+          updateCarousel();
+        });
+      });
+    });
+
+    // Intersection Observer for video autoplay
+    (function() {
+      var videos = document.querySelectorAll('.low-calories__carousel-slide video');
+      if (videos.length > 0 && 'IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            var video = entry.target;
+            if (entry.isIntersecting) {
+              video.play().catch(function() {});
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: 0.5 });
+        videos.forEach(function(video) {
+          observer.observe(video);
+        });
+      }
+    })();
+
     // Sticky header on scroll
     (function() {
-      var header = document.querySelector('.low-calories__banner-header');
-      var banner = document.querySelector('.low-calories__banner');
+      var header = document.querySelector('.banner__header');
+      var banner = document.querySelector('.banner');
       if (header && banner) {
         window.addEventListener('scroll', function() {
           var bannerBottom = banner.offsetTop + banner.offsetHeight;
           if (window.scrollY >= bannerBottom) {
-            header.classList.add('low-calories__banner-header--sticky');
+            header.classList.add('banner__header--sticky');
           } else {
-            header.classList.remove('low-calories__banner-header--sticky');
+            header.classList.remove('banner__header--sticky');
           }
         });
       }
@@ -90,17 +267,20 @@
     var burgerBtn = document.getElementById('burgerBtn');
     var menuOverlay = document.getElementById('menuOverlay');
     var menuNav = document.getElementById('menuNav');
+    var header = document.querySelector('.banner__header');
 
     function openMenu() {
       menuNav.classList.add('low-calories__menu--open');
       menuOverlay.classList.add('low-calories__menu-overlay--visible');
       document.body.style.overflow = 'hidden';
+      if (header) header.classList.add('banner__header--hidden');
     }
 
     function closeMenu() {
       menuNav.classList.remove('low-calories__menu--open');
       menuOverlay.classList.remove('low-calories__menu-overlay--visible');
       document.body.style.overflow = '';
+      if (header) header.classList.remove('banner__header--hidden');
     }
 
     burgerBtn.addEventListener('click', function (e) {
@@ -114,4 +294,5 @@
   </script>
 
 </body>
+
 </html>

@@ -220,7 +220,7 @@
         </div>
       </div>
       <div class="low-calories__card-body">
-        <div class="low-calories__card-name">Медовик</div>
+        <div class="low-calories__card-name">Муравейник</div>
         <div class="low-calories__card-calories"> 150 ккал</div>
         <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
@@ -231,9 +231,7 @@
       <div class="low-calories__carousel" data-current="0">
         <div class="low-calories__carousel-track">
           <div class="low-calories__carousel-slide"><img src="anich_cakes/img/traditional/traditional-8-1.jpg" alt="Десерт 4-4"></div>
-          <div class="low-calories__carousel-slide">
-            <video src="anich_cakes/img/traditional/traditional-8-2.mp4" muted loop playsinline></video>
-          </div>
+     
           <div class="low-calories__carousel-slide"><img src="anich_cakes/img/traditional/traditional-8-3.jpg" alt="Десерт 4-6"></div>
           <div class="low-calories__carousel-slide">
             <video src="anich_cakes/img/traditional/traditional-8-4.mp4" muted loop playsinline></video>
@@ -388,17 +386,20 @@
     var burgerBtn = document.getElementById('burgerBtn');
     var menuOverlay = document.getElementById('menuOverlay');
     var menuNav = document.getElementById('menuNav');
+    var header = document.querySelector('.low-calories__banner-header');
 
     function openMenu() {
       menuNav.classList.add('low-calories__menu--open');
       menuOverlay.classList.add('low-calories__menu-overlay--visible');
       document.body.style.overflow = 'hidden';
+      if (header) header.classList.add('low-calories__banner-header--hidden');
     }
 
     function closeMenu() {
       menuNav.classList.remove('low-calories__menu--open');
       menuOverlay.classList.remove('low-calories__menu-overlay--visible');
       document.body.style.overflow = '';
+      if (header) header.classList.remove('low-calories__banner-header--hidden');
     }
 
     burgerBtn.addEventListener('click', function (e) {

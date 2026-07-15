@@ -568,17 +568,20 @@
     var burgerBtn = document.getElementById('burgerBtn');
     var menuOverlay = document.getElementById('menuOverlay');
     var menuNav = document.getElementById('menuNav');
+    var header = document.querySelector('.banner__header');
 
     function openMenu() {
       menuNav.classList.add('menu-nav--open');
       menuOverlay.classList.add('menu-overlay--visible');
       document.body.style.overflow = 'hidden';
+      if (header) header.classList.add('banner__header--hidden');
     }
 
     function closeMenu() {
       menuNav.classList.remove('menu-nav--open');
       menuOverlay.classList.remove('menu-overlay--visible');
       document.body.style.overflow = '';
+      if (header) header.classList.remove('banner__header--hidden');
     }
 
     burgerBtn.addEventListener('click', function (e) {

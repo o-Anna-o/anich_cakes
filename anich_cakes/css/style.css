@@ -76,6 +76,10 @@ a, a:visited, a:hover, a:active {
   backdrop-filter: blur(4px);
 }
 
+.banner__header--hidden {
+  display: none !important;
+}
+
 .banner__header-left {
   display: flex;
   align-items: center;

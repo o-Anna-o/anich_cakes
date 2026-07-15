@@ -32,6 +32,10 @@
   backdrop-filter: blur(4px);
 }
 
+.low-calories__banner-header--hidden {
+  display: none !important;
+}
+
 .low-calories__banner-left {
   display: flex;
   align-items: center;
