@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 18px;
+  font-size: var(--font-size-breadcrumbs);
   color: #F7DCCB;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
 }

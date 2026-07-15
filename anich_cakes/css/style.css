@@ -89,9 +89,10 @@ a, a:visited, a:hover, a:active {
 }
 
 .banner__title {
-  font-size: 30px;
+  font-size: var(--font-size-category-card-name);
   color: var(--color-bg-primary);
   text-decoration: none;
+  width: 150px;
 }
 
 .banner__title a {
@@ -313,6 +314,14 @@ a, a:visited, a:hover, a:active {
     background-size: cover;
   }
 }
+@media (max-width: 481px) {
+  .low-calories__breadcrumbs {
+    display: none;
+  }
+  .banner__title {
+    width: 135px;
+  }
+}
 
 /* 2 колонки — от 392px до 719px */
 @media (min-width: 392px) and (max-width: 719px) {
@@ -325,6 +334,13 @@ a, a:visited, a:hover, a:active {
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+.banner__title {
+  font-size: var(--font-size-category-card-name);
+  color: var(--color-bg-primary);
+  text-decoration: none;
+  width: 135px;
+}
   .product-card__body {
     position: relative;
     z-index: 1;
@@ -345,6 +361,12 @@ a, a:visited, a:hover, a:active {
   .products__grid {
     grid-template-columns: 1fr;
   }
+    .banner__title {
+  font-size: var(--font-size-category-card-name);
+  color: var(--color-bg-primary);
+  text-decoration: none;
+  width: 135px;
+  } 
 
   .product-card__body {
     position: relative;

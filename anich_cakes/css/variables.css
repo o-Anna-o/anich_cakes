@@ -35,6 +35,8 @@
   --font-size-category-card-calories: 16px;
   --font-size-category-card-desc: 16px;
 
+  --font-size-breadcrumbs: 24px;
+
   /* --- Отступы и размеры --- */
   --gap-card: 16px;
   --width-card-btn: 90px;
@@ -42,8 +44,23 @@
   --padding-card-body-top: 35px;
 }
 
-/* ===== Планшеты (391px — 719px) ===== */
-@media (min-width: 391px) and (max-width: 719px) {
+@media (min-width: 393px) and (max-width: 481px) {
+  :root {
+    
+    --font-size-card-title: 16px;
+    --font-size-card-desc: 16px;
+    --font-size-card-btn: 16px;
+
+    --font-size-category-card-name: 20px;
+    --font-size-category-card-calories: 16px;
+    --font-size-category-card-desc: 16px;
+
+    --font-size-breadcrumbs: 23px;
+
+  }
+}
+/* ===== Планшеты (480px — 719px) ===== */
+@media (min-width: 480px) and (max-width: 719px) {
   :root {
     --font-size-card-title: 11px;
     --font-size-card-desc: 11px;
@@ -52,6 +69,8 @@
     --font-size-category-card-name: 23px;
     --font-size-category-card-calories: 23px;
     --font-size-category-card-desc: 23px;
+
+    --font-size-breadcrumbs: 18px;
 
     --gap-card: clamp(16px, 3vw, 24px);
     --width-card-btn: clamp(80px, 18vw, 120px);
@@ -71,6 +90,8 @@
     --font-size-category-card-calories: 24px;
     --font-size-category-card-desc: 24px;
 
+    --font-size-breadcrumbs: 23px;
+
     --gap-card: clamp(24px, 2.5vw, 32px);
     --width-card-btn: clamp(120px, 14vw, 168px);
     --radius-card: clamp(28px, 3vw, 44px);
@@ -87,6 +108,8 @@
     --font-size-category-card-name: 20px;
     --font-size-category-card-calories: 16px;
     --font-size-category-card-desc: 16px;
+
+    --font-size-breadcrumbs: 23px;
   }
 }
 
