@@ -59,6 +59,7 @@ a, a:visited, a:hover, a:active {
 }
 
 .banner__header {
+  height: 55px;
   position: absolute;
   top: 0;
   left: 0;
