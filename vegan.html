@@ -13,19 +13,6 @@
 
 <body class="low-calories">
 
-  <div class="low-calories__menu-overlay" id="menuOverlay"></div>
-  <nav class="low-calories__menu" id="menuNav">
-    <ul class="low-calories__menu-list">
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="low_calories.html">Низкокалорийные</a></li>
-      <li><a href="raw.html">Живые (Raw)</a></li>
-      <li><a href="vegan.html">Веганские</a></li>
-      <li><a href="traditional.html">Традиционные</a></li>
-      <li><a href="thematical.html">Тематические</a></li>
-      <li><a href="chocolate.html">Шоколадные</a></li>
-    </ul>
-  </nav>
-
   <section class="banner" aria-label="Hero image">
       <div class="banner__image">
         <img class="banner__img" src="anich_cakes/img/vegan/vegan__banner.jpg" alt="Berry dessert background">
@@ -46,6 +33,20 @@
         </a>
       </header>
     </section>
+
+    <!-- Burger Menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <nav class="menu-nav" id="menuNav">
+      <ul class="menu-nav__list">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="low_calories.html">Низкокалорийные</a></li>
+        <li><a href="raw.html">Живые (Raw)</a></li>
+        <li><a href="vegan.html">Веганские</a></li>
+        <li><a href="traditional.html">Традиционные</a></li>
+        <li><a href="thematical.html">Тематические</a></li>
+        <li><a href="chocolate.html">Шоколадные</a></li>
+      </ul>
+    </nav>
 
 
   <section class="low-calories__intro">
@@ -115,7 +116,10 @@
         <div class="low-calories__carousel-track">
           <div class="low-calories__carousel-slide"><img src="anich_cakes/img/vegan/vegan-4-1.jpg" alt="Десерт 4-1"></div>
           <div class="low-calories__carousel-slide"><img src="anich_cakes/img/vegan/vegan-4-2.jpg" alt="Десерт 4-2"></div>
-    
+        </div>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
+        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
+        <div class="low-calories__carousel-dots"></div>
       </div>
       <div class="low-calories__card-body">
         <div class="low-calories__card-name">Тропический Сплит</div>
@@ -544,35 +548,31 @@
       }
     });
 
-    // Burger menu
+    // Burger menu functionality
     var burgerBtn = document.getElementById('burgerBtn');
     var menuOverlay = document.getElementById('menuOverlay');
     var menuNav = document.getElementById('menuNav');
 
     function openMenu() {
-      menuNav.classList.add('low-calories__menu--open');
-      menuOverlay.classList.add('low-calories__menu-overlay--visible');
+      menuNav.classList.add('menu-nav--open');
+      menuOverlay.classList.add('menu-overlay--visible');
       document.body.style.overflow = 'hidden';
     }
 
     function closeMenu() {
-      menuNav.classList.remove('low-calories__menu--open');
-      menuOverlay.classList.remove('low-calories__menu-overlay--visible');
+      menuNav.classList.remove('menu-nav--open');
+      menuOverlay.classList.remove('menu-overlay--visible');
       document.body.style.overflow = '';
     }
 
-    if(burgerBtn) {
-      burgerBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        openMenu();
-      });
-    }
+    burgerBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openMenu();
+    });
 
-    if(menuOverlay) {
-      menuOverlay.addEventListener('click', function () {
-        closeMenu();
-      });
-    }
+    menuOverlay.addEventListener('click', function () {
+      closeMenu();
+    });
   </script>
 
 </body>
