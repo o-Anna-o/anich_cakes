@@ -368,6 +368,22 @@
       playVideo(slides[0]);
     });
 
+    // Sticky header on scroll
+    (function() {
+      var header = document.querySelector('.low-calories__banner-header');
+      var banner = document.querySelector('.low-calories__banner');
+      if (header && banner) {
+        window.addEventListener('scroll', function() {
+          var bannerBottom = banner.offsetTop + banner.offsetHeight;
+          if (window.scrollY >= bannerBottom) {
+            header.classList.add('low-calories__banner-header--sticky');
+          } else {
+            header.classList.remove('low-calories__banner-header--sticky');
+          }
+        });
+      }
+    })();
+
     // Burger menu functionality
     var burgerBtn = document.getElementById('burgerBtn');
     var menuOverlay = document.getElementById('menuOverlay');

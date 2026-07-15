@@ -275,6 +275,22 @@
       });
     });
 
+    // Sticky header on scroll
+    (function() {
+      var header = document.querySelector('.banner__header');
+      var banner = document.querySelector('.banner');
+      if (header && banner) {
+        window.addEventListener('scroll', function() {
+          var bannerBottom = banner.offsetTop + banner.offsetHeight;
+          if (window.scrollY >= bannerBottom) {
+            header.classList.add('banner__header--sticky');
+          } else {
+            header.classList.remove('banner__header--sticky');
+          }
+        });
+      }
+    })();
+
     // Burger menu functionality
     var burgerBtn = document.getElementById('burgerBtn');
     var menuOverlay = document.getElementById('menuOverlay');
