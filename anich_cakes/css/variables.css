@@ -47,9 +47,9 @@
 @media (min-width: 393px) and (max-width: 481px) {
   :root {
     
-    --font-size-card-title: 16px;
-    --font-size-card-desc: 16px;
-    --font-size-card-btn: 16px;
+    --font-size-card-title: 9px;
+    --font-size-card-desc: 10px;
+    --font-size-card-btn: 10px;
 
     --font-size-category-card-name: 20px;
     --font-size-category-card-calories: 16px;
@@ -81,10 +81,10 @@
 
 /* ===== Десктоп (>= 720px) ===== */
 @media (min-width: 720px) {
-  :root {
-    --font-size-card-title: 14px;
-    --font-size-card-desc: 12px;
-    --font-size-card-btn: 12px;
+    :root {
+      --font-size-card-title: 23px;
+      --font-size-card-desc: 23px;
+      --font-size-card-btn: 20px;
 
     --font-size-category-card-name: 26px;
     --font-size-category-card-calories: 24px;
