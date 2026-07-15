@@ -389,6 +389,12 @@ a, a:visited, a:hover, a:active {
   text-decoration: none;
   width: 135px;
   } 
+  .banner__header--sticky {
+  position: fixed;
+  background-color: rgb(35 19 13 / 66%);
+  backdrop-filter: blur(4px);
+  height: 40px;
+}
 
   .product-card__body {
     position: relative;
