@@ -1,0 +1,76 @@
+/**
+ * Данные всех карточек десертов со всех страниц сайта
+ * Структура: { name, category, page, images[], calories, description }
+ */
+var allCards = [
+  // ===== Низкокалорийные (low_calories.html) =====
+  { name: 'Райское яблочко', category: 'Низкокалорийные', page: 'low_calories.html', images: ['anich_cakes/img/low_calories/low_cal-1-1.jpg', 'anich_cakes/img/low_calories/low_cal-1-2.jpg'], calories: '150 ккал', description: 'Описание десерта. Натуральные ингредиенты, без сахара.' },
+  { name: 'Муссовый Птичка', category: 'Низкокалорийные', page: 'low_calories.html', images: ['anich_cakes/img/low_calories/low_cal-2-1.jpg', 'anich_cakes/img/low_calories/low_cal-2-2.jpg'], calories: '180 ккал', description: 'Описание десерта. Натуральные ингредиенты, без сахара.' },
+  { name: 'Муссовый Манго-Тропики', category: 'Низкокалорийные', page: 'low_calories.html', images: ['anich_cakes/img/low_calories/low_cal-3-1.jpg', 'anich_cakes/img/low_calories/low_cal-3-2.jpg', 'anich_cakes/img/low_calories/low_cal-3-3.jpg'], calories: '200 ккал', description: 'Описание десерта. Натуральные ингредиенты, без сахара.' },
+  { name: 'Муссовый Клубничная нежность', category: 'Низкокалорийные', page: 'low_calories.html', images: ['anich_cakes/img/low_calories/low_cal-4-1.jpg', 'anich_cakes/img/low_calories/low_cal-4-2.jpg'], calories: '160 ккал', description: 'Описание десерта. Натуральные ингредиенты, без сахара.' },
+  { name: 'Муссовый Груша в шоколаде', category: 'Низкокалорийные', page: 'low_calories.html', images: ['anich_cakes/img/low_calories/low_cal-5-1.jpg', 'anich_cakes/img/low_calories/low_cal-5-2.jpg', 'anich_cakes/img/low_calories/low_cal-5-3.jpg'], calories: '190 ккал', description: 'Описание десерта. Натуральные ингредиенты, без сахара.' },
+  { name: 'Муссовый Облипиха-карамель', category: 'Низкокалорийные', page: 'low_calories.html', images: ['anich_cakes/img/low_calories/low_cal-6-1.jpg'], calories: '170 ккал', description: 'Описание десерта. Натуральные ингредиенты, без сахара.' },
+  { name: 'Муссовый Мега-Черника', category: 'Низкокалорийные', page: 'low_calories.html', images: ['anich_cakes/img/low_calories/low_cal-7-1.jpg', 'anich_cakes/img/low_calories/low_cal-7-2.jpg', 'anich_cakes/img/low_calories/low_cal-7-3.jpg'], calories: '140 ккал', description: 'Описание десерта. Натуральные ингредиенты, без сахара.' },
+  { name: 'Меренговый рулет', category: 'Низкокалорийные', page: 'low_calories.html', images: ['anich_cakes/img/low_calories/low_cal-8-1.jpg', 'anich_cakes/img/low_calories/low_cal-8-2.jpg'], calories: '130 ккал', description: 'Описание десерта. Натуральные ингредиенты, без сахара.' },
+  { name: 'Шоколадная мечта', category: 'Низкокалорийные', page: 'low_calories.html', images: ['anich_cakes/img/low_calories/low_cal-9-1.jpg', 'anich_cakes/img/low_calories/low_cal-9-2.jpg'], calories: '130 ккал', description: 'Описание десерта. Натуральные ингредиенты, без сахара.' },
+
+  // ===== Живые (Raw) (raw.html) =====
+  { name: 'Кешью-кейк Клубника-Базилик', category: 'Живые (Raw)', page: 'raw.html', images: ['anich_cakes/img/raw/raw-1-1.jpg', 'anich_cakes/img/raw/raw-1-2.jpg'], calories: '150 ккал', description: 'Описание десерта. Натуральные ингредиенты, без сахара.' },
+  { name: 'Веган-raw Nutella', category: 'Живые (Raw)', page: 'raw.html', images: ['anich_cakes/img/raw/raw-2-1.jpg', 'anich_cakes/img/raw/raw-2-2.jpg'], calories: '150 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Веган-raw Брауни', category: 'Живые (Raw)', page: 'raw.html', images: ['anich_cakes/img/raw/raw-3-1.jpg'], calories: '150 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Кешью-кейк Несливочная вишня', category: 'Живые (Raw)', page: 'raw.html', images: ['anich_cakes/img/raw/raw-5-1.jpg'], calories: '150 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Кешью-кейк Черничный', category: 'Живые (Raw)', page: 'raw.html', images: ['anich_cakes/img/raw/raw-6-1.jpg', 'anich_cakes/img/raw/raw-6-2.jpg'], calories: '150 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Кешью-кейк Клубничная элегия', category: 'Живые (Raw)', page: 'raw.html', images: ['anich_cakes/img/raw/raw-7-1.jpg'], calories: '150 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Raw Трюфель', category: 'Живые (Raw)', page: 'raw.html', images: ['anich_cakes/img/raw/raw-8-1.jpg'], calories: '150 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+
+  // ===== Веганские (vegan.html) =====
+  { name: 'Банановый кекс с кокосовыми сливками', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-1-1.jpg', 'anich_cakes/img/vegan/vegan-1-2.jpg'], calories: '150 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Райское яблочко', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-2-1.jpg', 'anich_cakes/img/vegan/vegan-2-2.jpg'], calories: '180 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Апельсин-мак', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-3-1.jpg', 'anich_cakes/img/vegan/vegan-3-2.jpg', 'anich_cakes/img/vegan/vegan-3-3.jpg'], calories: '200 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Тропический Сплит', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-4-1.jpg', 'anich_cakes/img/vegan/vegan-4-2.jpg'], calories: '160 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Вишня-шоколад с кокосовыми сливками', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-5-1.jpg', 'anich_cakes/img/vegan/vegan-5-2.jpg'], calories: '175 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Муссовый Манго-Тропики', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-6-1.jpg', 'anich_cakes/img/vegan/vegan-6-2.jpg'], calories: '190 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Муссовый Облипиха-карамель', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-7-1.jpg'], calories: '140 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Муссовый Птичка', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-8-1.jpg', 'anich_cakes/img/vegan/vegan-8-2.jpg', 'anich_cakes/img/vegan/vegan-8-3.jpg'], calories: '210 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Зимняя сказка', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-9-1.jpg', 'anich_cakes/img/vegan/vegan-9-2.jpg'], calories: '165 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Муссовый Клубничная нежность', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-10-1.jpg', 'anich_cakes/img/vegan/vegan-10-2.jpg', 'anich_cakes/img/vegan/vegan-10-3.jpg', 'anich_cakes/img/vegan/vegan-10-4.jpg', 'anich_cakes/img/vegan/vegan-10-5.jpg'], calories: '195 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Муссовый Груша-Шоколад', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-11-1.jpg', 'anich_cakes/img/vegan/vegan-11-2.jpg', 'anich_cakes/img/vegan/vegan-11-3.jpg', 'anich_cakes/img/vegan/vegan-11-4.jpg', 'anich_cakes/img/vegan/vegan-11-5.jpg'], calories: '185 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Муссовый Мега-Черника', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-12-1.jpg', 'anich_cakes/img/vegan/vegan-12-2.jpg'], calories: '170 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Кешью-кейк Черничный', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-13-1.jpg', 'anich_cakes/img/vegan/vegan-13-2.jpg'], calories: '150 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Новогоднее настроение', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-14-1.jpg'], calories: '160 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Лимонный кекс с маком', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-15-1.jpg', 'anich_cakes/img/vegan/vegan-15-2.jpg'], calories: '200 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Веган-raw Nutella', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-16-1.jpg', 'anich_cakes/img/vegan/vegan-16-2.jpg'], calories: '175 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Муравейник', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-17-1.jpg'], calories: '140 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Кешью-кейк Клубника-базилик', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-18-1.jpg', 'anich_cakes/img/vegan/vegan-18-2.jpg'], calories: '185 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Кешью-кейк Клубничная элегия', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-19-1.jpg'], calories: '190 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Веган-raw Брауни', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-20-1.jpg'], calories: '160 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Муссовый ассорти', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-21-1.jpg'], calories: '175 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Кешью-кейк Сливочная вишня', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-22-1.jpg'], calories: '140 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Raw Трюфель', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-23-1.jpg'], calories: '180 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+  { name: 'Веган-raw Nutella', category: 'Веганские', page: 'vegan.html', images: ['anich_cakes/img/vegan/vegan-24-1.jpg'], calories: '200 ккал', description: 'Описание десерта. Натуральные ингредиенты.' },
+
+  // ===== Традиционные (traditional.html) =====
+  { name: 'Пирожное макарон', category: 'Традиционные', page: 'traditional.html', images: ['anich_cakes/img/traditional/traditional-1-1.jpg', 'anich_cakes/img/traditional/traditional-1-2.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Красный бархат', category: 'Традиционные', page: 'traditional.html', images: ['anich_cakes/img/traditional/traditional-2-1.jpg', 'anich_cakes/img/traditional/traditional-2-2.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Москва', category: 'Традиционные', page: 'traditional.html', images: ['anich_cakes/img/traditional/traditional-3-1.jpg', 'anich_cakes/img/traditional/traditional-3-2.jpg', 'anich_cakes/img/traditional/traditional-3-3.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Бисквитный торт', category: 'Традиционные', page: 'traditional.html', images: ['anich_cakes/img/traditional/traditional-4-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Три шоколада', category: 'Традиционные', page: 'traditional.html', images: ['anich_cakes/img/traditional/traditional-5-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Вишневый муссовый торт', category: 'Традиционные', page: 'traditional.html', images: ['anich_cakes/img/traditional/traditional-6-1.jpg', 'anich_cakes/img/traditional/traditional-6-2.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Муравейник', category: 'Традиционные', page: 'traditional.html', images: ['anich_cakes/img/traditional/traditional-7-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Медовый торт', category: 'Традиционные', page: 'traditional.html', images: ['anich_cakes/img/traditional/traditional-8-1.jpg', 'anich_cakes/img/traditional/traditional-8-5.jpg', 'anich_cakes/img/traditional/traditional-8-6.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Кейк-попсы', category: 'Традиционные', page: 'traditional.html', images: ['anich_cakes/img/traditional/traditional-9-1.jpg', 'anich_cakes/img/traditional/traditional-9-2.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Лимонный пирог', category: 'Традиционные', page: 'traditional.html', images: ['anich_cakes/img/traditional/traditional-10-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+
+  // ===== Тематические (thematical.html) =====
+  { name: 'Шоколадный муссовый торт', category: 'Тематические', page: 'thematical.html', images: ['anich_cakes/img/thematical/thematical-1-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Низкокалорийный Черничные ночи', category: 'Тематические', page: 'thematical.html', images: ['anich_cakes/img/thematical/thematical-2-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Красный бархат', category: 'Тематические', page: 'thematical.html', images: ['anich_cakes/img/thematical/thematical-3-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Веганский муравейник', category: 'Тематические', page: 'thematical.html', images: ['anich_cakes/img/thematical/thematical-5-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+
+  // ===== Шоколадные (chocolate.html) =====
+  { name: 'Шоколадная мечта', category: 'Шоколадные', page: 'chocolate.html', images: ['anich_cakes/img/chocolate/chocolate-1-1.jpg', 'anich_cakes/img/chocolate/chocolate-1-2.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Веган-raw Nutella', category: 'Шоколадные', page: 'chocolate.html', images: ['anich_cakes/img/chocolate/chocolate-2-1.jpg', 'anich_cakes/img/chocolate/chocolate-2-2.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Три шоколада', category: 'Шоколадные', page: 'chocolate.html', images: ['anich_cakes/img/chocolate/chocolate-3-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Шоколадный муссовый торт', category: 'Шоколадные', page: 'chocolate.html', images: ['anich_cakes/img/chocolate/chocolate-4-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Веган-raw Брауни', category: 'Шоколадные', page: 'chocolate.html', images: ['anich_cakes/img/chocolate/chocolate-5-1.jpg', 'anich_cakes/img/chocolate/chocolate-5-2.jpg', 'anich_cakes/img/chocolate/chocolate-5-3.jpg', 'anich_cakes/img/chocolate/chocolate-5-4.jpg', 'anich_cakes/img/chocolate/chocolate-5-5.jpg'], calories: '150 ккал', description: 'Описание десерта.' }
+];
