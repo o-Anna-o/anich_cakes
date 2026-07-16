@@ -292,7 +292,11 @@
       return;
     }
 
-    var menuList = menuNav.querySelector('ul') || menuNav.querySelector('.menu-nav__list') || menuNav.querySelector('.low-calories__menu-list');
+    var menuList = menuNav.querySelector('.menu-nav__list--bottom, .low-calories__menu-list--bottom');
+    if (!menuList) {
+      var menuLists = menuNav.querySelectorAll('ul');
+      menuList = menuLists[menuLists.length - 1] || menuNav.querySelector('ul') || menuNav.querySelector('.menu-nav__list') || menuNav.querySelector('.low-calories__menu-list');
+    }
     if (!menuList) {
       return;
     }
@@ -312,7 +316,7 @@
       var filterItem = document.createElement('li');
       var filterLink = document.createElement('a');
       filterLink.href = '#';
-      filterLink.id = 'filterMenuBtn';
+      // filterLink.id = 'filterMenuBtn';
       filterLink.className = 'low-calories__menu-link-icon';
       filterLink.innerHTML = '<img src="anich_cakes/img/filter.svg" alt="Фильтр"><span>Подобрать состав</span>';
       filterItem.appendChild(filterLink);
