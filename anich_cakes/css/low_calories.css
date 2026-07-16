@@ -158,6 +158,8 @@
   transition: transform 0.3s ease;
   padding: 24px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .low-calories__menu--open {
@@ -187,6 +189,25 @@
 
 .low-calories__menu-list li a:hover {
   opacity: 0.8;
+}
+
+/* ===== Menu bottom links (search & filter) ===== */
+
+.low-calories__menu-list--bottom {
+  margin-top: auto;
+  padding-top: 40px;
+}
+
+.low-calories__menu-link-icon {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+}
+
+.low-calories__menu-link-icon img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
 }
 
 /* ===== Section Title & Description ===== */

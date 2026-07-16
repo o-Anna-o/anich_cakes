@@ -263,13 +263,39 @@
     if (searchBtn) {
       searchBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        if (isOpen) {
-          closeSearch();
-        } else {
-          openSearch();
+        toggleSearch();
+      });
+    }
+
+    // Обработчик для кнопки "Поиск десерта" в меню
+    var searchMenuBtn = document.getElementById('searchMenuBtn');
+    if (searchMenuBtn) {
+      searchMenuBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Закрываем меню
+        var menuNav = document.getElementById('menuNav');
+        var menuOverlay = document.getElementById('menuOverlay');
+        var header = document.querySelector('.banner__header');
+        if (menuNav) {
+          menuNav.classList.remove('low-calories__menu--open');
         }
+        if (menuOverlay) {
+          menuOverlay.classList.remove('low-calories__menu-overlay--visible');
+        }
+        document.body.style.overflow = '';
+        if (header) header.classList.remove('banner__header--hidden');
+        // Открываем поиск
+        toggleSearch();
       });
     }
   });
+
+  function toggleSearch() {
+    if (isOpen) {
+      closeSearch();
+    } else {
+      openSearch();
+    }
+  }
 
 })();
