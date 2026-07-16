@@ -12,27 +12,26 @@
 
 <body class="low-calories">
 
-  <!-- Banner -->
-  <section class="low-calories__banner" aria-label="Hero image">
-    <div class="low-calories__banner-image">
-      <img class="low-calories__banner-img" src="anich_cakes/img/traditional/traditional__banner.jpg" alt="Traditional desserts">
-    </div>
-    <header class="low-calories__banner-header">
-      <div class="low-calories__banner-left">
-        <a href="#" class="low-calories__banner-burger" id="burgerBtn">
-          <img class="low-calories__banner-logo" src="anich_cakes/img/burger.svg" alt="menu">
-        </a>
+  <section class="banner" aria-label="Hero image">
+      <div class="banner__image">
+        <img class="banner__img" src="anich_cakes/img/traditional/traditional__banner.jpg" alt="Traditional desserts">
+      </div>
+      <header class="banner__header">
+        <div class="banner__header-left">
+          <a href="#" class="banner__burger" id="burgerBtn">
+            <img class="banner__logo" src="anich_cakes/img/burger.svg" alt="menu">
+          </a>
         <nav class="low-calories__breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Главная</a>
           <span class="low-calories__breadcrumbs-sep">/</span>
           <span>Традиционные</span>
         </nav>
-      </div>
-      <a href="index.html">
-        <h1 class="low-calories__banner-title">Anich Cakes</h1>
-      </a>
-    </header>
-  </section>
+        </div>
+        <a href="index.html">
+          <h1 class="banner__title">Anich Cakes</h1>
+        </a>
+      </header>
+    </section>
 
   <!-- Burger Menu -->
   <div class="low-calories__menu-overlay" id="menuOverlay"></div>
@@ -361,15 +360,15 @@
 
     // Sticky header on scroll
     (function() {
-      var header = document.querySelector('.low-calories__banner-header');
-      var banner = document.querySelector('.low-calories__banner');
+      var header = document.querySelector('.banner__header');
+      var banner = document.querySelector('.banner');
       if (header && banner) {
         window.addEventListener('scroll', function() {
           var bannerBottom = banner.offsetTop + banner.offsetHeight;
           if (window.scrollY >= bannerBottom) {
-            header.classList.add('low-calories__banner-header--sticky');
+            header.classList.add('banner__header--sticky');
           } else {
-            header.classList.remove('low-calories__banner-header--sticky');
+            header.classList.remove('banner__header--sticky');
           }
         });
       }
@@ -379,20 +378,20 @@
     var burgerBtn = document.getElementById('burgerBtn');
     var menuOverlay = document.getElementById('menuOverlay');
     var menuNav = document.getElementById('menuNav');
-    var header = document.querySelector('.low-calories__banner-header');
+    var header = document.querySelector('.banner__header');
 
     function openMenu() {
       menuNav.classList.add('low-calories__menu--open');
       menuOverlay.classList.add('low-calories__menu-overlay--visible');
       document.body.style.overflow = 'hidden';
-      if (header) header.classList.add('low-calories__banner-header--hidden');
+      if (header) header.classList.add('banner__header--hidden');
     }
 
     function closeMenu() {
       menuNav.classList.remove('low-calories__menu--open');
       menuOverlay.classList.remove('low-calories__menu-overlay--visible');
       document.body.style.overflow = '';
-      if (header) header.classList.remove('low-calories__banner-header--hidden');
+      if (header) header.classList.remove('banner__header--hidden');
     }
 
     burgerBtn.addEventListener('click', function (e) {

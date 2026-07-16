@@ -60,6 +60,7 @@ a, a:visited, a:hover, a:active {
 
 .banner__header {
   height: 55px;
+  background-color: rgba(8, 4, 3, 0.44);
   position: absolute;
   top: 0;
   left: 0;
@@ -73,7 +74,7 @@ a, a:visited, a:hover, a:active {
 
 .banner__header--sticky {
   position: fixed;
-  background-color: rgb(35 19 13 / 66%);
+  background-color: rgba(8, 4, 3, 0.44);
   backdrop-filter: blur(4px);
 }
 
