@@ -436,7 +436,6 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     buildSearchButton();
-    buildSearchMenuLink();
 
     var searchBtn = document.getElementById('searchBtn');
     if (searchBtn) {
