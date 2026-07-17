@@ -1,7 +1,7 @@
 /* ===== Vegan Page Styles ===== */
 
 /* Сетка на 2 карточки */
-.low-calories__cards {
+.global__cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
@@ -11,13 +11,13 @@
 }
 
 @media (max-width: 768px) {
-  .low-calories__cards {
+  .global__cards {
     grid-template-columns: 1fr;
   }
 }
 
 /* Карточка: белый фон, скругление 20px */
-.low-calories__card {
+.global__card {
   background-color: #FFFFFF;
   border-radius: 20px;
   box-sizing: border-box;
@@ -26,7 +26,7 @@
 }
 
 /* Карусель: скругление 20px, пропорции квадрата */
-.low-calories__carousel {
+.global__carousel {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
@@ -35,14 +35,14 @@
   background-color: #f0f0f0;
 }
 
-.low-calories__carousel-track {   
+.global__carousel-track {   
   display: flex;
   height: 100%;
   transition: transform 0.4s ease-in-out;
 }
 
 /* Слайд: строго 100% ширины */
-.low-calories__carousel-slide {
+.global__carousel-slide {
   flex: 0 0 100%;
   height: 100%;
   display: flex;
@@ -51,8 +51,8 @@
 }
 
 /* Изображения и видео: сохраняют пропорции, обрезаются по краям */
-.low-calories__carousel-slide img,
-.low-calories__carousel-slide video {
+.global__carousel-slide img,
+.global__carousel-slide video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -61,7 +61,7 @@
 }
 
 /* Точки перелистывания */
-.low-calories__carousel-dots {
+.global__carousel-dots {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -71,7 +71,7 @@
   z-index: 10;
 }
 
-.low-calories__carousel-dot {
+.global__carousel-dot {
   width: 8px;
   height: 8px;
   background: rgba(255,255,255,0.5);
@@ -80,6 +80,6 @@
   cursor: pointer;
 }
 
-.low-calories__carousel-dot--active {
+.global__carousel-dot--active {
   background: #FFFFFF;
 }

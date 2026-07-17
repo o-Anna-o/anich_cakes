@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="anich_cakes/css/low_calories.css">
   <link rel="stylesheet" href="anich_cakes/css/style.css">
 </head>
-<body class="low-calories">
+<body class="global">
 
  <section class="banner" aria-label="Hero image">
       <div class="banner__image">
@@ -20,9 +20,9 @@
             <img class="banner__logo" src="anich_cakes/img/burger.svg" alt="menu">
           </a>
           
-          <nav class="low-calories__breadcrumbs" aria-label="Breadcrumb">
+          <nav class="global__breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Главная</a>
-          <span class="low-calories__breadcrumbs-sep">/</span>
+          <span class="global__breadcrumbs-sep">/</span>
           <span>Живые (Raw)</span>
         </nav>
         </div>
@@ -43,9 +43,9 @@
     </section>
 
   <!-- Burger Menu -->
-  <div class="low-calories__menu-overlay" id="menuOverlay"></div>
-  <nav class="low-calories__menu" id="menuNav">
-    <ul class="low-calories__menu-list">
+  <div class="global__menu-overlay" id="menuOverlay"></div>
+  <nav class="global__menu" id="menuNav">
+    <ul class="global__menu-list">
       <li><a href="index.html">Главная</a></li>
       <li><a href="low_calories.html">Низкокалорийные</a></li>
       <li><a href="raw.html">Живые (Raw)</a></li>
@@ -54,16 +54,16 @@
       <li><a href="thematical.html">Тематические</a></li>
       <li><a href="chocolate.html">Шоколадные</a></li>
     </ul>
-    <ul class="low-calories__menu-list low-calories__menu-list--bottom">
+    <ul class="global__menu-list global__menu-list--bottom">
       <li>
-        <a href="#" id="searchMenuBtn" class="low-calories__menu-link-icon">
+        <a href="#" id="searchMenuBtn" class="menu-nav__link-icon">
           <img src="anich_cakes/img/search.svg" alt="Поиск">
           <span>Поиск десерта</span>
         </a>
       </li>
       <li>
-        <a href="#" class="low-calories__menu-link-icon">
-          <img src="anich_cakes/img/filter.svg" alt="Подобрать">
+        <a href="#" id="filterMenuBtn" class="menu-nav__link-icon">
+          <img src="anich_cakes/img/filter.svg" alt="Фильтр">
           <span>Подобрать состав</span>
         </a>
       </li>
@@ -71,193 +71,193 @@
   </nav>
 
   <!-- Intro -->
-  <section class="low-calories__intro">
-    <div class="low-calories__intro-inner">
-      <h2 class="low-calories__intro-title">Живые (Raw) десерты</h2>
-      <p class="low-calories__intro-text">Raw десерты без термической обработки. Максимум пользы и натурального вкуса!</p>
+  <section class="global__intro">
+    <div class="global__intro-inner">
+      <h2 class="global__intro-title">Живые (Raw) десерты</h2>
+      <p class="global__intro-text">Raw десерты без термической обработки. Максимум пользы и натурального вкуса!</p>
     </div>
   </section>
 
   <!-- Cards -->
-  <section class="low-calories__cards">
+  <section class="global__cards">
 
     <!-- Card 1 -->
-    <article class="low-calories__card">
-      <div class="low-calories__carousel" data-current="0">
-        <div class="low-calories__carousel-track">
-          <div class="low-calories__carousel-slide">
+    <article class="global__card" data-tags="Низкокалорийный, Raw">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-1-1.jpg" alt="Десерт 1-2">
           </div>
-          <div class="low-calories__carousel-slide">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-1-2.jpg" alt="Десерт 1-1" >
           </div>
         </div>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
-        <div class="low-calories__carousel-dots">
-          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
-          <button class="low-calories__carousel-dot" type="button"></button>
+        <button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>
+        <button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>
+        <div class="global__carousel-dots">
+          <button class="global__carousel-dot global__carousel-dot--active" type="button"></button>
+          <button class="global__carousel-dot" type="button"></button>
         </div>
       </div>
-      <div class="low-calories__card-body">
-        <div class="low-calories__card-name">Кешью-кейк<br>Клубника-Базилик</div>
-        <div class="low-calories__card-calories">150 ккал</div>
-        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты, без сахара.</div>
+      <div class="global__card-body">
+        <div class="global__card-name">Кешью-кейк<br>Клубника-Базилик</div>
+        <div class="global__card-calories">150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты, без сахара.</div>
       </div>
     </article>
 
     <!-- Card 2 -->
-    <article class="low-calories__card">
-      <div class="low-calories__carousel" data-current="0">
-        <div class="low-calories__carousel-track">
-          <div class="low-calories__carousel-slide">
+    <article class="global__card" data-tags="Веганский, Raw">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-2-1.jpg" alt="Десерт 2-1">
           </div>
-          <div class="low-calories__carousel-slide">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-2-2.jpg" alt="Десерт 2-2">
           </div>
         </div>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
-        <div class="low-calories__carousel-dots">
-          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
-          <button class="low-calories__carousel-dot" type="button"></button>
+        <button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>
+        <button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>
+        <div class="global__carousel-dots">
+          <button class="global__carousel-dot global__carousel-dot--active" type="button"></button>
+          <button class="global__carousel-dot" type="button"></button>
         </div>
       </div>
-      <div class="low-calories__card-body">
-        <div class="low-calories__card-name">Веган-raw<br>Nutella</div>
-        <div class="low-calories__card-calories">150 ккал</div>
-        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      <div class="global__card-body">
+        <div class="global__card-name">Веган-raw<br>Nutella</div>
+        <div class="global__card-calories">150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
 
     <!-- Card 3 -->
-    <article class="low-calories__card">
-      <div class="low-calories__carousel" data-current="0">
-        <div class="low-calories__carousel-track">
-          <div class="low-calories__carousel-slide">
+    <article class="global__card" data-tags="Веганский, Raw">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-3-1.jpg" alt="Десерт 3-1">
           </div>
         </div>
-        <div class="low-calories__carousel-dots"></div>
+        <div class="global__carousel-dots"></div>
       </div>
-      <div class="low-calories__card-body">
-        <div class="low-calories__card-name">Веган-raw<br>Брауни</div>
-        <div class="low-calories__card-calories">150 ккал</div>
-        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      <div class="global__card-body">
+        <div class="global__card-name">Веган-raw<br>Брауни</div>
+        <div class="global__card-calories">150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
 
     <!-- Card 4 -->
-    <article class="low-calories__card">
-      <div class="low-calories__carousel" data-current="0">
-        <div class="low-calories__carousel-track">
-          <div class="low-calories__carousel-slide">
+    <article class="global__card" data-tags="Веганский, Raw">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-4-1.jpg" alt="Десерт 4-1">
           </div>
         </div>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
+        <button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>
+        <button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>
       
       </div>
-      <div class="low-calories__card-body">
-        <div class="low-calories__card-name">Веган-raw<br>Nutella</div>
-        <div class="low-calories__card-calories">150 ккал</div>
-        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      <div class="global__card-body">
+        <div class="global__card-name">Веган-raw<br>Nutella</div>
+        <div class="global__card-calories">150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
 
     <!-- Card 5 -->
-    <article class="low-calories__card">
-      <div class="low-calories__carousel" data-current="0">
-        <div class="low-calories__carousel-track">
-          <div class="low-calories__carousel-slide">
+    <article class="global__card" data-tags="Raw">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-5-1.jpg" alt="Десерт 5-1">
           </div>
         </div>
-        <div class="low-calories__carousel-dots"></div>
+        <div class="global__carousel-dots"></div>
       </div>
-      <div class="low-calories__card-body">
-        <div class="low-calories__card-name">Кешью-кейк<br>Несливочная вишня</div>
-        <div class="low-calories__card-calories">150 ккал</div>
-        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      <div class="global__card-body">
+        <div class="global__card-name">Кешью-кейк<br>Несливочная вишня</div>
+        <div class="global__card-calories">150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
 
     <!-- Card 6 -->
-    <article class="low-calories__card">
-      <div class="low-calories__carousel" data-current="0">
-        <div class="low-calories__carousel-track">
-          <div class="low-calories__carousel-slide">
+    <article class="global__card" data-tags="Raw">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-6-1.jpg" alt="Десерт 6-1">
           </div>
-          <div class="low-calories__carousel-slide">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-6-2.jpg" alt="Десерт 6-2">
           </div>
         </div>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>
-        <button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>
-        <div class="low-calories__carousel-dots">
-          <button class="low-calories__carousel-dot low-calories__carousel-dot--active" type="button"></button>
-          <button class="low-calories__carousel-dot" type="button"></button>
+        <button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>
+        <button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>
+        <div class="global__carousel-dots">
+          <button class="global__carousel-dot global__carousel-dot--active" type="button"></button>
+          <button class="global__carousel-dot" type="button"></button>
         </div>
       </div>
-      <div class="low-calories__card-body">
-        <div class="low-calories__card-name">Кешью-кейк<br>Черничный</div>
-        <div class="low-calories__card-calories">150 ккал</div>
-        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      <div class="global__card-body">
+        <div class="global__card-name">Кешью-кейк<br>Черничный</div>
+        <div class="global__card-calories">150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
 
     <!-- Card 7 -->
-    <article class="low-calories__card">
-      <div class="low-calories__carousel" data-current="0">
-        <div class="low-calories__carousel-track">
-          <div class="low-calories__carousel-slide">
+    <article class="global__card" data-tags="Raw">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-7-1.jpg" alt="Десерт 7-1">
           </div>
         </div>
-        <div class="low-calories__carousel-dots"></div>
+        <div class="global__carousel-dots"></div>
       </div>
-      <div class="low-calories__card-body">
-        <div class="low-calories__card-name">Кешью-кейк<br>Клубничная элегия</div>
-        <div class="low-calories__card-calories">150 ккал</div>
-        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      <div class="global__card-body">
+        <div class="global__card-name">Кешью-кейк<br>Клубничная элегия</div>
+        <div class="global__card-calories">150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>
 
     <!-- Card 8 -->
-    <article class="low-calories__card">
-      <div class="low-calories__carousel" data-current="0">
-        <div class="low-calories__carousel-track">
-          <div class="low-calories__carousel-slide">
+    <article class="global__card" data-tags="Raw">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
             <img src="anich_cakes/img/raw/raw-8-1.jpg" alt="Десерт 8-1">
           </div>
         </div>
-        <div class="low-calories__carousel-dots"></div>
+        <div class="global__carousel-dots"></div>
       </div>
-      <div class="low-calories__card-body">
-        <div class="low-calories__card-name">Raw Трюфель</div>
-        <div class="low-calories__card-calories">150 ккал</div>
-        <div class="low-calories__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      <div class="global__card-body">
+        <div class="global__card-name">Raw Трюфель</div>
+        <div class="global__card-calories">150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
     </article>  
 
   </section>
 
   <!-- Footer -->
-  <footer class="low-calories__footer">
-    <p class="low-calories__footer-copyright">© 2026 Anich Cakes</p>
+  <footer class="global__footer">
+    <p class="global__footer-copyright">© 2026 Anich Cakes</p>
   </footer>
 
   <script>
     // Carousel functionality
-    document.querySelectorAll('.low-calories__carousel').forEach(function (carousel) {
-      var track = carousel.querySelector('.low-calories__carousel-track');
-      var slides = carousel.querySelectorAll('.low-calories__carousel-slide');
-      var dots = carousel.querySelectorAll('.low-calories__carousel-dot');
-      var prevBtn = carousel.querySelector('.low-calories__carousel-btn--prev');
-      var nextBtn = carousel.querySelector('.low-calories__carousel-btn--next');
+    document.querySelectorAll('.global__carousel').forEach(function (carousel) {
+      var track = carousel.querySelector('.global__carousel-track');
+      var slides = carousel.querySelectorAll('.global__carousel-slide');
+      var dots = carousel.querySelectorAll('.global__carousel-dot');
+      var prevBtn = carousel.querySelector('.global__carousel-btn--prev');
+      var nextBtn = carousel.querySelector('.global__carousel-btn--next');
       var current = 0;
 
       // Если только один слайд — скрываем кнопки и не добавляем обработчики
@@ -270,7 +270,7 @@
       function updateCarousel() {
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
         dots.forEach(function (dot, i) {
-          dot.classList.toggle('low-calories__carousel-dot--active', i === current);
+          dot.classList.toggle('global__carousel-dot--active', i === current);
         });
       }
 
@@ -319,15 +319,15 @@
     var header = document.querySelector('.banner__header');
 
     function openMenu() {
-      menuNav.classList.add('low-calories__menu--open');
-      menuOverlay.classList.add('low-calories__menu-overlay--visible');
+      menuNav.classList.add('global__menu--open');
+      menuOverlay.classList.add('global__menu-overlay--visible');
       document.body.style.overflow = 'hidden';
       if (header) header.classList.add('banner__header--hidden');
     }
 
     function closeMenu() {
-      menuNav.classList.remove('low-calories__menu--open');
-      menuOverlay.classList.remove('low-calories__menu-overlay--visible');
+      menuNav.classList.remove('global__menu--open');
+      menuOverlay.classList.remove('global__menu-overlay--visible');
       document.body.style.overflow = '';
       if (header) header.classList.remove('banner__header--hidden');
     }
