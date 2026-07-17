@@ -34,8 +34,17 @@
     searchInput.placeholder = 'Поиск десертов...';
     searchInput.setAttribute('autocomplete', 'off');
 
+    var closeIcon = document.createElement('span');
+    closeIcon.className = 'search-panel__close-icon';
+    closeIcon.textContent = '×';
+    closeIcon.setAttribute('aria-label', 'Закрыть поиск');
+    closeIcon.addEventListener('click', function () {
+      closeSearch();
+    });
+
     inputWrapper.appendChild(searchIcon);
     inputWrapper.appendChild(searchInput);
+    inputWrapper.appendChild(closeIcon);
 
     searchResults = document.createElement('div');
     searchResults.className = 'search-panel__results';
@@ -111,17 +120,17 @@
     var slidesHTML = '';
     var dotsHTML = '';
     images.forEach(function (img, i) {
-      slidesHTML += '<div class="low-calories__carousel-slide"><img src="' + img + '" alt="Фото"></div>';
-      dotsHTML += '<button class="low-calories__carousel-dot' + (i === 0 ? ' low-calories__carousel-dot--active' : '') + '" type="button"></button>';
+      slidesHTML += '<div class="global__carousel-slide"><img src="' + img + '" alt="Фото"></div>';
+      dotsHTML += '<button class="global__carousel-dot' + (i === 0 ? ' global__carousel-dot--active' : '') + '" type="button"></button>';
     });
 
-    var prevBtn = images.length > 1 ? '<button class="low-calories__carousel-btn low-calories__carousel-btn--prev" type="button">‹</button>' : '';
-    var nextBtn = images.length > 1 ? '<button class="low-calories__carousel-btn low-calories__carousel-btn--next" type="button">›</button>' : '';
+    var prevBtn = images.length > 1 ? '<button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>' : '';
+    var nextBtn = images.length > 1 ? '<button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>' : '';
 
-    return '<div class="low-calories__carousel" data-current="0">' +
-      '<div class="low-calories__carousel-track">' + slidesHTML + '</div>' +
+    return '<div class="global__carousel" data-current="0">' +
+      '<div class="global__carousel-track">' + slidesHTML + '</div>' +
       prevBtn + nextBtn +
-      '<div class="low-calories__carousel-dots">' + dotsHTML + '</div>' +
+      '<div class="global__carousel-dots">' + dotsHTML + '</div>' +
       '</div>';
   }
 
@@ -145,7 +154,7 @@
 
     uniqueCards.forEach(function (card) {
       var cardEl = document.createElement('article');
-      cardEl.className = 'low-calories__card search-result-card';
+      cardEl.className = 'global__card search-result-card';
       cardEl.setAttribute('data-tags', card.tags || '');
 
       var carouselHTML = createCarouselHTML(card.images);
@@ -154,18 +163,18 @@
       cardEl.appendChild(carouselDiv.firstElementChild);
 
       var bodyDiv = document.createElement('div');
-      bodyDiv.className = 'low-calories__card-body';
+      bodyDiv.className = 'global__card-body';
 
       var nameDiv = document.createElement('div');
-      nameDiv.className = 'low-calories__card-name';
+      nameDiv.className = 'global__card-name';
       nameDiv.textContent = card.name;
 
       var caloriesDiv = document.createElement('div');
-      caloriesDiv.className = 'low-calories__card-calories';
+      caloriesDiv.className = 'global__card-calories';
       caloriesDiv.textContent = card.calories;
 
       var descDiv = document.createElement('div');
-      descDiv.className = 'low-calories__card-description';
+      descDiv.className = 'global__card-description';
       descDiv.textContent = card.description;
 
       bodyDiv.appendChild(nameDiv);
@@ -180,12 +189,12 @@
   }
 
   function initSearchCarousels() {
-    searchResults.querySelectorAll('.low-calories__carousel').forEach(function (carousel) {
-      var track = carousel.querySelector('.low-calories__carousel-track');
-      var slides = carousel.querySelectorAll('.low-calories__carousel-slide');
-      var dots = carousel.querySelectorAll('.low-calories__carousel-dot');
-      var prevBtn = carousel.querySelector('.low-calories__carousel-btn--prev');
-      var nextBtn = carousel.querySelector('.low-calories__carousel-btn--next');
+    searchResults.querySelectorAll('.global__carousel').forEach(function (carousel) {
+      var track = carousel.querySelector('.global__carousel-track');
+      var slides = carousel.querySelectorAll('.global__carousel-slide');
+      var dots = carousel.querySelectorAll('.global__carousel-dot');
+      var prevBtn = carousel.querySelector('.global__carousel-btn--prev');
+      var nextBtn = carousel.querySelector('.global__carousel-btn--next');
       var current = 0;
 
       if (slides.length <= 1) {
@@ -197,7 +206,7 @@
       function updateCarousel() {
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
         dots.forEach(function (dot, i) {
-          dot.classList.toggle('low-calories__carousel-dot--active', i === current);
+          dot.classList.toggle('global__carousel-dot--active', i === current);
         });
       }
 
@@ -292,10 +301,10 @@
       return;
     }
 
-    var menuList = menuNav.querySelector('.menu-nav__list--bottom, .low-calories__menu-list--bottom');
+    var menuList = menuNav.querySelector('.menu-nav__list--bottom, .global__menu-list--bottom, .low-calories__menu-list--bottom');
     if (!menuList) {
       var menuLists = menuNav.querySelectorAll('ul');
-      menuList = menuLists[menuLists.length - 1] || menuNav.querySelector('ul') || menuNav.querySelector('.menu-nav__list') || menuNav.querySelector('.low-calories__menu-list');
+      menuList = menuLists[menuLists.length - 1] || menuNav.querySelector('ul') || menuNav.querySelector('.menu-nav__list') || menuNav.querySelector('.global__menu-list') || menuNav.querySelector('.low-calories__menu-list');
     }
     if (!menuList) {
       return;
@@ -306,7 +315,7 @@
       var searchLink = document.createElement('a');
       searchLink.href = '#';
       searchLink.id = 'searchMenuBtn';
-      searchLink.className = 'low-calories__menu-link-icon';
+      searchLink.className = 'menu-nav__link-icon';
       searchLink.innerHTML = '<img src="anich_cakes/img/search.svg" alt="Поиск"><span>Поиск десерта</span>';
       searchItem.appendChild(searchLink);
       menuList.appendChild(searchItem);
@@ -316,8 +325,7 @@
       var filterItem = document.createElement('li');
       var filterLink = document.createElement('a');
       filterLink.href = '#';
-      // filterLink.id = 'filterMenuBtn';
-      filterLink.className = 'low-calories__menu-link-icon';
+      filterLink.className = 'menu-nav__link-icon';
       filterLink.innerHTML = '<img src="anich_cakes/img/filter.svg" alt="Фильтр"><span>Подобрать состав</span>';
       filterItem.appendChild(filterLink);
       menuList.appendChild(filterItem);
@@ -330,12 +338,14 @@
     var header = document.querySelector('.banner__header');
 
     if (menuNav) {
-      menuNav.classList.remove('low-calories__menu--open');
+      menuNav.classList.remove('global__menu--open');
       menuNav.classList.remove('menu-nav--open');
+      menuNav.classList.remove('low-calories__menu--open');
     }
     if (menuOverlay) {
-      menuOverlay.classList.remove('low-calories__menu-overlay--visible');
+      menuOverlay.classList.remove('global__menu-overlay--visible');
       menuOverlay.classList.remove('menu-overlay--visible');
+      menuOverlay.classList.remove('low-calories__menu-overlay--visible');
     }
     document.body.style.overflow = '';
     if (header) {
@@ -387,10 +397,10 @@
     if (!card) return;
     createDessertModal();
 
-    var title = card.querySelector('.low-calories__card-name');
-    var calories = card.querySelector('.low-calories__card-calories');
-    var description = card.querySelector('.low-calories__card-description');
-    var firstImage = card.querySelector('.low-calories__carousel-slide img');
+    var title = card.querySelector('.global__card-name');
+    var calories = card.querySelector('.global__card-calories');
+    var description = card.querySelector('.global__card-description');
+    var firstImage = card.querySelector('.global__carousel-slide img');
     var content = dessertModal.querySelector('.dessert-details-content');
     var tags = card.getAttribute('data-tags') || 'Raw';
 
@@ -425,11 +435,11 @@
       return;
     }
 
-    document.querySelectorAll('.low-calories__card-name').forEach(function (nameEl) {
+    document.querySelectorAll('.global__card-name').forEach(function (nameEl) {
       nameEl.style.cursor = 'pointer';
       nameEl.addEventListener('click', function (event) {
         event.preventDefault();
-        openDessertModal(nameEl.closest('.low-calories__card'));
+        openDessertModal(nameEl.closest('.global__card'));
       });
     });
   }

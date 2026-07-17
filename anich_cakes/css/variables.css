@@ -1,8 +1,8 @@
 :root {
   --color-bg-primary: #F7DCCB;
   --color-text-white: #FFFFFF;
-  --color-back-header :#08040370;
-  --color-back-search :#291009;
+  --color-back-header: #08040370;
+  --color-back-search: #291009;
 
 
   --font-family-primary: 'Gilroy', 'Montserrat', Arial, sans-serif;
@@ -28,66 +28,164 @@
    * Значения подобраны для комфортного чтения на каждом диапазоне.
    */
 
-  /* --- Карточки на главной (index.html) --- */
-  --font-size-card-title: 11px;
-  --font-size-card-desc: 11px;
-  --font-size-card-btn: 11px;
-
-  /* --- Карточки на страницах категорий (low_calories и др.) --- */
-  --font-size-category-card-name: 16px;
-  --font-size-category-card-calories: 16px;
-  --font-size-category-card-desc: 16px;
-
-  --font-size-breadcrumbs: 24px;
-
   /* --- Отступы и размеры --- */
   --gap-card: 16px;
   --width-card-btn: 90px;
   --radius-card: 15px;
-  --padding-card-body-top: 35px;
 }
 
-@media (min-width: 393px) and (max-width: 481px) {
+/* OK */
+@media (max-width: 349px) {
   :root {
-    
-    --font-size-card-title: 9px;
-    --font-size-card-desc: 10px;
-    --font-size-card-btn: 10px;
+    --font-size-card-title: 18px;
+    --font-size-card-btn: 18px;
+    --font-size-card-desc: 18px;
+
+    --max-width-card-desc: 73%;
+    --max-height-card-desc: 50px;
+
+    --width-card-btn: 150px;
+    --border-radius-card-btn: 8px;
+    --product-card-body--gap: 13px;
+
+    --font-size-main-header: 25px;
+    --font-size-main-text: 20px;
 
     --font-size-category-card-name: 20px;
     --font-size-category-card-calories: 16px;
     --font-size-category-card-desc: 16px;
 
+    --font-size-breadcrumbs: 12px;
+
+  }
+}
+
+/* OK */
+@media (min-width: 350px) and (max-width: 390px) {
+  :root {
+    --font-size-card-title: 25px;
+    --font-size-card-btn: 20px;
+    --font-size-card-desc: 20px;
+
+    --max-width-card-desc: 80%;
+    --max-height-card-desc: 50px;
+
+    --font-size-main-text: 25px;
+    --font-size-main-header: 32px;
+
+    --width-card-btn: 100px;
+    --border-radius-card-btn: 8px;
+    --product-card-body--gap: 18px;
+
+    --font-size-category-card-name: 20px;
+    --font-size-category-card-calories: 16px;
+    --font-size-category-card-desc: 20px;
+
     --font-size-breadcrumbs: 23px;
 
   }
 }
-/* ===== Планшеты (480px — 719px) ===== */
-@media (min-width: 480px) and (max-width: 719px) {
-  :root {
-    --font-size-card-title: 11px;
-    --font-size-card-desc: 11px;
-    --font-size-card-btn: 12px;
 
-    --font-size-category-card-name: 23px;
-    --font-size-category-card-calories: 23px;
-    --font-size-category-card-desc: 23px;
+/* OK */
+/* ===== Телефоны (391px — 450px) ===== */
+@media (min-width: 391px) and (max-width: 449px) {
+  :root {
+    --font-size-card-title: 15px;
+    --font-size-card-desc: 15px;
+    --font-size-card-btn: 15px;
+
+    --max-width-card-desc: 90%;
+    --max-height-card-desc: 50px;
+
+    --font-size-main-header: 32px;
+    --font-size-main-text: 25px;
+
+    --border-radius-card-btn: 12px;
+    --product-card-body--gap: 10px;
+
+    --font-size-category-card-name: 25px;
+    --font-size-category-card-calories: 20px;
+    --font-size-category-card-desc: 22px;
 
     --font-size-breadcrumbs: 18px;
 
     --gap-card: clamp(16px, 3vw, 24px);
     --width-card-btn: clamp(80px, 18vw, 120px);
     --radius-card: clamp(18px, 3vw, 28px);
-    --padding-card-body-top: clamp(40px, 8vw, 60px);
+  }
+}
+/* OK */
+/* ===== Планшеты (450px — 549px) ===== */
+@media (min-width: 450px) and (max-width: 549px) {
+  :root {
+    --font-size-card-title: 18px;
+    --font-size-card-desc: 17px;
+    --font-size-card-btn: 15px;
+
+    --max-width-card-desc: 90%;
+    --max-height-card-desc: 80px;
+
+    --font-size-main-header: 32px;
+    --font-size-main-text: 25px;
+
+    --border-radius-card-btn: 12px;
+    --product-card-body--gap: 10px;
+
+    --font-size-category-card-name: 25px;
+    --font-size-category-card-calories: 20px;
+    --font-size-category-card-desc: 20px;
+
+    --font-size-breadcrumbs: 18px;
+
+    --gap-card: clamp(16px, 3vw, 24px);
+    --width-card-btn: 150px;
+    --radius-card: clamp(18px, 3vw, 28px);
+  }
+}
+/* OK */
+/* ===== Планшеты (550px — 719px) ===== */
+@media (min-width: 550px) and (max-width: 719px) {
+  :root {
+    --font-size-card-title: 23px;
+    --font-size-card-desc: 20px;
+    --font-size-card-btn: 15px;
+
+    --max-width-card-desc: 90%;
+    --max-height-card-desc: 80px;
+
+    --font-size-main-header: 32px;
+    --font-size-main-text: 25px;
+
+    --border-radius-card-btn: 12px;
+    --product-card-body--gap: 10px;
+
+    --font-size-category-card-name: 25px;
+    --font-size-category-card-calories: 20px;
+    --font-size-category-card-desc: 20px;
+
+    --font-size-breadcrumbs: 18px;
+
+    --gap-card: clamp(16px, 3vw, 24px);   
+    --width-card-btn: 200px;
+    --radius-card: clamp(18px, 3vw, 28px);
   }
 }
 
 /* ===== Десктоп (>= 720px) ===== */
-@media (min-width: 720px) {
-    :root {
-      --font-size-card-title: 23px;
-      --font-size-card-desc: 23px;
-      --font-size-card-btn: 20px;
+@media (min-width: 720px) and (max-width: 899px) {
+  :root {
+    --font-size-card-title: 16px;
+    --font-size-card-desc: 16px;
+    --font-size-card-btn: 16px;
+
+    --max-width-card-desc: 90%;
+    --max-height-card-desc: 50px;
+
+    --font-size-main-text: 25px;
+    --font-size-main-header: 32px;
+
+    --border-radius-card-btn: 12px;
+    --product-card-body--gap: 15px;
 
     --font-size-category-card-name: 26px;
     --font-size-category-card-calories: 24px;
@@ -98,21 +196,61 @@
     --gap-card: clamp(24px, 2.5vw, 32px);
     --width-card-btn: clamp(120px, 14vw, 168px);
     --radius-card: clamp(28px, 3vw, 44px);
-    --padding-card-body-top: clamp(60px, 8vw, 103px);
   }
 }
 
-@media (max-width: 393px) {
+/* ===== Десктоп (>= 900px) ===== */
+@media (min-width: 900px) and (max-width: 1199px) {
   :root {
-    --font-size-card-title: 16px;
-    --font-size-card-desc: 16px;
-    --font-size-card-btn: 16px;
+    --font-size-card-title: 20px;
+    --font-size-card-desc: 20px;
+    --font-size-card-btn: 20px;
 
-    --font-size-category-card-name: 20px;
-    --font-size-category-card-calories: 16px;
-    --font-size-category-card-desc: 16px;
+    --max-width-card-desc: 90%;
+    --max-height-card-desc: 60px;
+
+    --font-size-main-text: 25px;
+    --font-size-main-header: 32px;
+
+    --border-radius-card-btn: 12px;
+    --product-card-body--gap: 15px;
+
+    --font-size-category-card-name: 26px;
+    --font-size-category-card-calories: 24px;
+    --font-size-category-card-desc: 24px;
 
     --font-size-breadcrumbs: 23px;
+
+    --gap-card: clamp(24px, 2.5vw, 32px);
+    --width-card-btn: clamp(120px, 14vw, 200px);
+    --radius-card: clamp(28px, 3vw, 44px);
   }
 }
 
+/* ===== Десктоп (>= 1200px) ===== */
+@media (min-width: 1200px) {
+  :root {
+    --font-size-card-title: 25px;
+    --font-size-card-desc: 24px;
+    --font-size-card-btn: 20px;
+
+    --max-width-card-desc: 90%;
+    --max-height-card-desc: 72px;
+
+    --font-size-main-text: 25px;
+    --font-size-main-header: 32px;
+
+    --border-radius-card-btn: 12px;
+    --product-card-body--gap: 20px;
+
+    --font-size-category-card-name: 26px;
+    --font-size-category-card-calories: 24px;
+    --font-size-category-card-desc: 24px;
+
+    --font-size-breadcrumbs: 23px;
+
+    --gap-card: clamp(24px, 2.5vw, 32px);
+    --width-card-btn: clamp(120px, 14vw, 200px);
+    --radius-card: clamp(28px, 3vw, 44px);
+  }
+}

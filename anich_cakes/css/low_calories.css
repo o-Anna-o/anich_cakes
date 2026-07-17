@@ -199,18 +199,6 @@
   padding-top: 40px;
 }
 
-.low-calories__menu-link-icon {
-  display: flex !important;
-  align-items: center;
-  gap: 12px;
-}
-
-.low-calories__menu-link-icon img {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
 /* ===== Section Title & Description ===== */
 
 .low-calories__intro {
@@ -413,4 +401,10 @@
   font-size: 14px;
   color: #3A1409;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
+}
+
+@media (max-width: 481px) {
+  .low-calories__breadcrumbs {
+    display: none;
+  }
 }

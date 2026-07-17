@@ -11,11 +11,18 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   font-weight: var(--font-weight-regular);
-  font-size: 18px;
+  font-size: var(--font-size-main-text);
 }
 
 .title-white {
   color: var(--color-text-white);
+}
+
+.intro__text, .global__intro-text {
+  font-size: var(--font-size-main-text);
+}
+.intro__text,.intro__title, .global__intro-text {
+  text-align: center;
 }
 
 @media (max-width: 1199px) {
