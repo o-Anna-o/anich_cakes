@@ -253,6 +253,7 @@
   .detail-global__carousel {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    border-radius: 0;
   }
 
   .detail-global__carousel .global__carousel-slide img,
@@ -260,6 +261,7 @@
     width: 100vw;
     height: 100%;
     object-fit: cover;
+    border-radius: 0;
   }
 
   .detail-filters {
