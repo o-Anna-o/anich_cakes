@@ -269,10 +269,7 @@
   }
 
   .detail-global__card-name,
-  .detail-global__card-calories,
-  .detail-global__card-description,
-  .detail-global__card-content-title,
-  .detail-global__card-content {
+  .detail-global__card-calories {
     text-align: center;
     align-items: center;
   }
