@@ -1184,3 +1184,18 @@ a:active {
   color: #3A1409;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
 }
+
+/* Фикс: панель поиска без отступов на узких экранах */
+@media (min-width: 350px) and (max-width: 390px) {
+  .search-panel__input-wrapper {
+    padding: 0;
+  }
+}
+
+/* Фикс: при sticky header (прокрутка) высота header 40px, а search-panel top:55px — появляется зазор */
+@media (max-width: 390px) {
+  .search-panel {
+    top: 40px;
+    max-height: calc(100vh - 40px);
+  }
+}
