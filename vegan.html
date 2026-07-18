@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="anich_cakes/css/low_calories.css">
   <!-- <link rel="stylesheet" href="anich_cakes/css/vegan.css">  -->
   <link rel="stylesheet" href="anich_cakes/css/style.css">
+  <link rel="stylesheet" href="anich_cakes/css/detail.css">
 </head>
 
 <body class="global">
@@ -608,6 +609,28 @@
 
     menuOverlay.addEventListener('click', function () {
       closeMenu();
+    });
+  </script>
+
+  <script>
+    // Detail button navigation
+    document.querySelectorAll('.global__card').forEach(function (card) {
+      var nameEl = card.querySelector('.global__card-name');
+      var descEl = card.querySelector('.global__card-description');
+      if (nameEl && descEl) {
+        var btn = document.createElement('button');
+        btn.className = 'detail-card__button';
+        btn.type = 'button';
+        btn.textContent = 'Подробнее';
+        btn.setAttribute('data-card-name', nameEl.textContent.replace(/\s+/g, ' ').trim());
+        btn.addEventListener('click', function () {
+          var cardName = this.getAttribute('data-card-name');
+          if (cardName) {
+            window.location.href = 'detail.html?name=' + encodeURIComponent(cardName);
+          }
+        });
+        descEl.parentNode.insertBefore(btn, descEl.nextSibling);
+      }
     });
   </script>
 
