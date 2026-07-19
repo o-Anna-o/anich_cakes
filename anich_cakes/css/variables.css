@@ -1,9 +1,9 @@
 :root {
   --color-bg-primary: #F7DCCB;
   --color-text-white: #FFFFFF;
-  --color-back-header: #08040370;
+  --color-back-header: rgba(8, 4, 3, 0.7);
   --color-back-search: #291009;
-  --font-size-detail-card-color:#6C1B29;
+  --font-size-detail-card-color: #6C1B29;
 
   --font-family-primary: 'Gilroy', 'Montserrat', Arial, sans-serif;
   --font-family-heading: 'Gilroy', 'Montserrat', Arial, sans-serif;
@@ -76,7 +76,7 @@
     --detail-filters--gap: 8px;
     --width-detail-card-btn: 225px;
     --width-detail-carousel: 100%;
-    --detail-width-card-btn: 150px;
+    --font-size-detail-card-btn: 18px;
     --detail-border-radius-card-btn: 8px;
     --detail-font-size-card-btn: 18px;
   }
@@ -110,10 +110,10 @@
     --font-size-detail-card-name: 22px;
     --font-size-detail-card-calories: 18px;
     --detail-filters--gap: 8px;
-    --width-detail-card-btn: 150px;
     --width-detail-carousel: 100%;
-    --detail-width-card-btn: 100px;
-    --detail-border-radius-card-btn: 8px;
+    --font-size-detail-card-btn: 18px;
+    --width-detail-card-btn: 250px;
+    --detail-border-radius-card-btn: 14px;
     --detail-font-size-card-btn: 20px;
   }
 }
@@ -148,10 +148,10 @@
     --detail-card-body--gap: 40px;
     --font-size-detail-card-name: 27px;
     --font-size-detail-card-calories: 22px;
-    --detail-filters--gap: 8px;
-    --width-detail-card-btn: 150px;
+    --detail-filters--gap: 12px;
+    --width-detail-card-btn: 300px;
+    --font-size-detail-card-btn: 25px;
     --width-detail-carousel: 50%;
-    --detail-width-card-btn: clamp(80px, 18vw, 120px);
     --detail-border-radius-card-btn: 12px;
     --detail-font-size-card-btn: 15px;
   }

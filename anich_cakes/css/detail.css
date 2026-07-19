@@ -141,14 +141,18 @@
   width: 100%;
 }
 
+.detail-filters:empty {
+  display: none;
+}
+
 .detail-filter {
   width: var(--width-detail-card-btn);
   padding: 0.4em 0;
   font-weight: var(--font-weight-semibold);
   background-color: var(--font-size-detail-card-color);
   border: none;
-  border-radius: var(--border-radius-card-btn);
-  font-size: var(--font-size-card-btn);
+  border-radius: var(--detail-border-radius-card-btn);
+  font-size: var(--font-size-detail-card-btn);
   color: var(--color-bg-primary);
   cursor: pointer;
   font-family: inherit;

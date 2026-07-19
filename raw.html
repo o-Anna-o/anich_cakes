@@ -331,14 +331,12 @@
       menuNav.classList.add('global__menu--open');
       menuOverlay.classList.add('global__menu-overlay--visible');
       document.body.style.overflow = 'hidden';
-      if (header) header.classList.add('banner__header--hidden');
     }
 
     function closeMenu() {
       menuNav.classList.remove('global__menu--open');
       menuOverlay.classList.remove('global__menu-overlay--visible');
       document.body.style.overflow = '';
-      if (header) header.classList.remove('banner__header--hidden');
     }
 
     burgerBtn.addEventListener('click', function (e) {
