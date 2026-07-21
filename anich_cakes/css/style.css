@@ -1144,6 +1144,7 @@ a:active {
 
 .global__card-name {
   font-size: var(--font-size-category-card-name);
+  height: var(--height-category-card-name);
   font-weight: 600;
   color: #3A1409;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;

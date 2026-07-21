@@ -37,6 +37,7 @@
   /* Detail page variables */
   --detail-card-body--gap: 32px;
   --font-size-detail-card-name: 22px;
+  --height-category-card-name: 60px;
   --font-size-detail-card-calories: 18px;
   --detail-filters--gap: 8px;
   --width-detail-card-btn: 135px;
@@ -46,7 +47,6 @@
   --font-size-detail-card-btn: 18px;
 }
 
-/* OK */
 @media (max-width: 349px) {
   :root {
     --font-size-card-title: 18px;
@@ -64,6 +64,7 @@
     --font-size-main-text: 20px;
 
     --font-size-category-card-name: 20px;
+    --height-category-card-name: 50px;
     --font-size-category-card-calories: 16px;
     --font-size-category-card-desc: 16px;
 
@@ -74,15 +75,14 @@
     --font-size-detail-card-name: 22px;
     --font-size-detail-card-calories: 18px;
     --detail-filters--gap: 8px;
-    --width-detail-card-btn: 225px;
+    --detail-width-card-btn: 200px;
     --width-detail-carousel: 100%;
-    --font-size-detail-card-btn: 18px;
+    --font-size-detail-card-btn: 12px;
     --detail-border-radius-card-btn: 20px;
-    --detail-font-size-card-btn: 18px;
+    --detail-font-size-card-btn: 20px;
   }
 }
 
-/* OK */
 @media (min-width: 350px) and (max-width: 390px) {
   :root {
     --font-size-card-title: 25px;
@@ -100,6 +100,7 @@
     --product-card-body--gap: 18px;
 
     --font-size-category-card-name: 20px;
+    --height-category-card-name: 50px;
     --font-size-category-card-calories: 16px;
     --font-size-category-card-desc: 20px;
 
@@ -111,7 +112,7 @@
     --font-size-detail-card-calories: 18px;
     --detail-filters--gap: 8px;
     --width-detail-carousel: 100%;
-    --width-detail-card-btn: 250px;
+    --detail-width-card-btn: 200px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 20px;
     --font-size-detail-card-btn: 20px;
@@ -135,6 +136,7 @@
     --product-card-body--gap: 10px;
 
     --font-size-category-card-name: 25px;
+    --height-category-card-name: 50px;
     --font-size-category-card-calories: 20px;
     --font-size-category-card-desc: 22px;
 
@@ -149,11 +151,11 @@
     --font-size-detail-card-name: 27px;
     --font-size-detail-card-calories: 22px;
     --detail-filters--gap: 12px;
-    --width-detail-card-btn: 300px;
+    --detail-width-card-btn: 200px;
     --font-size-detail-card-btn: 25px;
     --width-detail-carousel: 50%;
     --detail-border-radius-card-btn: 25px;
-    --detail-font-size-card-btn: 15px;
+    --detail-font-size-card-btn: 20px;
   }
 }
 
@@ -174,6 +176,7 @@
     --product-card-body--gap: 10px;
 
     --font-size-category-card-name: 25px;
+    --height-category-card-name: 50px;
     --font-size-category-card-calories: 20px;
     --font-size-category-card-desc: 20px;
 
@@ -190,9 +193,10 @@
     --detail-filters--gap: 20px;
     --width-detail-card-btn: 370px;
     --width-detail-carousel: 50%;
-    --detail-width-card-btn: 150px;
+    --detail-width-card-btn: 250px;
     --detail-border-radius-card-btn: 20px;
     --font-size-detail-card-btn: 25px;
+    --detail-font-size-card-btn: 20px;
   }
 }
 
@@ -202,6 +206,8 @@
     --width-detail-card-btn: 400px;
     --detail-border-radius-card-btn: 20px;
     --font-size-detail-card-btn: 25px;
+    --detail-width-card-btn: 250px;
+    --detail-font-size-card-btn: 20px;
   }
 }
 
@@ -222,6 +228,7 @@
     --product-card-body--gap: 10px;
 
     --font-size-category-card-name: 25px;
+    --height-category-card-name: 55px;
     --font-size-category-card-calories: 20px;
     --font-size-category-card-desc: 20px;
 
@@ -240,7 +247,7 @@
     --width-detail-carousel: 50%;
     --detail-width-card-btn: 150px;
     --detail-border-radius-card-btn: 20px;
-    --font-size-detail-card-btn: 20px;
+    --detail-font-size-card-btn: 20px;
   }
 }
 
@@ -261,6 +268,7 @@
     --product-card-body--gap: 15px;
 
     --font-size-category-card-name: 26px;
+    --height-category-card-name: 60px;
     --font-size-category-card-calories: 24px;
     --font-size-category-card-desc: 24px;
 
@@ -277,9 +285,9 @@
     --detail-filters--gap: 10px;
     --width-detail-card-btn: 300px;
     --width-detail-carousel: 40%;
-    --detail-width-card-btn: 300px;
+    --detail-width-card-btn: 200px;
     --detail-border-radius-card-btn: 20px;
-    --font-size-detail-card-btn: 20px;
+    --detail-font-size-card-btn: 23px;
   }
 }
 
@@ -300,6 +308,7 @@
     --product-card-body--gap: 15px;
 
     --font-size-category-card-name: 26px;
+    --height-category-card-name: 63px;
     --font-size-category-card-calories: 24px;
     --font-size-category-card-desc: 24px;
 
@@ -314,11 +323,10 @@
     --font-size-detail-card-name: 28px;
     --font-size-detail-card-calories: 26px;
     --detail-filters--gap: 8px;
-    --width-detail-card-btn: 240px;
+    --detail-width-card-btn: 250px;
     --width-detail-carousel: 40%;
-    --detail-width-card-btn: clamp(120px, 14vw, 200px);
-    --detail-border-radius-card-btn: 12px;
-    --font-size-detail-card-btn: 20px;
+    --detail-border-radius-card-btn: 20px;
+    --detail-font-size-card-btn: 23px;
   }
 }
 
@@ -339,6 +347,7 @@
     --product-card-body--gap: 20px;
 
     --font-size-category-card-name: 26px;
+    --height-category-card-name: 63px;
     --font-size-category-card-calories: 24px;
     --font-size-category-card-desc: 24px;
 
@@ -353,10 +362,9 @@
     --font-size-detail-card-name: 28px;
     --font-size-detail-card-calories: 26px;
     --detail-filters--gap: 8px;
-    --width-detail-card-btn: 200px;
     --width-detail-carousel: 40%;
-    --detail-width-card-btn: clamp(120px, 14vw, 200px);
-    --detail-border-radius-card-btn: 12px;
-    --font-size-detail-card-btn: 20px;
+    --detail-width-card-btn: 240px;
+    --detail-border-radius-card-btn: 20px;
+    --detail-font-size-card-btn: 25px;
   }
 }
