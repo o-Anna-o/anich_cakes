@@ -77,6 +77,7 @@
     --detail-filters--gap: 8px;
     --detail-width-card-btn: 200px;
     --width-detail-carousel: 100%;
+    --width-detail-card-btn: 200px;
     --font-size-detail-card-btn: 12px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 20px;
@@ -112,6 +113,7 @@
     --font-size-detail-card-calories: 18px;
     --detail-filters--gap: 8px;
     --width-detail-carousel: 100%;
+    --width-detail-card-btn: 200px;
     --detail-width-card-btn: 200px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 20px;
@@ -151,6 +153,7 @@
     --font-size-detail-card-name: 27px;
     --font-size-detail-card-calories: 22px;
     --detail-filters--gap: 12px;
+    --width-detail-card-btn: 300px;
     --detail-width-card-btn: 200px;
     --font-size-detail-card-btn: 25px;
     --width-detail-carousel: 50%;
@@ -281,9 +284,10 @@
     /* Detail page */
     --detail-card-body--gap: 30px;
     --font-size-detail-card-name: 28px;
+    --font-size-detail-card-btn: 20px;
     --font-size-detail-card-calories: 26px;
     --detail-filters--gap: 10px;
-    --width-detail-card-btn: 300px;
+    --width-detail-card-btn: 350px;
     --width-detail-carousel: 40%;
     --detail-width-card-btn: 200px;
     --detail-border-radius-card-btn: 20px;
@@ -319,11 +323,13 @@
     --radius-card: clamp(28px, 3vw, 44px);
 
     /* Detail page */
-    --detail-card-body--gap: 35px;
+    --detail-card-body--gap: 20px;
     --font-size-detail-card-name: 28px;
     --font-size-detail-card-calories: 26px;
     --detail-filters--gap: 8px;
     --detail-width-card-btn: 250px;
+    --width-detail-card-btn: 450px;
+    --font-size-detail-card-btn: 24px;
     --width-detail-carousel: 40%;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 23px;
@@ -363,6 +369,8 @@
     --font-size-detail-card-calories: 26px;
     --detail-filters--gap: 8px;
     --width-detail-carousel: 40%;
+    --width-detail-card-btn: 500px;
+    --font-size-detail-card-btn: 25px;
     --detail-width-card-btn: 240px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 25px;
