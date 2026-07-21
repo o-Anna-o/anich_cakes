@@ -118,6 +118,8 @@
   align-items: center;
   justify-content: center;
   line-height: 1.2;
+  text-align: center;
+  width: 100%;
 }
 
 /* ===== Detail Card Calories ===== */
@@ -126,6 +128,8 @@
   font-weight: 400;
   color: var(--font-size-detail-card-color);
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
+  text-align: center;
+  width: 100%;
 }
 
 /* ===== Detail Filters ===== */
@@ -232,10 +236,6 @@
     width: 100%;
   }
 
-  .detail-global__card-calories {
-    text-align: left;
-    align-items: flex-start;
-  }
 }
 
 /* ===== Mobile: column layout ===== */
@@ -282,11 +282,6 @@
     margin: 0 auto;
   }
 
-  .detail-global__card-name,
-  .detail-global__card-calories {
-    text-align: center;
-    align-items: center;
-  }
 }
 
 /* На очень узких экранах высота header 55px (переопределяем 40px из style.css) */
