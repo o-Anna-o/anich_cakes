@@ -1,8 +1,17 @@
 /* ===== Detail Page Styles ===== */
 
-/* Header с opacity 80% */
-.detail__header {
-  opacity: 0.8;
+/* Header: всегда приклеен к верхнему краю, поверх изображения */
+.banner__header {
+  position: fixed;
+  top: 0;
+  height: 55px;
+}
+
+/* На мобильных переопределяем высоту 40px из style.css */
+@media (max-width: 390px) {
+  .banner__header {
+    height: 55px;
+  }
 }
 
 /* ===== Detail Card Layout ===== */
@@ -20,6 +29,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  margin-top: -24px;
 }
 
 .detail-global__carousel .global__carousel-track {
@@ -110,6 +120,7 @@
   gap: var(--detail-card-body--gap);
   align-items: center;
   width: 100%;
+  padding-top: 24px;
 }
 
 /* ===== Detail Card Name ===== */
@@ -246,27 +257,8 @@
 
 /* ===== Mobile: column layout ===== */
 @media (max-width: 600px) {
-  .banner {
-    height: 0;
-  }
-
-  .banner__header {
-    position: fixed;
-    top: 0;
-  }
-
-  .banner__header--sticky {
-    position: fixed;
-    top: 0;
-  }
-
-  .banner__image {
-    display: none;
-  }
-
   .detail-card {
     flex-direction: column;
-    padding-top: 55px;
   }
 
   .detail-global__carousel {

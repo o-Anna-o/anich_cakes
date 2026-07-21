@@ -206,6 +206,35 @@
 /* ===== Планшеты (550px — 719px) ===== */
 @media (min-width: 550px) and (max-width: 600px) {
   :root {
+    --font-size-card-title: 23px;
+    --font-size-card-desc: 20px;
+    --font-size-card-btn: 15px;
+
+    --max-width-card-desc: 90%;
+    --max-height-card-desc: 80px;
+
+    --font-size-main-header: 32px;
+    --font-size-main-text: 25px;
+
+    --border-radius-card-btn: 12px;
+    --product-card-body--gap: 10px;
+
+    --font-size-category-card-name: 25px;
+    --height-category-card-name: 55px;
+    --font-size-category-card-calories: 20px;
+    --font-size-category-card-desc: 20px;
+
+    --font-size-breadcrumbs: 18px;
+
+    --gap-card: clamp(16px, 3vw, 24px);
+    --width-card-btn: 200px;
+    --radius-card: clamp(18px, 3vw, 28px);
+
+    --detail-card-body--gap: 20px;
+    --font-size-detail-card-name: 27px;
+    --font-size-detail-card-calories: 23px;
+    --detail-filters--gap: 10px;
+    --width-detail-carousel: 50%;
     --width-detail-card-btn: 400px;
     --detail-border-radius-card-btn: 20px;
     --font-size-detail-card-btn: 25px;
