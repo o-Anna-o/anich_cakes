@@ -11,6 +11,9 @@
 <body class="global">
 
   <section class="banner" aria-label="Hero image">
+    <div class="banner__image">
+      <img class="banner__img" src="anich_cakes/img/berry_header.jpg" alt="Berry dessert background">
+    </div>
     <header class="banner__header">
       <div class="banner__header-left">
         <a href="#" class="banner__burger" id="burgerBtn">
@@ -230,6 +233,22 @@
             current = i;
             updateCarousel();
           });
+        });
+      }
+    })();
+
+    // Sticky header on scroll (только на десктопе, где header не fixed)
+    (function() {
+      var header = document.querySelector('.banner__header');
+      var banner = document.querySelector('.banner');
+      if (header && banner) {
+        window.addEventListener('scroll', function() {
+          var bannerBottom = banner.offsetTop + banner.offsetHeight;
+          if (window.scrollY >= bannerBottom) {
+            header.classList.add('banner__header--sticky');
+          } else {
+            header.classList.remove('banner__header--sticky');
+          }
         });
       }
     })();

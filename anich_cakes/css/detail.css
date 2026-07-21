@@ -1,19 +1,5 @@
 /* ===== Detail Page Styles ===== */
 
-/* Header: всегда приклеен к верхнему краю, поверх изображения */
-.banner__header {
-  position: fixed;
-  top: 0;
-  height: 55px;
-}
-
-/* На мобильных переопределяем высоту 40px из style.css */
-@media (max-width: 390px) {
-  .banner__header {
-    height: 55px;
-  }
-}
-
 /* ===== Detail Card Layout ===== */
 .detail-card {
   display: flex;
@@ -29,7 +15,6 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: -24px;
 }
 
 .detail-global__carousel .global__carousel-track {
@@ -120,7 +105,6 @@
   gap: var(--detail-card-body--gap);
   align-items: center;
   width: 100%;
-  padding-top: 24px;
 }
 
 /* ===== Detail Card Name ===== */
@@ -248,7 +232,6 @@
     width: 100%;
   }
 
-  .detail-global__card-name,
   .detail-global__card-calories {
     text-align: left;
     align-items: flex-start;
@@ -257,13 +240,27 @@
 
 /* ===== Mobile: column layout ===== */
 @media (max-width: 600px) {
+  /* Header фиксированный, поверх изображения */
+  .banner__header {
+    position: fixed;
+    top: 0;
+    height: 55px;
+  }
+
+  /* Скрываем баннер на мобильных */
+  .banner__image {
+    display: none;
+  }
+
   .detail-card {
     flex-direction: column;
   }
 
+  /* Карусель приклеена к потолку */
   .detail-global__carousel {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    margin-top: -24px;
     border-radius: 0;
   }
 
@@ -289,5 +286,12 @@
   .detail-global__card-calories {
     text-align: center;
     align-items: center;
+  }
+}
+
+/* На очень узких экранах высота header 55px (переопределяем 40px из style.css) */
+@media (max-width: 390px) {
+  .banner__header {
+    height: 55px;
   }
 }
