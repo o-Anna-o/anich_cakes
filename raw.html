@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="anich_cakes/css/variables.css">
   <link rel="stylesheet" href="anich_cakes/css/low_calories.css">
   <link rel="stylesheet" href="anich_cakes/css/style.css">
+  <link rel="stylesheet" href="anich_cakes/css/detail.css">
 </head>
 <body class="global">
 
@@ -39,8 +40,8 @@
           <h1 class="banner__title">Anich Cakes</h1>
         </a>
         </div>
-      </header>
-    </section>
+  </header>
+</section>
 
   <!-- Burger Menu -->
   <div class="global__menu-overlay" id="menuOverlay"></div>
@@ -103,6 +104,7 @@
         <div class="global__card-name">Кешью-кейк<br>Клубника-Базилик</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты, без сахара.</div>
+        <button class="detail-card__button" type="button" data-card-name="Кешью-кейк Клубника-Базилик">Подробнее</button>
       </div>
     </article>
 
@@ -128,6 +130,7 @@
         <div class="global__card-name">Nutella</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+        <button class="detail-card__button" type="button" data-card-name="Nutella">Подробнее</button>
       </div>
     </article>
 
@@ -145,6 +148,7 @@
         <div class="global__card-name">Брауни</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+        <button class="detail-card__button" type="button" data-card-name="Брауни">Подробнее</button>
       </div>
     </article>
 
@@ -164,6 +168,7 @@
         <div class="global__card-name">Nutella</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+        <button class="detail-card__button" type="button" data-card-name="Nutella">Подробнее</button>
       </div>
     </article>
 
@@ -181,6 +186,7 @@
         <div class="global__card-name">Кешью-кейк<br>Несливочная вишня</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+        <button class="detail-card__button" type="button" data-card-name="Кешью-кейк Несливочная вишня">Подробнее</button>
       </div>
     </article>
 
@@ -206,6 +212,7 @@
         <div class="global__card-name">Кешью-кейк<br>Черничный</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+        <button class="detail-card__button" type="button" data-card-name="Кешью-кейк Черничный">Подробнее</button>
       </div>
     </article>
 
@@ -223,6 +230,7 @@
         <div class="global__card-name">Кешью-кейк<br>Клубничная элегия</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+        <button class="detail-card__button" type="button" data-card-name="Кешью-кейк Клубничная элегия">Подробнее</button>
       </div>
     </article>
 
@@ -240,8 +248,9 @@
         <div class="global__card-name">Raw Трюфель</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+        <button class="detail-card__button" type="button" data-card-name="Трюфель">Подробнее</button>
       </div>
-    </article>  
+    </article>
 
   </section>
 
@@ -322,14 +331,12 @@
       menuNav.classList.add('global__menu--open');
       menuOverlay.classList.add('global__menu-overlay--visible');
       document.body.style.overflow = 'hidden';
-      if (header) header.classList.add('banner__header--hidden');
     }
 
     function closeMenu() {
       menuNav.classList.remove('global__menu--open');
       menuOverlay.classList.remove('global__menu-overlay--visible');
       document.body.style.overflow = '';
-      if (header) header.classList.remove('banner__header--hidden');
     }
 
     burgerBtn.addEventListener('click', function (e) {
@@ -339,6 +346,18 @@
 
     menuOverlay.addEventListener('click', function () {
       closeMenu();
+    });
+  </script>
+
+  <script>
+    // Detail button navigation
+    document.querySelectorAll('.detail-card__button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var cardName = this.getAttribute('data-card-name');
+        if (cardName) {
+          window.location.href = 'detail.html?name=' + encodeURIComponent(cardName);
+        }
+      });
     });
   </script>
 

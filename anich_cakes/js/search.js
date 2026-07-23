@@ -180,6 +180,21 @@
       bodyDiv.appendChild(nameDiv);
       bodyDiv.appendChild(caloriesDiv);
       bodyDiv.appendChild(descDiv);
+
+      // Кнопка "Подробнее" — как на страницах категорий
+      var detailBtn = document.createElement('button');
+      detailBtn.className = 'detail-card__button';
+      detailBtn.type = 'button';
+      detailBtn.textContent = 'Подробнее';
+      detailBtn.setAttribute('data-card-name', card.name);
+      detailBtn.addEventListener('click', function () {
+        var cardName = this.getAttribute('data-card-name');
+        if (cardName) {
+          window.location.href = 'detail.html?name=' + encodeURIComponent(cardName);
+        }
+      });
+      bodyDiv.appendChild(detailBtn);
+
       cardEl.appendChild(bodyDiv);
 
       searchResults.appendChild(cardEl);
@@ -230,6 +245,38 @@
           updateCarousel();
         });
       });
+
+      // Touch-свайп для мобильной версии
+      var touchStartX = 0;
+      var touchEndX = 0;
+      var isSwiping = false;
+
+      carousel.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+        isSwiping = true;
+      }, { passive: true });
+
+      carousel.addEventListener('touchmove', function (e) {
+        if (!isSwiping) return;
+        touchEndX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', function (e) {
+        if (!isSwiping) return;
+        isSwiping = false;
+        touchEndX = e.changedTouches[0].screenX;
+        var diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 30) {
+          if (diff > 0) {
+            // Свайп влево — следующий слайд
+            current = (current + 1) % slides.length;
+          } else {
+            // Свайп вправо — предыдущий слайд
+            current = (current - 1 + slides.length) % slides.length;
+          }
+          updateCarousel();
+        }
+      }, { passive: true });
     });
   }
 

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Детально — Anich Cakes</title>
+  <link rel="stylesheet" href="anich_cakes/css/variables.css">
+  <link rel="stylesheet" href="anich_cakes/css/style.css">
+  <link rel="stylesheet" href="anich_cakes/css/detail.css">
+</head>
+<body class="global page--detail">
+
+  <section class="banner" aria-label="Hero image">
+    <header class="banner__header">
+      <div class="banner__header-left">
+        <a href="#" class="banner__burger" id="burgerBtn">
+          <img class="banner__logo" src="anich_cakes/img/burger.svg" alt="menu">
+        </a>
+        <nav class="global__breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Главная</a>
+          <span class="global__breadcrumbs-sep">/</span>
+          <a href="raw.html" id="detailBreadcrumbLink">Живые (Raw)</a>
+        </nav>
+      </div>
+      <div class="right-part">
+        <div class="banner__header-icons">
+          <a href="#" class="banner__header-icon" id="searchBtn" aria-label="Поиск">
+            <img src="anich_cakes/img/search.svg" alt="Поиск">
+          </a>
+          <a href="#" class="banner__header-icon" id="filterBtn" aria-label="Фильтр">
+            <img src="anich_cakes/img/filter.svg" alt="Фильтр">
+          </a>
+        </div>
+        <a href="index.html">
+          <h1 class="banner__title">Anich Cakes</h1>
+        </a>
+      </div>
+    </header>
+  </section>
+
+  <!-- Burger Menu -->
+  <div class="global__menu-overlay" id="menuOverlay"></div>
+  <nav class="global__menu" id="menuNav">
+    <ul class="global__menu-list">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="low_calories.html">Низкокалорийные</a></li>
+      <li><a href="raw.html">Живые (Raw)</a></li>
+      <li><a href="vegan.html">Веганские</a></li>
+      <li><a href="traditional.html">Традиционные</a></li>
+      <li><a href="thematical.html">Тематические</a></li>
+      <li><a href="chocolate.html">Шоколадные</a></li>
+    </ul>
+    <ul class="global__menu-list global__menu-list--bottom">
+      <li>
+        <a href="#" id="searchMenuBtn" class="menu-nav__link-icon">
+          <img src="anich_cakes/img/search.svg" alt="Поиск">
+          <span>Поиск десерта</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="filterMenuBtn" class="menu-nav__link-icon">
+          <img src="anich_cakes/img/filter.svg" alt="Фильтр">
+          <span>Подобрать состав</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Detail Card -->
+  <section class="detail-card" id="detailCard">
+    <!-- Карусель -->
+    <div class="detail-global__carousel" id="detailCarousel" data-current="0">
+      <div class="global__carousel-track" id="detailCarouselTrack">
+        <!-- Слайды будут вставлены динамически -->
+      </div>
+      <button class="global__carousel-btn global__carousel-btn--prev" type="button" id="detailPrevBtn">‹</button>
+      <button class="global__carousel-btn global__carousel-btn--next" type="button" id="detailNextBtn">›</button>
+      <div class="global__carousel-dots" id="detailCarouselDots"></div>
+    </div>
+
+    <!-- Текстовый блок -->
+    <div class="detail-global__text">
+      <div class="detail-global__card-name" id="detailCardName">Название десерта</div>
+      <div class="detail-global__card-calories" id="detailCardCalories">0 ккал</div>
+
+      <!-- Фильтры -->
+      <div class="detail-filters" id="detailFilters"></div>
+
+      <div class="detail-card__info">
+        <div class="detail-global__card-description" id="detailCardDescription">Описание десерта.</div>
+      </div>
+      <div class="detail-card__content">
+        <div class="detail-global__card-content-title" id="detailCardContentTitle">Состав</div>
+        <div class="detail-global__card-content" id="detailCardContent">Состав десерта.</div>
+      </div>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="global__footer">
+    <p class="global__footer-copyright">© 2026 Anich Cakes</p>
+  </footer>
+
+  <script src="anich_cakes/js/search-data.js"></script>
+  <script>
+    // ===== Загрузка данных десерта из URL =====
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var cardName = params.get('name');
+
+      if (!cardName) {
+        document.getElementById('detailCardName').textContent = 'Десерт не найден';
+        return;
+      }
+
+      // Ищем десерт в allCards
+      var cardData = null;
+      for (var i = 0; i < allCards.length; i++) {
+        if (allCards[i].name === cardName) {
+          cardData = allCards[i];
+          break;
+        }
+      }
+
+      if (!cardData) {
+        document.getElementById('detailCardName').textContent = 'Десерт "' + cardName + '" не найден';
+        return;
+      }
+
+      // Заполняем хлебные крошки
+      var breadcrumbLink = document.getElementById('detailBreadcrumbLink');
+      if (cardData.page) {
+        breadcrumbLink.href = cardData.page;
+        // Название категории берём из category
+        var pageNames = {
+          'low_calories.html': 'Низкокалорийные',
+          'raw.html': 'Живые (Raw)',
+          'vegan.html': 'Веганские',
+          'traditional.html': 'Традиционные',
+          'thematical.html': 'Тематические',
+          'chocolate.html': 'Шоколадные'
+        };
+        breadcrumbLink.textContent = pageNames[cardData.page] || cardData.category;
+      }
+
+      // Заполняем название
+      document.getElementById('detailCardName').textContent = cardData.name;
+
+      // Заполняем калории
+      document.getElementById('detailCardCalories').textContent = cardData.calories;
+
+      // Заполняем описание
+      document.getElementById('detailCardDescription').textContent = cardData.description;
+
+      // Заполняем состав (content) — пока используем описание, если нет отдельного поля
+      var contentText = cardData.content || cardData.description;
+      document.getElementById('detailCardContent').textContent = contentText;
+
+      // Заполняем фильтры
+      var filtersContainer = document.getElementById('detailFilters');
+      filtersContainer.innerHTML = '';
+      if (cardData.filters && cardData.filters.length > 0) {
+        for (var f = 0; f < cardData.filters.length; f++) {
+          var filterBtn = document.createElement('button');
+          filterBtn.className = 'detail-filter';
+          filterBtn.textContent = cardData.filters[f];
+          filterBtn.type = 'button';
+          filtersContainer.appendChild(filterBtn);
+        }
+      }
+
+      // Заполняем карусель
+      var track = document.getElementById('detailCarouselTrack');
+      var dotsContainer = document.getElementById('detailCarouselDots');
+      track.innerHTML = '';
+      dotsContainer.innerHTML = '';
+
+      if (cardData.images && cardData.images.length > 0) {
+        for (var j = 0; j < cardData.images.length; j++) {
+          var slide = document.createElement('div');
+          slide.className = 'global__carousel-slide';
+          var img = document.createElement('img');
+          img.src = cardData.images[j];
+          img.alt = cardData.name + ' фото ' + (j + 1);
+          slide.appendChild(img);
+          track.appendChild(slide);
+
+          var dot = document.createElement('button');
+          dot.className = 'global__carousel-dot' + (j === 0 ? ' global__carousel-dot--active' : '');
+          dot.type = 'button';
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      // Карусель: функциональность
+      var carousel = document.getElementById('detailCarousel');
+      var slides = track.querySelectorAll('.global__carousel-slide');
+      var dots = dotsContainer.querySelectorAll('.global__carousel-dot');
+      var prevBtn = document.getElementById('detailPrevBtn');
+      var nextBtn = document.getElementById('detailNextBtn');
+      var current = 0;
+
+      if (slides.length <= 1) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+      } else {
+        function updateCarousel() {
+          track.style.transform = 'translateX(-' + (current * 100) + '%)';
+          dots.forEach(function (dot, i) {
+            dot.classList.toggle('global__carousel-dot--active', i === current);
+          });
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', function () {
+            current = (current - 1 + slides.length) % slides.length;
+            updateCarousel();
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', function () {
+            current = (current + 1) % slides.length;
+            updateCarousel();
+          });
+        }
+
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () {
+            current = i;
+            updateCarousel();
+          });
+        });
+      }
+    })();
+
+    // Sticky header on scroll (только на десктопе, где header не fixed)
+    (function() {
+      var header = document.querySelector('.banner__header');
+      var banner = document.querySelector('.banner');
+      if (header && banner) {
+        window.addEventListener('scroll', function() {
+          var bannerBottom = banner.offsetTop + banner.offsetHeight;
+          if (window.scrollY >= bannerBottom) {
+            header.classList.add('banner__header--sticky');
+          } else {
+            header.classList.remove('banner__header--sticky');
+          }
+        });
+      }
+    })();
+
+    // Burger menu functionality
+    var burgerBtn = document.getElementById('burgerBtn');
+    var menuOverlay = document.getElementById('menuOverlay');
+    var menuNav = document.getElementById('menuNav');
+    var header = document.querySelector('.banner__header');
+
+    function openMenu() {
+      menuNav.classList.add('global__menu--open');
+      menuOverlay.classList.add('global__menu-overlay--visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      menuNav.classList.remove('global__menu--open');
+      menuOverlay.classList.remove('global__menu-overlay--visible');
+      document.body.style.overflow = '';
+    }
+
+    burgerBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openMenu();
+    });
+
+    menuOverlay.addEventListener('click', function () {
+      closeMenu();
+    });
+  </script>
+
+</body>
+</html>

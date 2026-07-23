@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="anich_cakes/css/variables.css">
   <link rel="stylesheet" href="anich_cakes/css/low_calories.css">
   <link rel="stylesheet" href="anich_cakes/css/style.css">
+  <link rel="stylesheet" href="anich_cakes/css/detail.css">
 </head>
 
 <body class="global">
@@ -126,7 +127,7 @@
         </div>
       </div>
       <div class="global__card-body">
-        <div class="global__card-name">Веган-raw Nutella</div>
+        <div class="global__card-name">Nutella</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
@@ -160,7 +161,7 @@
         <div class="global__carousel-dots"></div>
       </div>
       <div class="global__card-body">
-        <div class="global__card-name">Веган-raw Nutella</div>
+        <div class="global__card-name">Nutella</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
@@ -198,7 +199,7 @@
         </div>
       </div>
       <div class="global__card-body">
-        <div class="global__card-name">Шоколадный<br>муссовый торт</div>
+        <div class="global__card-name">Муссовый <br>Груша-Шоколад</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
@@ -215,7 +216,7 @@
         <div class="global__carousel-dots"></div>
       </div>
       <div class="global__card-body">
-        <div class="global__card-name">Веган-raw Брауни</div>
+        <div class="global__card-name">Брауни</div>
         <div class="global__card-calories">150 ккал</div>
         <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
       </div>
@@ -300,14 +301,12 @@
       menuNav.classList.add('global__menu--open');
       menuOverlay.classList.add('global__menu-overlay--visible');
       document.body.style.overflow = 'hidden';
-      if (header) header.classList.add('banner__header--hidden');
     }
 
     function closeMenu() {
       menuNav.classList.remove('global__menu--open');
       menuOverlay.classList.remove('global__menu-overlay--visible');
       document.body.style.overflow = '';
-      if (header) header.classList.remove('banner__header--hidden');
     }
 
     burgerBtn.addEventListener('click', function (e) {
@@ -320,8 +319,30 @@
     });
   </script>
 
+  <script>
+    // Detail button navigation
+    document.querySelectorAll('.global__card').forEach(function (card) {
+      var nameEl = card.querySelector('.global__card-name');
+      var descEl = card.querySelector('.global__card-description');
+      if (nameEl && descEl) {
+        var btn = document.createElement('button');
+        btn.className = 'detail-card__button';
+        btn.type = 'button';
+        btn.textContent = 'Подробнее';
+        btn.setAttribute('data-card-name', nameEl.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/\s+/g, ' ').trim());
+        btn.addEventListener('click', function () {
+          var cardName = this.getAttribute('data-card-name');
+          if (cardName) {
+            window.location.href = 'detail.html?name=' + encodeURIComponent(cardName);
+          }
+        });
+        descEl.parentNode.insertBefore(btn, descEl.nextSibling);
+      }
+    });
+  </script>
+
+  <script src="anich_cakes/js/search-data.js"></script>
+  <script src="anich_cakes/js/search.js"></script>
 </body>
 
-<script src="anich_cakes/js/search-data.js"></script>
-<script src="anich_cakes/js/search.js"></script>
 </html>
