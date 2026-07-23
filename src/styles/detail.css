@@ -209,6 +209,7 @@
   font-size: var(--detail-font-size-card-btn);
   cursor: pointer;
   font-family: inherit;
+  color: #3A1409 !important;
 }
 
 /* ===== Desktop: row layout ===== */
@@ -296,11 +297,4 @@
     margin: 0 auto;
   }
 
-}
-
-/* На очень узких экранах высота header 55px (переопределяем 40px из style.css) */
-@media (max-width: 390px) {
-  .banner__header {
-    height: 55px;
-  }
 }

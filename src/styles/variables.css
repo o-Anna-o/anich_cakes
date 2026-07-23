@@ -45,6 +45,15 @@
   --detail-width-card-btn: 90px;
   --detail-border-radius-card-btn: 8px;
   --font-size-detail-card-btn: 18px;
+
+  /* Header */
+  --header-height: 55px;
+  --icon-header-height: 44px;
+  --font-size-header-title: 26px;
+  --width-header-title: 150px;
+  --header-title-flex-direction: row;
+  --header-title-text-align: end;
+  --header-right-gap: 20px;
 }
 
 @media (max-width: 349px) {
@@ -81,6 +90,15 @@
     --font-size-detail-card-btn: 12px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 20px;
+
+    /* Header */
+    --header-height: 40px;
+    --icon-header-height: 32px;
+    --font-size-header-title: 14px;
+    --width-header-title: 70px;
+    --header-title-flex-direction: column;
+    --header-title-text-align: right;
+    --header-right-gap: 10px;
   }
 }
 
@@ -118,6 +136,15 @@
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 20px;
     --font-size-detail-card-btn: 20px;
+
+    /* Header */
+    --header-height: 40px;
+    --icon-header-height: 32px;
+    --font-size-header-title: 16px;
+    --width-header-title: 30px;
+    --header-title-flex-direction: column;
+    --header-title-text-align: right;
+    --header-right-gap: 10px;
   }
 }
 
@@ -159,6 +186,15 @@
     --width-detail-carousel: 50%;
     --detail-border-radius-card-btn: 25px;
     --detail-font-size-card-btn: 20px;
+
+    /* Header */
+    --header-height: 55px;
+    --icon-header-height: 44px;
+    --font-size-header-title: 18px;
+    --width-header-title: 90px;
+    --header-title-flex-direction: column;
+    --header-title-text-align: right;
+    --header-right-gap: 12px;
   }
 }
 
@@ -200,6 +236,14 @@
     --detail-border-radius-card-btn: 20px;
     --font-size-detail-card-btn: 25px;
     --detail-font-size-card-btn: 20px;
+
+    /* Header */
+    --header-height: 55px;
+    --icon-header-height: 44px;
+    --font-size-header-title: 26px;
+    --width-header-title: 150px;
+    --header-title-flex-direction: row;
+    --header-title-text-align: end;
   }
 }
 
@@ -240,6 +284,14 @@
     --font-size-detail-card-btn: 25px;
     --detail-width-card-btn: 250px;
     --detail-font-size-card-btn: 20px;
+
+    /* Header */
+    --header-height: 55px;
+    --icon-header-height: 44px;
+    --font-size-header-title: 26px;
+    --width-header-title: 150px;
+    --header-title-flex-direction: row;
+    --header-title-text-align: end;
   }
 }
 
@@ -280,6 +332,14 @@
     --detail-width-card-btn: 150px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 20px;
+
+    /* Header */
+    --header-height: 55px;
+    --icon-header-height: 44px;
+    --font-size-header-title: 26px;
+    --width-header-title: 150px;
+    --header-title-flex-direction: row;
+    --header-title-text-align: end;
   }
 }
 
@@ -321,6 +381,15 @@
     --detail-width-card-btn: 200px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 23px;
+
+    /* Header */
+    --header-height: 55px;
+    --icon-header-height: 44px;
+    --font-size-header-title: 26px;
+    --width-header-title: 150px;
+    --header-title-flex-direction: row;
+    --header-title-text-align: end;
+    --header-right-gap: 20px;
   }
 }
 
@@ -362,6 +431,15 @@
     --width-detail-carousel: 40%;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 23px;
+
+    /* Header */
+    --header-height: 55px;
+    --icon-header-height: 44px;
+    --font-size-header-title: 26px;
+    --width-header-title: 150px;
+    --header-title-flex-direction: row;
+    --header-title-text-align: end;
+    --header-right-gap: 20px;
   }
 }
 
@@ -403,5 +481,14 @@
     --detail-width-card-btn: 240px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 25px;
+
+    /* Header */
+    --header-height: 55px;
+    --icon-header-height: 44px;
+    --font-size-header-title: 26px;
+    --width-header-title: 150px;
+    --header-title-flex-direction: row;
+    --header-title-text-align: end;
+    --header-right-gap: 20px;
   }
 }

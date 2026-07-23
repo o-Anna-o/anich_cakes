@@ -86,8 +86,6 @@ export default function DetailPage() {
             <a href={cardData.page} onClick={(e) => { e.preventDefault(); navigate(cardData.page); }}>
               {breadcrumbCategory}
             </a>
-            <span className="global__breadcrumbs-sep">/</span>
-            <span>{cardData.name}</span>
           </nav>
         }
         onBurgerClick={() => setMenuOpen(true)}
