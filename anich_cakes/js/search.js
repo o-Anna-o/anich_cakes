@@ -284,10 +284,10 @@
     var header = document.querySelector('.banner__header');
     if (!header) return;
 
-    var rightPart = header.querySelector('.right-part');
+    var rightPart = header.querySelector('.right-icons');
     if (!rightPart) {
       rightPart = document.createElement('div');
-      rightPart.className = 'right-part';
+      rightPart.className = 'right-icons';
 
       var titleLink = header.querySelector('a[href="index.html"]');
       if (titleLink) {
@@ -305,13 +305,10 @@
 
     buildHeaderLayout();
 
-    var rightPart = header.querySelector('.right-part');
+    var rightPart = header.querySelector('.right-icons');
     if (!rightPart) return;
 
     if (!document.getElementById('searchBtn')) {
-      var iconsWrapper = document.createElement('div');
-      iconsWrapper.className = 'banner__header-icons';
-
       var searchLink = document.createElement('a');
       searchLink.href = '#';
       searchLink.className = 'banner__header-icon';
@@ -323,7 +320,6 @@
       searchIcon.alt = 'Поиск';
 
       searchLink.appendChild(searchIcon);
-      iconsWrapper.appendChild(searchLink);
 
       var filterLink = document.createElement('a');
       filterLink.href = '#';
@@ -336,9 +332,9 @@
       filterIcon.alt = 'Фильтр';
 
       filterLink.appendChild(filterIcon);
-      iconsWrapper.appendChild(filterLink);
 
-      rightPart.insertBefore(iconsWrapper, rightPart.firstChild);
+      rightPart.insertBefore(searchLink, rightPart.firstChild);
+      rightPart.insertBefore(filterLink, rightPart.firstChild);
     }
   }
 
