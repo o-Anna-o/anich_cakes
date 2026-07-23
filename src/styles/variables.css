@@ -142,7 +142,7 @@
     --font-size-category-card-calories: 20px;
     --font-size-category-card-desc: 22px;
 
-    --font-size-breadcrumbs: 18px;
+    --font-size-breadcrumbs: 15px;
 
     --gap-card: clamp(16px, 3vw, 24px);
     --width-card-btn: clamp(80px, 18vw, 120px);

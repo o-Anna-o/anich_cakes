@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './components/pages/HomePage';
 import CategoryPage from './components/pages/CategoryPage';
 import DetailPage from './components/pages/DetailPage';
@@ -57,7 +57,7 @@ const categoryConfigs = [
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         {categoryConfigs.map((cfg) => (
@@ -78,6 +78,6 @@ export default function App() {
         ))}
         <Route path="/detail" element={<DetailPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

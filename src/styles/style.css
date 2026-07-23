@@ -579,7 +579,7 @@ a:active {
   text-align: center;
 }
 
-@media (max-width: 484px) {
+@media (max-width: 390px) {
   .global__breadcrumbs {
     display: none !important; 
   }
