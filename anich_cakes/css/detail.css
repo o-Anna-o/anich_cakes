@@ -216,6 +216,7 @@
   .detail-card {
     flex-direction: row;
     align-items: flex-start;
+    margin-top: 70px;
   }
 
   .detail-global__carousel {
@@ -238,6 +239,14 @@
 
 }
 
+/* ===== Desktop: фиксированный header на detail.html ===== */
+@media (min-width: 601px) {
+  .page--detail .banner__header {
+    position: fixed;
+    top: 0;
+  }
+}
+
 /* ===== Mobile: column layout ===== */
 @media (max-width: 600px) {
   /* Header фиксированный, поверх изображения */
@@ -247,8 +256,8 @@
     height: 55px;
   }
 
-  /* Скрываем баннер на мобильных */
-  .banner__image {
+  /* Скрываем баннер на мобильных (только на detail.html) */
+  .page--detail .banner__image {
     display: none;
   }
 

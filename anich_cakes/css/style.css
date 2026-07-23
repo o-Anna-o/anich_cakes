@@ -128,11 +128,19 @@ a:active {
   margin: 0 auto;
 }
 
+/* Показываем баннер на мобильных на всех страницах, кроме detail */
+@media (max-width: 600px) {
+  .banner__image {
+    display: block;
+  }
+}
+
 /* Широкий баннер для экранов больше 600px */
 @media (min-width: 601px) {
   .banner__img {
     content: url('../img/berry_header_wide.jpg');
   }
+  
 }
 
 /* ===== Menu Overlay (index page) ===== */
