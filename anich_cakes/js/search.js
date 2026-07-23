@@ -536,7 +536,14 @@
     if (isOpen) {
       closeSearch();
     } else {
-      openSearch();
+      // Если открыты фильтры — сначала открываем поиск, потом закрываем фильтры,
+      // чтобы не было моргания с показом предыдущей страницы
+      if (isFiltersOpen) {
+        openSearch();
+        closeFilters();
+      } else {
+        openSearch();
+      }
     }
   }
 
