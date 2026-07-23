@@ -245,6 +245,11 @@
     position: fixed;
     top: 0;
   }
+
+  /* Скрываем изображение баннера, т.к. header фиксированный */
+  .page--detail .banner__image {
+    display: none;
+  }
 }
 
 /* ===== Mobile: column layout ===== */

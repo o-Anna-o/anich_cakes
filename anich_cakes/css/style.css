@@ -659,21 +659,49 @@ a:active {
   transform: translateY(-50%);
   width: 32px;
   height: 32px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.85);
-  color: #3A1409;
-  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 32px;
+  line-height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+  color: #FFF;
+  opacity: 0.3;
+  padding: 0;
+  /* Убираем визуальные эффекты при нажатии */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  outline: none;
+}
+
+.search-result-card .global__carousel-btn::-moz-focus-inner {
+  border: 0;
+}
+
+/* Увеличенная зона клика: 30% от размера фото */
+.search-result-card .global__carousel-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  height: 30vw;
+  max-width: 30%;
+  max-height: 30%;
+  min-width: 60px;
+  min-height: 60px;
 }
 
 .search-result-card .global__carousel-btn--prev {
-  left: 12px;
+  left: 4px;
 }
 
 .search-result-card .global__carousel-btn--next {
-  right: 12px;
+  right: 4px;
 }
 
 .search-result-card .global__carousel-dots {

@@ -230,6 +230,38 @@
           updateCarousel();
         });
       });
+
+      // Touch-свайп для мобильной версии
+      var touchStartX = 0;
+      var touchEndX = 0;
+      var isSwiping = false;
+
+      carousel.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+        isSwiping = true;
+      }, { passive: true });
+
+      carousel.addEventListener('touchmove', function (e) {
+        if (!isSwiping) return;
+        touchEndX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', function (e) {
+        if (!isSwiping) return;
+        isSwiping = false;
+        touchEndX = e.changedTouches[0].screenX;
+        var diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 30) {
+          if (diff > 0) {
+            // Свайп влево — следующий слайд
+            current = (current + 1) % slides.length;
+          } else {
+            // Свайп вправо — предыдущий слайд
+            current = (current - 1 + slides.length) % slides.length;
+          }
+          updateCarousel();
+        }
+      }, { passive: true });
     });
   }
 
