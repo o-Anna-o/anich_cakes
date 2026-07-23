@@ -70,7 +70,7 @@ export default function Carousel({ images, name = '', className = '' }: Carousel
             {src.endsWith('.mp4') ? (
               <video src={src} muted loop playsInline />
             ) : (
-              <img src={src} alt={`${name} фото ${i + 1}`} />
+              <img src={src} alt={`${name} фото ${i + 1}`} loading="lazy" decoding="async" />
             )}
           </div>
         ))}

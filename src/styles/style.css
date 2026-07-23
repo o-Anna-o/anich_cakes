@@ -613,6 +613,8 @@ a:active {
   box-shadow: none;
   width: 100%;
   max-width: 100%;
+  content-visibility: auto;
+  contain-intrinsic-size: 400px;
 }
 
 .search-result-card .global__carousel {
