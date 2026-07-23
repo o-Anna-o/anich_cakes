@@ -511,6 +511,24 @@
       });
     }
 
+    // Обработчики для фильтров
+    var filterBtn = document.getElementById('filterBtn');
+    if (filterBtn) {
+      filterBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        toggleFilters();
+      });
+    }
+
+    var filterMenuBtn = document.getElementById('filterMenuBtn');
+    if (filterMenuBtn) {
+      filterMenuBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        closeMenu();
+        toggleFilters();
+      });
+    }
+
     initDessertDetailsModal();
   });
 
@@ -521,4 +539,309 @@
       openSearch();
     }
   }
+
+  // ===== Filters Search (поиск по фильтрам) =====
+
+  var filtersPanel = null;
+  var filtersOverlay = null;
+  var filtersResults = null;
+  var isFiltersOpen = false;
+  var activeFilters = [];
+
+  // Собираем все уникальные фильтры из allCards
+  function getAllUniqueFilters() {
+    var filterSet = {};
+    allCards.forEach(function (card) {
+      if (card.filters && Array.isArray(card.filters)) {
+        card.filters.forEach(function (f) {
+          filterSet[f] = true;
+        });
+      }
+    });
+    return Object.keys(filterSet).sort();
+  }
+
+  function createFiltersPanel() {
+    filtersOverlay = document.createElement('div');
+    filtersOverlay.className = 'filters-search-overlay';
+
+    filtersPanel = document.createElement('div');
+    filtersPanel.className = 'filters-search-panel';
+
+    // Заголовок панели
+    var header = document.createElement('div');
+    header.className = 'filters-search-panel__header';
+
+    var title = document.createElement('span');
+    title.className = 'filters-search-panel__title';
+    title.textContent = 'Подобрать состав';
+
+    var closeIcon = document.createElement('span');
+    closeIcon.className = 'filters-search-panel__close-icon';
+    closeIcon.textContent = '×';
+    closeIcon.setAttribute('aria-label', 'Закрыть фильтры');
+    closeIcon.addEventListener('click', function () {
+      closeFilters();
+    });
+
+    header.appendChild(title);
+    header.appendChild(closeIcon);
+
+    // Контейнер с кнопками фильтров
+    var filtersContainer = document.createElement('div');
+    filtersContainer.className = 'filters-search-panel__filters';
+
+    var allFilterNames = getAllUniqueFilters();
+    allFilterNames.forEach(function (filterName) {
+      var btn = document.createElement('button');
+      btn.className = 'filters-search-panel__filter-btn';
+      btn.type = 'button';
+      btn.textContent = filterName;
+      btn.setAttribute('data-filter', filterName);
+      btn.addEventListener('click', function () {
+        toggleFilter(this);
+      });
+      filtersContainer.appendChild(btn);
+    });
+
+    // Результаты
+    filtersResults = document.createElement('div');
+    filtersResults.className = 'filters-search-panel__results';
+
+    filtersPanel.appendChild(header);
+    filtersPanel.appendChild(filtersContainer);
+    filtersPanel.appendChild(filtersResults);
+    document.body.appendChild(filtersOverlay);
+    document.body.appendChild(filtersPanel);
+
+    filtersOverlay.addEventListener('click', function () {
+      closeFilters();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isFiltersOpen) {
+        closeFilters();
+      }
+    });
+  }
+
+  function toggleFilter(btn) {
+    var filterName = btn.getAttribute('data-filter');
+    var idx = activeFilters.indexOf(filterName);
+
+    if (idx === -1) {
+      activeFilters.push(filterName);
+      btn.classList.add('filters-search-panel__filter-btn--active');
+    } else {
+      activeFilters.splice(idx, 1);
+      btn.classList.remove('filters-search-panel__filter-btn--active');
+    }
+
+    applyFilters();
+  }
+
+  function applyFilters() {
+    if (activeFilters.length === 0) {
+      filtersResults.innerHTML = '';
+      return;
+    }
+
+    var filtered = allCards.filter(function (card) {
+      if (!card.filters || !Array.isArray(card.filters)) return false;
+      // У карточки должны быть ВСЕ выбранные фильтры
+      return activeFilters.every(function (f) {
+        return card.filters.indexOf(f) !== -1;
+      });
+    });
+
+    renderFiltersResults(filtered);
+  }
+
+  function renderFiltersResults(cards) {
+    filtersResults.innerHTML = '';
+
+    if (cards.length === 0) {
+      filtersResults.innerHTML = '<div class="filters-search-panel__empty">Ничего не найдено</div>';
+      return;
+    }
+
+    // Убираем дубликаты по имени
+    var seenNames = {};
+    var uniqueCards = cards.filter(function (card) {
+      var nameLower = card.name.toLowerCase();
+      if (seenNames[nameLower]) {
+        return false;
+      }
+      seenNames[nameLower] = true;
+      return true;
+    });
+
+    uniqueCards.forEach(function (card) {
+      var cardEl = document.createElement('article');
+      cardEl.className = 'global__card filters-search-result-card';
+      cardEl.setAttribute('data-tags', card.tags || '');
+
+      var carouselHTML = createCarouselHTML(card.images);
+      var carouselDiv = document.createElement('div');
+      carouselDiv.innerHTML = carouselHTML;
+      cardEl.appendChild(carouselDiv.firstElementChild);
+
+      var bodyDiv = document.createElement('div');
+      bodyDiv.className = 'global__card-body';
+
+      var nameDiv = document.createElement('div');
+      nameDiv.className = 'global__card-name';
+      nameDiv.textContent = card.name;
+
+      var caloriesDiv = document.createElement('div');
+      caloriesDiv.className = 'global__card-calories';
+      caloriesDiv.textContent = card.calories;
+
+      var descDiv = document.createElement('div');
+      descDiv.className = 'global__card-description';
+      descDiv.textContent = card.description;
+
+      bodyDiv.appendChild(nameDiv);
+      bodyDiv.appendChild(caloriesDiv);
+      bodyDiv.appendChild(descDiv);
+
+      var detailBtn = document.createElement('button');
+      detailBtn.className = 'detail-card__button';
+      detailBtn.type = 'button';
+      detailBtn.textContent = 'Подробнее';
+      detailBtn.setAttribute('data-card-name', card.name);
+      detailBtn.addEventListener('click', function () {
+        var cardName = this.getAttribute('data-card-name');
+        if (cardName) {
+          window.location.href = 'detail.html?name=' + encodeURIComponent(cardName);
+        }
+      });
+      bodyDiv.appendChild(detailBtn);
+
+      cardEl.appendChild(bodyDiv);
+      filtersResults.appendChild(cardEl);
+    });
+
+    // Инициализируем карусели в результатах фильтрации
+    initFiltersCarousels();
+  }
+
+  function initFiltersCarousels() {
+    filtersResults.querySelectorAll('.global__carousel').forEach(function (carousel) {
+      var track = carousel.querySelector('.global__carousel-track');
+      var slides = carousel.querySelectorAll('.global__carousel-slide');
+      var dots = carousel.querySelectorAll('.global__carousel-dot');
+      var prevBtn = carousel.querySelector('.global__carousel-btn--prev');
+      var nextBtn = carousel.querySelector('.global__carousel-btn--next');
+      var current = 0;
+
+      if (slides.length <= 1) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        return;
+      }
+
+      function updateCarousel() {
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('global__carousel-dot--active', i === current);
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          current = (current - 1 + slides.length) % slides.length;
+          updateCarousel();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          current = (current + 1) % slides.length;
+          updateCarousel();
+        });
+      }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          current = i;
+          updateCarousel();
+        });
+      });
+
+      // Touch-свайп
+      var touchStartX = 0;
+      var touchEndX = 0;
+      var isSwiping = false;
+
+      carousel.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+        isSwiping = true;
+      }, { passive: true });
+
+      carousel.addEventListener('touchmove', function (e) {
+        if (!isSwiping) return;
+        touchEndX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', function (e) {
+        if (!isSwiping) return;
+        isSwiping = false;
+        touchEndX = e.changedTouches[0].screenX;
+        var diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 30) {
+          if (diff > 0) {
+            current = (current + 1) % slides.length;
+          } else {
+            current = (current - 1 + slides.length) % slides.length;
+          }
+          updateCarousel();
+        }
+      }, { passive: true });
+    });
+  }
+
+  function openFilters() {
+    if (!filtersPanel) {
+      createFiltersPanel();
+    }
+    filtersPanel.classList.add('filters-search-panel--open');
+    filtersOverlay.classList.add('filters-search-overlay--visible');
+    isFiltersOpen = true;
+    // Показываем все карточки при открытии (если фильтры уже выбраны — применяем)
+    if (activeFilters.length > 0) {
+      applyFilters();
+    } else {
+      filtersResults.innerHTML = '';
+    }
+  }
+
+  function closeFilters() {
+    if (!filtersPanel) return;
+    filtersPanel.classList.remove('filters-search-panel--open');
+    filtersOverlay.classList.remove('filters-search-overlay--visible');
+    isFiltersOpen = false;
+    // Сбрасываем активные фильтры
+    activeFilters = [];
+    var btns = filtersPanel.querySelectorAll('.filters-search-panel__filter-btn');
+    btns.forEach(function (btn) {
+      btn.classList.remove('filters-search-panel__filter-btn--active');
+    });
+    if (filtersResults) {
+      filtersResults.innerHTML = '';
+    }
+  }
+
+  function toggleFilters() {
+    if (isFiltersOpen) {
+      closeFilters();
+    } else {
+      // Закрываем поиск, если открыт
+      if (isOpen) {
+        closeSearch();
+      }
+      openFilters();
+    }
+  }
+
 })();
