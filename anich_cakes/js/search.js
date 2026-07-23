@@ -180,6 +180,21 @@
       bodyDiv.appendChild(nameDiv);
       bodyDiv.appendChild(caloriesDiv);
       bodyDiv.appendChild(descDiv);
+
+      // Кнопка "Подробнее" — как на страницах категорий
+      var detailBtn = document.createElement('button');
+      detailBtn.className = 'detail-card__button';
+      detailBtn.type = 'button';
+      detailBtn.textContent = 'Подробнее';
+      detailBtn.setAttribute('data-card-name', card.name);
+      detailBtn.addEventListener('click', function () {
+        var cardName = this.getAttribute('data-card-name');
+        if (cardName) {
+          window.location.href = 'detail.html?name=' + encodeURIComponent(cardName);
+        }
+      });
+      bodyDiv.appendChild(detailBtn);
+
       cardEl.appendChild(bodyDiv);
 
       searchResults.appendChild(cardEl);
