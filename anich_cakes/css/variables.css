@@ -45,6 +45,11 @@
   --detail-width-card-btn: 90px;
   --detail-border-radius-card-btn: 8px;
   --font-size-detail-card-btn: 18px;
+
+  /* Header icons gaps */
+  --header-left-icons--gap: 16px;
+  --header-right-icons--gap: 12px;
+  --header-icons--gap: 0px;
 }
 
 @media (max-width: 349px) {
@@ -81,6 +86,11 @@
     --font-size-detail-card-btn: 12px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 20px;
+
+    /* Header icons gaps */
+    --header-left-icons--gap: 8px;
+    --header-right-icons--gap: 8px;
+    --header-icons--gap: 0px;
   }
 }
 
@@ -118,6 +128,11 @@
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 20px;
     --font-size-detail-card-btn: 20px;
+
+    /* Header icons gaps */
+    --header-left-icons--gap: 8px;
+    --header-right-icons--gap: 8px;
+    --header-icons--gap: 0px;
   }
 }
 
@@ -159,6 +174,11 @@
     --width-detail-carousel: 50%;
     --detail-border-radius-card-btn: 25px;
     --detail-font-size-card-btn: 20px;
+
+    /* Header icons gaps */
+    --header-left-icons--gap: 12px;
+    --header-right-icons--gap: 10px;
+    --header-icons--gap: 0px;
   }
 }
 
@@ -200,6 +220,11 @@
     --detail-border-radius-card-btn: 20px;
     --font-size-detail-card-btn: 25px;
     --detail-font-size-card-btn: 20px;
+
+    /* Header icons gaps */
+    --header-left-icons--gap: 16px;
+    --header-right-icons--gap: 12px;
+    --header-icons--gap: 0px;
   }
 }
 
@@ -240,6 +265,11 @@
     --font-size-detail-card-btn: 25px;
     --detail-width-card-btn: 250px;
     --detail-font-size-card-btn: 20px;
+
+    /* Header icons gaps */
+    --header-left-icons--gap: 16px;
+    --header-right-icons--gap: 12px;
+    --header-icons--gap: 0px;
   }
 }
 
@@ -280,6 +310,11 @@
     --detail-width-card-btn: 150px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 20px;
+
+    /* Header icons gaps */
+    --header-left-icons--gap: 16px;
+    --header-right-icons--gap: 12px;
+    --header-icons--gap: 0px;
   }
 }
 
@@ -321,6 +356,11 @@
     --detail-width-card-btn: 200px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 23px;
+
+    /* Header icons gaps */
+    --header-left-icons--gap: 16px;
+    --header-right-icons--gap: 12px;
+    --header-icons--gap: 0px;
   }
 }
 
@@ -362,6 +402,11 @@
     --width-detail-carousel: 40%;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 23px;
+
+    /* Header icons gaps */
+    --header-left-icons--gap: 16px;
+    --header-right-icons--gap: 12px;
+    --header-icons--gap: 0px;
   }
 }
 
@@ -403,5 +448,10 @@
     --detail-width-card-btn: 240px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 25px;
+
+    /* Header icons gaps */
+    --header-left-icons--gap: 16px;
+    --header-right-icons--gap: 12px;
+    --header-icons--gap: 0px;
   }
 }

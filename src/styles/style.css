@@ -70,6 +70,7 @@ a:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--header-icons--gap, 0px);
   padding: 16px;
   z-index: 100;
 }
@@ -84,10 +85,11 @@ a:active {
   display: none !important;
 }
 
-.banner__header-left {
+.left-icons {
   display: flex;
   align-items: center;
-  gap: 16px;
+  flex-direction: row;
+  gap: var(--header-left-icons--gap, 16px);
 }
 
 .banner__burger {
@@ -98,8 +100,8 @@ a:active {
 }
 
 .banner__logo {
-  width: var(--icon-header-height, 44px);
-  height: var(--icon-header-height, 44px);
+  width: var(--icon-header-height, 30px);
+  height: var(--icon-header-height, 30px);
 }
 
 .banner__title {
@@ -228,12 +230,11 @@ a:active {
   flex-shrink: 0;
 }
 
-.right-part {
+.right-icons {
   display: flex;
-  flex-direction: row;
-  gap: var(--header-right-gap, 20px);
   align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  gap: var(--header-right-icons--gap, 12px);
 }
 
 /* ===== Intro ===== */
@@ -737,12 +738,6 @@ a:active {
 
 /* ===== Header icons (search & filter) ===== */
 
-.banner__header-icons {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 .banner__header-icon {
   display: flex;
   align-items: center;
@@ -758,8 +753,8 @@ a:active {
 }
 
 .banner__header-icon img {
-  width: var(--icon-header-height, 44px);
-  height: var(--icon-header-height, 44px);
+  width: var(--icon-header-height, 30px);
+  height: var(--icon-header-height, 30px);
   display: block;
 }
 
