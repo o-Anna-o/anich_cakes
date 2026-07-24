@@ -12,6 +12,7 @@ export default function Carousel({ images, name = '', className = '' }: Carousel
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
   const isSwiping = useRef(false);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const slides = images;
   const hasMultiple = slides.length > 1;
@@ -22,18 +23,37 @@ export default function Carousel({ images, name = '', className = '' }: Carousel
     }
   }, []);
 
+  const manageVideos = useCallback((activeIndex: number) => {
+    videoRefs.current.forEach((video, i) => {
+      if (!video) return;
+      if (i === activeIndex) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, []);
+
   const goTo = useCallback((index: number) => {
     const newIndex = ((index % slides.length) + slides.length) % slides.length;
     setCurrent(newIndex);
     updateCarousel(newIndex);
-  }, [slides.length, updateCarousel]);
+    manageVideos(newIndex);
+  }, [slides.length, updateCarousel, manageVideos]);
 
   const goPrev = useCallback(() => goTo(current - 1), [current, goTo]);
   const goNext = useCallback(() => goTo(current + 1), [current, goTo]);
 
   useEffect(() => {
     updateCarousel(current);
-  }, [current, updateCarousel]);
+    manageVideos(current);
+  }, [current, updateCarousel, manageVideos]);
+
+  useEffect(() => {
+    // Запуск видео на первом слайде при монтировании
+    manageVideos(0);
+  }, [manageVideos]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.changedTouches[0].screenX;
@@ -68,7 +88,14 @@ export default function Carousel({ images, name = '', className = '' }: Carousel
         {slides.map((src, i) => (
           <div className="global__carousel-slide" key={i}>
             {src.endsWith('.mp4') ? (
-              <video src={src} muted loop playsInline />
+              <video
+                ref={(el) => { videoRefs.current[i] = el; }}
+                src={src}
+                muted
+                loop
+                playsInline
+                autoPlay
+              />
             ) : (
               <img src={src} alt={`${name} фото ${i + 1}`} loading="lazy" decoding="async" />
             )}

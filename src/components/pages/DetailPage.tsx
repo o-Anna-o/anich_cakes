@@ -23,6 +23,7 @@ export default function DetailPage() {
   const navigate = useNavigate();
   const trackRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const cardName = searchParams.get('name');
 
@@ -44,13 +45,26 @@ export default function DetailPage() {
   const slides = cardData?.images || [];
   const hasMultiple = slides.length > 1;
 
+  const manageVideos = useCallback((activeIndex: number) => {
+    videoRefs.current.forEach((video, i) => {
+      if (!video) return;
+      if (i === activeIndex) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, []);
+
   const goTo = useCallback((index: number) => {
     const newIndex = ((index % slides.length) + slides.length) % slides.length;
     setCurrentSlide(newIndex);
     if (trackRef.current) {
       trackRef.current.style.transform = `translateX(-${newIndex * 100}%)`;
     }
-  }, [slides.length]);
+    manageVideos(newIndex);
+  }, [slides.length, manageVideos]);
 
   useEffect(() => {
     goTo(0);
@@ -103,7 +117,14 @@ export default function DetailPage() {
             {slides.map((src, i) => (
               <div className="global__carousel-slide" key={i}>
                 {src.endsWith('.mp4') ? (
-                  <video src={src} muted loop playsInline />
+                  <video
+                    ref={(el) => { videoRefs.current[i] = el; }}
+                    src={src}
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                  />
                 ) : (
                   <img src={src} alt={`${cardData.name} фото ${i + 1}`} />
                 )}

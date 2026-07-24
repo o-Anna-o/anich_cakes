@@ -261,7 +261,7 @@ a:active {
 .products {
   padding: 100px 24px 40px;
   background-color: #F7DCCB;
-  background-image: url('../img/choco-back.jpg');
+  background-image: url('../anich_cakes/img/choco-back.jpg');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -365,7 +365,7 @@ a:active {
     margin-top: 50px;
     padding: 100px 24px 40px;
     background-color: #F7DCCB;
-    background-image: url('../img/choco-back-PC.jpg');
+    background-image: url('../anich_cakes/img/choco-back-PC.jpg');
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -384,7 +384,7 @@ a:active {
     margin-top: 50px;
     padding: 100px 24px 40px;
     background-color: #F7DCCB;
-    background-image: url('../img/choco-back.jpg');
+    background-image: url('../anich_cakes/img/choco-back.jpg');
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
