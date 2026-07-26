@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../common/Header';
 import BurgerMenu from '../common/BurgerMenu';
@@ -7,12 +7,12 @@ import FiltersPanel from '../common/FiltersPanel';
 import Footer from '../common/Footer';
 
 const categories = [
-  { title: 'НИЗКОКАЛОРИЙНЫЕ', desc: 'Полезные десерты без белой муки и сахара', img: 'anich_cakes/img/card-img-1.jpg', link: '/low-calories', white: false },
-  { title: 'ЖИВЫЕ', desc: 'Raw десерты без термической обработки', img: 'anich_cakes/img/card-img-2.jpg', link: '/raw', white: true },
-  { title: 'ВЕГАНСКИЕ', desc: 'Без продуктов животного происхождения', img: 'anich_cakes/img/card-img-3.jpg', link: '/vegan', white: true },
-  { title: 'ТРАДИЦИОННЫЕ', desc: 'Знакомые с детства вкусы', img: 'anich_cakes/img/card-img-4.jpg', link: '/traditional', white: true },
-  { title: 'ТЕМАТИЧЕСКИЕ', desc: 'Десерты с украшением к праздникам', img: 'anich_cakes/img/card-img-5.jpg', link: '/thematical', white: true },
-  { title: 'ШОКОЛАДНЫЕ', desc: 'Для любителей шоколада', img: 'anich_cakes/img/card-img-6.jpg', link: '/chocolate', white: true },
+  { title: 'НИЗКОКАЛОРИЙНЫЕ', desc: 'Полезные десерты без белой муки и сахара', img: '/anich_cakes/img/card-img-1.jpg', link: '/low-calories', white: false },
+  { title: 'ЖИВЫЕ', desc: 'Raw десерты без термической обработки', img: '/anich_cakes/img/card-img-2.jpg', link: '/raw', white: true },
+  { title: 'ВЕГАНСКИЕ', desc: 'Без продуктов животного происхождения', img: '/anich_cakes/img/card-img-3.jpg', link: '/vegan', white: true },
+  { title: 'ТРАДИЦИОННЫЕ', desc: 'Знакомые с детства вкусы', img: '/anich_cakes/img/card-img-4.jpg', link: '/traditional', white: true },
+  { title: 'ТЕМАТИЧЕСКИЕ', desc: 'Десерты с украшением к праздникам', img: '/anich_cakes/img/card-img-5.jpg', link: '/thematical', white: true },
+  { title: 'ШОКОЛАДНЫЕ', desc: 'Для любителей шоколада', img: '/anich_cakes/img/card-img-6.jpg', link: '/chocolate', white: true },
 ];
 
 export default function HomePage() {
@@ -21,20 +21,20 @@ export default function HomePage() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleSearchToggle = () => {
-    if (filtersOpen) setFiltersOpen(false);
+  const handleSearchToggle = useCallback(() => {
+    setFiltersOpen(false);
     setSearchOpen(true);
-  };
+  }, []);
 
-  const handleFilterToggle = () => {
-    if (searchOpen) setSearchOpen(false);
+  const handleFilterToggle = useCallback(() => {
+    setSearchOpen(false);
     setFiltersOpen(true);
-  };
+  }, []);
 
   return (
     <main className="page">
       <Header
-        bannerImg="anich_cakes/img/berry_header.jpg"
+        bannerImg="/anich_cakes/img/berry_header.jpg"
         bannerAlt="Berry dessert background"
         onBurgerClick={() => setMenuOpen(true)}
         onSearchClick={handleSearchToggle}

@@ -1,4 +1,5 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import HomePage from './components/pages/HomePage';
 import CategoryPage from './components/pages/CategoryPage';
 import DetailPage from './components/pages/DetailPage';
@@ -8,7 +9,7 @@ const categoryConfigs = [
     path: '/chocolate',
     title: 'Шоколадные десерты',
     description: 'Шоколад и шоколадные вкусы. Для настоящих ценителей шоколада!',
-    bannerImg: 'anich_cakes/img/chocolate/chocolate__banner.jpg',
+    bannerImg: '/anich_cakes/img/chocolate/chocolate__banner.jpg',
     breadcrumbLabel: 'Шоколадные',
     categoryPage: '/chocolate',
   },
@@ -16,7 +17,7 @@ const categoryConfigs = [
     path: '/traditional',
     title: 'Традиционные десерты',
     description: 'Знакомые с детства и классические вкусы. Наслаждайтесь любимыми десертами!',
-    bannerImg: 'anich_cakes/img/traditional/traditional__banner.jpg',
+    bannerImg: '/anich_cakes/img/traditional/traditional__banner.jpg',
     breadcrumbLabel: 'Традиционные',
     categoryPage: '/traditional',
   },
@@ -24,7 +25,7 @@ const categoryConfigs = [
     path: '/vegan',
     title: 'Веганские десерты',
     description: 'Идеальные десерты без использования продуктов животного происхождения. 100% растительный состав, невероятный вкус!',
-    bannerImg: 'anich_cakes/img/vegan/vegan__banner.jpg',
+    bannerImg: '/anich_cakes/img/vegan/vegan__banner.jpg',
     breadcrumbLabel: 'Веганские',
     categoryPage: '/vegan',
   },
@@ -32,7 +33,7 @@ const categoryConfigs = [
     path: '/raw',
     title: 'Живые (Raw) десерты',
     description: 'Raw десерты без термической обработки. Максимум пользы и натурального вкуса!',
-    bannerImg: 'anich_cakes/img/raw/raw__banner-img.jpg',
+    bannerImg: '/anich_cakes/img/raw/raw__banner-img.jpg',
     breadcrumbLabel: 'Живые (Raw)',
     categoryPage: '/raw',
   },
@@ -40,7 +41,7 @@ const categoryConfigs = [
     path: '/low-calories',
     title: 'Низкокалорийные десерты',
     description: 'Полезные ПП десерты без белой муки, белого сахара. Наслаждайтесь вкусом без вреда для фигуры!',
-    bannerImg: 'anich_cakes/img/low_calories/low-calories__banner-img.png',
+    bannerImg: '/anich_cakes/img/low_calories/low-calories__banner-img.png',
     breadcrumbLabel: 'Низкокалорийные',
     categoryPage: '/low-calories',
   },
@@ -48,16 +49,25 @@ const categoryConfigs = [
     path: '/thematical',
     title: 'Тематические десерты',
     description: 'Десерты с украшением к праздникам. Сделайте ваш праздник незабываемым!',
-    bannerImg: 'anich_cakes/img/thematical/thematical__banner-img.jpg',
+    bannerImg: '/anich_cakes/img/thematical/thematical__banner-img.jpg',
     breadcrumbLabel: 'Тематические',
     categoryPage: '/thematical',
     thematical: true,
   },
 ];
 
+function ScrollToTop() {
+  const { pathname, search } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname, search]);
+  return null;
+}
+
 export default function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         {categoryConfigs.map((cfg) => (

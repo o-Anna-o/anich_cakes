@@ -33,14 +33,14 @@ export default function DetailPage() {
   }, [cardName]);
 
   const handleSearchToggle = useCallback(() => {
-    if (filtersOpen) setFiltersOpen(false);
+    setFiltersOpen(false);
     setSearchOpen(true);
-  }, [filtersOpen]);
+  }, []);
 
   const handleFilterToggle = useCallback(() => {
-    if (searchOpen) setSearchOpen(false);
+    setSearchOpen(false);
     setFiltersOpen(true);
-  }, [searchOpen]);
+  }, []);
 
   const slides = cardData?.images || [];
   const hasMultiple = slides.length > 1;

@@ -2,12 +2,19 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import allCards from '../../data/cards';
 import type { CardData } from '../../types';
-import Carousel from './Carousel';
 
 interface SearchPanelProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+const MAX_RESULTS = 20;
+
+/** Единожды вычисленный список уникальных карточек (по имени) */
+const uniqueCards = allCards.filter(
+  (card, i, arr) =>
+    arr.findIndex((c) => c.name.toLowerCase() === card.name.toLowerCase()) === i
+);
 
 export default function SearchPanel({ isOpen, onClose }: SearchPanelProps) {
   const [query, setQuery] = useState('');
@@ -17,7 +24,8 @@ export default function SearchPanel({ isOpen, onClose }: SearchPanelProps) {
 
   useEffect(() => {
     if (isOpen) {
-      setResults(allCards);
+      setQuery('');
+      setResults(uniqueCards.slice(0, MAX_RESULTS));
       setTimeout(() => inputRef.current?.focus(), 100);
     } else {
       setQuery('');
@@ -34,13 +42,20 @@ export default function SearchPanel({ isOpen, onClose }: SearchPanelProps) {
   }, [isOpen, onClose]);
 
   const handleInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value.trim().toLowerCase();
-    setQuery(e.target.value);
-    if (val === '') {
-      setResults(allCards);
+    const val = e.target.value;
+    setQuery(val);
+    const trimmed = val.trim().toLowerCase();
+    if (trimmed === '') {
+      setResults(uniqueCards.slice(0, MAX_RESULTS));
       return;
     }
-    setResults(allCards.filter((card) => card.name.toLowerCase().includes(val)));
+    const filtered = allCards.filter((card) =>
+      card.name.toLowerCase().includes(trimmed)
+    );
+    const unique = filtered.filter((card, i, arr) =>
+      arr.findIndex((c) => c.name.toLowerCase() === card.name.toLowerCase()) === i
+    );
+    setResults(unique.slice(0, MAX_RESULTS));
   }, []);
 
   const handleDetail = useCallback((cardName: string) => {
@@ -48,16 +63,12 @@ export default function SearchPanel({ isOpen, onClose }: SearchPanelProps) {
     navigate(`/detail?name=${encodeURIComponent(cardName)}`);
   }, [navigate, onClose]);
 
-  const uniqueResults = results.filter((card, i, arr) =>
-    arr.findIndex((c) => c.name.toLowerCase() === card.name.toLowerCase()) === i
-  );
-
   return (
     <>
       <div className={`search-overlay ${isOpen ? 'search-overlay--visible' : ''}`} onClick={onClose} />
       <div className={`search-panel ${isOpen ? 'search-panel--open' : ''}`}>
         <div className="search-panel__input-wrapper">
-          <img className="search-panel__input-icon" src="anich_cakes/img/search.svg" alt="" />
+          <img className="search-panel__input-icon" src="/anich_cakes/img/search.svg" alt="" />
           <input
             ref={inputRef}
             className="search-panel__input"
@@ -70,12 +81,20 @@ export default function SearchPanel({ isOpen, onClose }: SearchPanelProps) {
           <span className="search-panel__close-icon" onClick={onClose} aria-label="Закрыть поиск">×</span>
         </div>
         <div className="search-panel__results">
-          {uniqueResults.length === 0 ? (
+          {results.length === 0 ? (
             <div className="search-panel__empty">Ничего не найдено</div>
           ) : (
-            uniqueResults.map((card, i) => (
+            results.map((card, i) => (
               <article key={`${card.name}-${i}`} className="global__card search-result-card">
-                <Carousel images={card.images} name={card.name} />
+                <div className="search-result-card__image-wrapper">
+                  <img
+                    className="search-result-card__image"
+                    src={card.images[0]}
+                    alt={card.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <div className="global__card-body">
                   <div className="global__card-name">{card.name}</div>
                   <div className="global__card-calories">{card.calories}</div>

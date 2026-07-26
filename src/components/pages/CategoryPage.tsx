@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../common/Header';
 import BurgerMenu from '../common/BurgerMenu';
@@ -30,26 +30,29 @@ export default function CategoryPage({
   const [filtersOpen, setFiltersOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleSearchToggle = () => {
-    if (filtersOpen) setFiltersOpen(false);
+  const handleSearchToggle = useCallback(() => {
+    setFiltersOpen(false);
     setSearchOpen(true);
-  };
+  }, []);
 
-  const handleFilterToggle = () => {
-    if (searchOpen) setSearchOpen(false);
+  const handleFilterToggle = useCallback(() => {
+    setSearchOpen(false);
     setFiltersOpen(true);
-  };
+  }, []);
 
-  const cards = allCards.filter((card) => card.page === categoryPage);
+  const cards = useMemo(
+    () => allCards.filter((card) => card.page === categoryPage),
+    [categoryPage]
+  );
 
   const handleDetail = useCallback((cardName: string) => {
     navigate(`/detail?name=${encodeURIComponent(cardName)}`);
   }, [navigate]);
 
-  const pageClass = thematical ? 'global thematical' : 'global';
+  const pageClass = thematical ? 'page thematical' : 'page';
 
   return (
-    <body className={pageClass}>
+    <div className={pageClass}>
       <Header
         bannerImg={bannerImg}
         bannerAlt={`${title} background`}
@@ -85,7 +88,7 @@ export default function CategoryPage({
       <footer className="global__footer">
         <p className="global__footer-copyright">© 2026 Anich Cakes</p>
       </footer>
-    </body>
+    </div>
   );
 }
 

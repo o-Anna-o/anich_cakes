@@ -65,13 +65,13 @@ export default function BurgerMenu({ isOpen, onClose, onSearchClick, onFilterCli
         <ul className="menu-nav__list menu-nav__list--bottom">
           <li>
             <a href="#" id="searchMenuBtn" className="menu-nav__link-icon" onClick={handleSearchClick}>
-              <img src="anich_cakes/img/search.svg" alt="Поиск" />
+              <img src="/anich_cakes/img/search.svg" alt="Поиск" />
               <span>Поиск десерта</span>
             </a>
           </li>
           <li>
             <a href="#" id="filterMenuBtn" className="menu-nav__link-icon" onClick={handleFilterClick}>
-              <img src="anich_cakes/img/filter.svg" alt="Фильтр" />
+              <img src="/anich_cakes/img/filter.svg" alt="Фильтр" />
               <span>Подобрать состав</span>
             </a>
           </li>
