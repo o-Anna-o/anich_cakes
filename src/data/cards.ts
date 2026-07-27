@@ -58,12 +58,13 @@ const allCards: CardData[] = [
   { name: 'Медовый торт', category: 'Традиционные', page: '/traditional', images: ['/anich_cakes/img/traditional/traditional-8-1.jpg', '/anich_cakes/img/traditional/traditional-8-2.mp4', '/anich_cakes/img/traditional/traditional-8-5.jpg', '/anich_cakes/img/traditional/traditional-8-6.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
   { name: 'Кейк-попсы', category: 'Традиционные', page: '/traditional', images: ['/anich_cakes/img/traditional/traditional-9-1.jpg', '/anich_cakes/img/traditional/traditional-9-2.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
   { name: 'Лимонный пирог', category: 'Традиционные', page: '/traditional', images: ['/anich_cakes/img/traditional/traditional-10-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
-
+  
   // ===== Тематические (thematical.html) =====
   { name: 'Шоколадный муссовый торт', category: 'Тематические', page: '/thematical', images: ['/anich_cakes/img/thematical/thematical-1-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
   { name: 'Низкокалорийный Черничные ночи', category: 'Тематические', page: '/thematical', images: ['/anich_cakes/img/thematical/thematical-2-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
   { name: 'Красный бархат', category: 'Тематические', page: '/thematical', images: ['/anich_cakes/img/thematical/thematical-3-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
   { name: 'Веганский муравейник', category: 'Тематические', page: '/thematical', images: ['/anich_cakes/img/thematical/thematical-5-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
+  { name: 'Москва', category: 'Тематические', page: '/thematical', images: ['/anich_cakes/img/thematical/thematical-6-1.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
 
   // ===== Шоколадные (chocolate.html) =====
   { name: 'Nutella', category: 'Шоколадные', page: '/chocolate', images: ['/anich_cakes/img/chocolate/chocolate-2-1.jpg', '/anich_cakes/img/chocolate/chocolate-2-2.jpg'], calories: '150 ккал', description: 'Описание десерта.' },
