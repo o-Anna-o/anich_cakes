@@ -46,8 +46,8 @@ export default function CategoryPage({
   );
 
   const handleDetail = useCallback((cardName: string) => {
-    navigate(`/detail?name=${encodeURIComponent(cardName)}`);
-  }, [navigate]);
+    navigate(`/detail?name=${encodeURIComponent(cardName)}&from=${encodeURIComponent(categoryPage)}`);
+  }, [navigate, categoryPage]);
 
   const pageClass = thematical ? 'page thematical' : 'page';
 

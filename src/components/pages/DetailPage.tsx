@@ -26,6 +26,7 @@ export default function DetailPage() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const cardName = searchParams.get('name');
+  const fromPage = searchParams.get('from');
 
   const cardData = useMemo(() => {
     if (!cardName) return null;
@@ -88,7 +89,8 @@ export default function DetailPage() {
     );
   }
 
-  const breadcrumbCategory = pageNames[cardData.page] || cardData.category;
+  const breadcrumbPage = fromPage || cardData.page;
+  const breadcrumbCategory = pageNames[breadcrumbPage] || cardData.category;
 
   return (
     <div className="global page--detail">
@@ -97,7 +99,7 @@ export default function DetailPage() {
           <nav className="global__breadcrumbs" aria-label="Breadcrumb">
             <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Главная</a>
             <span className="global__breadcrumbs-sep">/</span>
-            <a href={cardData.page} onClick={(e) => { e.preventDefault(); navigate(cardData.page); }}>
+            <a href={breadcrumbPage} onClick={(e) => { e.preventDefault(); navigate(breadcrumbPage); }}>
               {breadcrumbCategory}
             </a>
           </nav>
