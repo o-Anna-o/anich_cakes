@@ -4,6 +4,7 @@ import Header from '../common/Header';
 import BurgerMenu from '../common/BurgerMenu';
 import SearchPanel from '../common/SearchPanel';
 import FiltersPanel from '../common/FiltersPanel';
+import Lightbox from '../common/Lightbox';
 import allCards from '../../data/cards';
 
 const pageNames: Record<string, string> = {
@@ -23,6 +24,7 @@ export default function DetailPage() {
   const navigate = useNavigate();
   const trackRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const cardName = searchParams.get('name');
@@ -117,7 +119,11 @@ export default function DetailPage() {
         <div className="detail-global__carousel" id="detailCarousel">
           <div className="global__carousel-track" ref={trackRef} id="detailCarouselTrack">
             {slides.map((src, i) => (
-              <div className="global__carousel-slide" key={i}>
+              <div
+                className="global__carousel-slide"
+                key={i}
+                onClick={() => setLightboxOpen(true)}
+              >
                 {src.endsWith('.mp4') ? (
                   <video
                     ref={(el) => { videoRefs.current[i] = el; }}
@@ -149,6 +155,14 @@ export default function DetailPage() {
               />
             ))}
           </div>
+
+          <Lightbox
+            isOpen={lightboxOpen}
+            images={slides}
+            startIndex={currentSlide}
+            name={cardData.name}
+            onClose={() => setLightboxOpen(false)}
+          />
         </div>
 
         <div className="detail-global__text">

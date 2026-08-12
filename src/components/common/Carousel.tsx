@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
+import Lightbox from './Lightbox';
 
 interface CarouselProps {
   images: string[];
@@ -8,6 +9,7 @@ interface CarouselProps {
 
 export default function Carousel({ images, name = '', className = '' }: CarouselProps) {
   const [current, setCurrent] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -86,7 +88,11 @@ export default function Carousel({ images, name = '', className = '' }: Carousel
         onTouchEnd={handleTouchEnd}
       >
         {slides.map((src, i) => (
-          <div className="global__carousel-slide" key={i}>
+          <div
+            className="global__carousel-slide"
+            key={i}
+            onClick={() => setLightboxOpen(true)}
+          >
             {src.endsWith('.mp4') ? (
               <video
                 ref={(el) => { videoRefs.current[i] = el; }}
@@ -118,6 +124,14 @@ export default function Carousel({ images, name = '', className = '' }: Carousel
           />
         ))}
       </div>
+
+      <Lightbox
+        isOpen={lightboxOpen}
+        images={slides}
+        startIndex={current}
+        name={name}
+        onClose={() => setLightboxOpen(false)}
+      />
     </div>
   );
 }

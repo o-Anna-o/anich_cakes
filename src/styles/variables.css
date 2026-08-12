@@ -349,6 +349,7 @@
     --width-detail-carousel: 50%;
     --detail-width-card-btn: 150px;
     --detail-border-radius-card-btn: 20px;
+    --font-size-detail-card-btn: 18px;
     --detail-font-size-card-btn: 20px;
 
     /* Header */
@@ -394,7 +395,7 @@
     /* Detail page */
     --detail-card-body--gap: 30px;
     --font-size-detail-card-name: 28px;
-    --font-size-detail-card-btn: 20px;
+    --font-size-detail-card-btn: 18px;
     --font-size-detail-card-calories: 26px;
     --detail-filters--gap: 10px;
     --width-detail-card-btn: 350px;
@@ -451,7 +452,7 @@
     --detail-filters--gap: 8px;
     --detail-width-card-btn: 250px;
     --width-detail-card-btn: 450px;
-    --font-size-detail-card-btn: 24px;
+    --font-size-detail-card-btn: 20px;
     --width-detail-carousel: 40%;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 23px;
@@ -504,7 +505,7 @@
     --detail-filters--gap: 8px;
     --width-detail-carousel: 40%;
     --width-detail-card-btn: 500px;
-    --font-size-detail-card-btn: 25px;
+    --font-size-detail-card-btn: 20px;
     --detail-width-card-btn: 240px;
     --detail-border-radius-card-btn: 20px;
     --detail-font-size-card-btn: 25px;
