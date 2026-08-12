@@ -7,6 +7,7 @@ export default function Footer() {
           href="https://t.me/Anna_Vegana"
           target="_blank"
           rel="noreferrer"
+          aria-label="Перейти в Telegram-чат с @Anna_Vegana"
         >
           <svg className="footer__icon" viewBox="0 0 24 24" aria-hidden="true">
             <path
