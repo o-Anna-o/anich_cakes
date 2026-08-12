@@ -10,7 +10,7 @@ interface SearchPanelProps {
 
 const MAX_RESULTS = 20;
 
-/** Единожды вычисленный список уникальных карточек (по имени) */
+/** Список уникальных карточек (по имени) */
 const uniqueCards = allCards.filter(
   (card, i, arr) =>
     arr.findIndex((c) => c.name.toLowerCase() === card.name.toLowerCase()) === i
