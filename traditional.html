@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Традиционные десерты — Anich Cakes</title>
+  <link rel="stylesheet" href="anich_cakes/css/variables.css">
+  <link rel="stylesheet" href="anich_cakes/css/low_calories.css">
+  <link rel="stylesheet" href="anich_cakes/css/style.css">
+  <link rel="stylesheet" href="anich_cakes/css/detail.css">
+</head>
+
+<body class="global">
+
+  <section class="banner" aria-label="Hero image">
+      <div class="banner__image">
+        <img class="banner__img" src="anich_cakes/img/traditional/traditional__banner.jpg" alt="Traditional desserts">
+      </div>
+      <header class="banner__header">
+        <div class="banner__header-left">
+          <a href="#" class="banner__burger" id="burgerBtn">
+            <img class="banner__logo" src="anich_cakes/img/burger.svg" alt="menu">
+          </a>
+        <nav class="global__breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Главная</a>
+          <span class="global__breadcrumbs-sep">/</span>
+          <span>Традиционные</span>
+        </nav>
+        </div>
+        <div class="right-part">
+        <div class="banner__header-icons">
+            <a href="#" class="banner__header-icon" id="searchBtn" aria-label="Поиск">
+              <img src="anich_cakes/img/search.svg" alt="Поиск">
+            </a>
+            <a href="#" class="banner__header-icon" id="filterBtn" aria-label="Фильтр">
+              <img src="anich_cakes/img/filter.svg" alt="Фильтр">
+            </a>
+          </div>
+        <a href="index.html">
+          <h1 class="banner__title">Anich Cakes</h1>
+        </a>
+        </div>
+      </header>
+    </section>
+
+  <!-- Burger Menu -->
+  <div class="global__menu-overlay" id="menuOverlay"></div>
+  <nav class="global__menu" id="menuNav">
+    <ul class="global__menu-list">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="low_calories.html">Низкокалорийные</a></li>
+      <li><a href="raw.html">Живые (Raw)</a></li>
+      <li><a href="vegan.html">Веганские</a></li>
+      <li><a href="traditional.html">Традиционные</a></li>
+      <li><a href="thematical.html">Тематические</a></li>
+      <li><a href="chocolate.html">Шоколадные</a></li>
+    </ul>
+    <ul class="global__menu-list global__menu-list--bottom">
+      <li>
+        <a href="#" id="searchMenuBtn" class="menu-nav__link-icon">
+          <img src="anich_cakes/img/search.svg" alt="Поиск">
+          <span>Поиск десерта</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="filterMenuBtn" class="menu-nav__link-icon">
+          <img src="anich_cakes/img/filter.svg" alt="Фильтр">
+          <span>Подобрать состав</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Intro -->
+  <section class="global__intro">
+    <div class="global__intro-inner">
+      <h2 class="global__intro-title">Традиционные десерты</h2>
+      <p class="global__intro-text">Знакомые с детства и классические вкусы. Наслаждайтесь любимыми десертами!</p>
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <section class="global__cards">
+
+    <!-- Card 1 -->
+    <article class="global__card">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-1-1.jpg" alt="Десерт 1-1">
+          </div>
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-1-2.jpg" alt="Десерт 1-2">
+          </div>
+        </div>
+        <button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>
+        <button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>
+        <div class="global__carousel-dots">
+          <button class="global__carousel-dot global__carousel-dot--active" type="button"></button>
+          <button class="global__carousel-dot" type="button"></button>
+        </div>
+      </div>
+      <div class="global__card-body">
+        <div class="global__card-name">Пирожное макарон</div>
+        <div class="global__card-calories"> 150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="global__card">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-2-1.jpg" alt="Десерт 2-1">
+          </div>
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-2-2.jpg" alt="Десерт 2-2">
+          </div>
+        </div>
+        <button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>
+        <button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>
+        <div class="global__carousel-dots">
+          <button class="global__carousel-dot global__carousel-dot--active" type="button"></button>
+          <button class="global__carousel-dot" type="button"></button>
+        </div>
+      </div>
+      <div class="global__card-body">
+        <div class="global__card-name">Красный бархат</div>
+        <div class="global__card-calories"> 150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="global__card">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-3-1.jpg" alt="Десерт 3-1">
+          </div>
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-3-2.jpg" alt="Десерт 3-2">
+          </div>
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-3-3.jpg" alt="Десерт 3-3">
+          </div>
+        </div>
+        <button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>
+        <button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>
+        <div class="global__carousel-dots">
+          <button class="global__carousel-dot global__carousel-dot--active" type="button"></button>
+          <button class="global__carousel-dot" type="button"></button>
+          <button class="global__carousel-dot" type="button"></button>
+        </div>
+      </div>
+      <div class="global__card-body">
+        <div class="global__card-name">Москва</div>
+        <div class="global__card-calories"> 150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="global__card">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-4-1.jpg" alt="Десерт 4-1">
+          </div>
+        </div>
+        <div class="global__carousel-dots"></div>
+      </div>
+      <div class="global__card-body">
+        <div class="global__card-name">Бисквитный торт</div>
+        <div class="global__card-calories"> 150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="global__card">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-5-1.jpg" alt="Десерт 5-1">
+          </div>
+        </div>
+        <div class="global__carousel-dots"></div>
+      </div>
+      <div class="global__card-body">
+        <div class="global__card-name">Три шоколада</div>
+        <div class="global__card-calories"> 150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 6 -->
+    <article class="global__card">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-6-1.jpg" alt="Десерт 6-1">
+          </div>
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-6-2.jpg" alt="Десерт 6-2">
+          </div>
+        </div>
+        <button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>
+        <button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>
+        <div class="global__carousel-dots">
+          <button class="global__carousel-dot global__carousel-dot--active" type="button"></button>
+          <button class="global__carousel-dot" type="button"></button>
+        </div>
+      </div>
+      <div class="global__card-body">
+        <div class="global__card-name">Вишневый<br>муссовый торт</div>
+        <div class="global__card-calories"> 150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 7 -->
+    <article class="global__card">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-7-1.jpg" alt="Десерт 7-1">
+          </div>
+        </div>
+        <div class="global__carousel-dots"></div>
+      </div>
+      <div class="global__card-body">
+        <div class="global__card-name">Муравейник</div>
+        <div class="global__card-calories"> 150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 8 -->
+     <article class="global__card">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide"><img src="anich_cakes/img/traditional/traditional-8-1.jpg" alt="Десерт 4-4"></div>
+          <div class="global__carousel-slide">
+            <video src="anich_cakes/img/traditional/traditional-8-2.mp4" muted loop playsinline></video>
+          </div>
+          <div class="global__carousel-slide"><img src="anich_cakes/img/traditional/traditional-8-5.jpg" alt="Десерт 4-4"></div>
+          <div class="global__carousel-slide"><img src="anich_cakes/img/traditional/traditional-8-6.jpg" alt="Десерт 4-4"></div>
+          
+        </div>
+        <button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>
+        <button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>
+        <div class="global__carousel-dots"></div>
+  
+      </div>
+      <div class="global__card-body">
+        <div class="global__card-name">Медовый торт</div>
+        <div class="global__card-calories"> 150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 9 -->
+    <article class="global__card">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-9-1.jpg" alt="Десерт 9-1">
+          </div>
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-9-2.jpg" alt="Десерт 9-2">
+          </div>
+        </div>
+        <button class="global__carousel-btn global__carousel-btn--prev" type="button">‹</button>
+        <button class="global__carousel-btn global__carousel-btn--next" type="button">›</button>
+        <div class="global__carousel-dots">
+          <button class="global__carousel-dot global__carousel-dot--active" type="button"></button>
+          <button class="global__carousel-dot" type="button"></button>
+        </div>
+      </div>
+      <div class="global__card-body">
+        <div class="global__card-name">Кейк-попсы</div>
+        <div class="global__card-calories"> 150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+    <!-- Card 10 -->
+    <article class="global__card">
+      <div class="global__carousel" data-current="0">
+        <div class="global__carousel-track">
+          <div class="global__carousel-slide">
+            <img src="anich_cakes/img/traditional/traditional-10-1.jpg" alt="Десерт 10-1">
+          </div>
+        </div>
+        <div class="global__carousel-dots"></div>
+      </div>
+      <div class="global__card-body">
+        <div class="global__card-name">Лимонный пирог</div>
+        <div class="global__card-calories"> 150 ккал</div>
+        <div class="global__card-description">Описание десерта. Натуральные ингредиенты.</div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="global__footer">
+    <p class="global__footer-copyright">© 2026 Anich Cakes</p>
+  </footer>
+
+  <script>
+    // Carousel functionality
+    document.querySelectorAll('.global__carousel').forEach(function (carousel) {
+      var track = carousel.querySelector('.global__carousel-track');
+      var slides = carousel.querySelectorAll('.global__carousel-slide');
+      var dots = carousel.querySelectorAll('.global__carousel-dot');
+      var prevBtn = carousel.querySelector('.global__carousel-btn--prev');
+      var nextBtn = carousel.querySelector('.global__carousel-btn--next');
+      var current = 0;
+
+      // Если только один слайд — скрываем кнопки и не добавляем обработчики
+      if (slides.length <= 1) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        return;
+      }
+
+      function getMediaElement(slide) {
+        return slide.querySelector('video') || slide.querySelector('img');
+      }
+
+      function playVideo(slide) {
+        var video = slide.querySelector('video');
+        if (video) {
+          video.currentTime = 0;
+          video.play().catch(function () {});
+        }
+      }
+
+      function pauseAllVideos() {
+        slides.forEach(function (slide) {
+          var video = slide.querySelector('video');
+          if (video) {
+            video.pause();
+          }
+        });
+      }
+
+      function updateCarousel() {
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('global__carousel-dot--active', i === current);
+        });
+        pauseAllVideos();
+        playVideo(slides[current]);
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          current = (current - 1 + slides.length) % slides.length;
+          updateCarousel();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          current = (current + 1) % slides.length;
+          updateCarousel();
+        });
+      }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          current = i;
+          updateCarousel();
+        });
+      });
+
+      // Auto-play video on the first slide if it contains a video
+      playVideo(slides[0]);
+    });
+
+    // Sticky header on scroll
+    (function() {
+      var header = document.querySelector('.banner__header');
+      var banner = document.querySelector('.banner');
+      if (header && banner) {
+        window.addEventListener('scroll', function() {
+          var bannerBottom = banner.offsetTop + banner.offsetHeight;
+          if (window.scrollY >= bannerBottom) {
+            header.classList.add('banner__header--sticky');
+          } else {
+            header.classList.remove('banner__header--sticky');
+          }
+        });
+      }
+    })();
+
+    // Burger menu functionality
+    var burgerBtn = document.getElementById('burgerBtn');
+    var menuOverlay = document.getElementById('menuOverlay');
+    var menuNav = document.getElementById('menuNav');
+    var header = document.querySelector('.banner__header');
+
+    function openMenu() {
+      menuNav.classList.add('global__menu--open');
+      menuOverlay.classList.add('global__menu-overlay--visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      menuNav.classList.remove('global__menu--open');
+      menuOverlay.classList.remove('global__menu-overlay--visible');
+      document.body.style.overflow = '';
+    }
+
+    burgerBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openMenu();
+    });
+
+    menuOverlay.addEventListener('click', function () {
+      closeMenu();
+    });
+  </script>
+
+  <script>
+    // Detail button navigation
+    document.querySelectorAll('.global__card').forEach(function (card) {
+      var nameEl = card.querySelector('.global__card-name');
+      var descEl = card.querySelector('.global__card-description');
+      if (nameEl && descEl) {
+        var btn = document.createElement('button');
+        btn.className = 'detail-card__button';
+        btn.type = 'button';
+        btn.textContent = 'Подробнее';
+        btn.setAttribute('data-card-name', nameEl.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/\s+/g, ' ').trim());
+        btn.addEventListener('click', function () {
+          var cardName = this.getAttribute('data-card-name');
+          if (cardName) {
+            window.location.href = 'detail.html?name=' + encodeURIComponent(cardName);
+          }
+        });
+        descEl.parentNode.insertBefore(btn, descEl.nextSibling);
+      }
+    });
+  </script>
+
+</body>
+
+<script src="anich_cakes/js/search-data.js"></script>
+<script src="anich_cakes/js/search.js"></script>
+</html>
