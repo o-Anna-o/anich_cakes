@@ -99,7 +99,6 @@ function CategoryCard({ card, onDetail }: { card: CardData; onDetail: (name: str
       <div className="global__card-body">
         <div className="global__card-name" dangerouslySetInnerHTML={{ __html: card.name.replace(/\n/g, '<br>') }} />
         <div className="global__card-calories">{card.calories}</div>
-        <div className="global__card-description">{card.description}</div>
         <button className="detail-card__button" type="button" onClick={() => onDetail(card.name)}>
           Подробнее
         </button>

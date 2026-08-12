@@ -164,6 +164,7 @@ export default function DetailPage() {
           )}
 
           <div className="detail-card__info">
+            <div className="detail-global__card-content-title">Описание</div>
             <div className="detail-global__card-description" id="detailCardDescription">
               {cardData.description}
             </div>
