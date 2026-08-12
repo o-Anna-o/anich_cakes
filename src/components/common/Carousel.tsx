@@ -114,16 +114,18 @@ export default function Carousel({ images, name = '', className = '' }: Carousel
           <button className="global__carousel-btn global__carousel-btn--next" type="button" onClick={goNext}>›</button>
         </>
       )}
-      <div className="global__carousel-dots">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            className={`global__carousel-dot ${i === current ? 'global__carousel-dot--active' : ''}`}
-            type="button"
-            onClick={() => goTo(i)}
-          />
-        ))}
-      </div>
+      {hasMultiple && (
+        <div className="global__carousel-dots">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              className={`global__carousel-dot ${i === current ? 'global__carousel-dot--active' : ''}`}
+              type="button"
+              onClick={() => goTo(i)}
+            />
+          ))}
+        </div>
+      )}
 
       <Lightbox
         isOpen={lightboxOpen}

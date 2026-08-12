@@ -145,16 +145,18 @@ export default function DetailPage() {
               <button className="global__carousel-btn global__carousel-btn--next" type="button" onClick={() => goTo(currentSlide + 1)}>›</button>
             </>
           )}
-          <div className="global__carousel-dots" id="detailCarouselDots">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                className={`global__carousel-dot ${i === currentSlide ? 'global__carousel-dot--active' : ''}`}
-                type="button"
-                onClick={() => goTo(i)}
-              />
-            ))}
-          </div>
+          {hasMultiple && (
+            <div className="global__carousel-dots" id="detailCarouselDots">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  className={`global__carousel-dot ${i === currentSlide ? 'global__carousel-dot--active' : ''}`}
+                  type="button"
+                  onClick={() => goTo(i)}
+                />
+              ))}
+            </div>
+          )}
 
           <Lightbox
             isOpen={lightboxOpen}
