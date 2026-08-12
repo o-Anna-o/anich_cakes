@@ -1448,15 +1448,25 @@ a:active {
   background: #000;
 }
 
-/* Увеличенный просмотр на десктопе: фото занимают больше пространства */
+/* Фото открывается на 80% высоты экрана, сохраняя пропорции, на всех экранах */
+.lightbox__stage img {
+  height: 80vh;
+  width: auto;
+  max-width: 100%;
+  max-height: none;
+}
+
+/* Видео также на 80% высоты экрана */
+.lightbox__stage video {
+  height: 80vh;
+  width: auto;
+  max-width: 100%;
+  max-height: none;
+}
+
+/* На десктопе фото ещё больше */
 @media (min-width: 601px) {
   .lightbox__stage {
-    max-width: 97vw;
-    max-height: 95vh;
-  }
-
-  .lightbox__stage img,
-  .lightbox__stage video {
     max-width: 97vw;
     max-height: 95vh;
   }
@@ -1464,12 +1474,6 @@ a:active {
 
 @media (min-width: 1100px) {
   .lightbox__stage {
-    max-width: 98vw;
-    max-height: 96vh;
-  }
-
-  .lightbox__stage img,
-  .lightbox__stage video {
     max-width: 98vw;
     max-height: 96vh;
   }
