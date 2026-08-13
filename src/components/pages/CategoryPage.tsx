@@ -5,6 +5,7 @@ import BurgerMenu from '../common/BurgerMenu';
 import SearchPanel from '../common/SearchPanel';
 import FiltersPanel from '../common/FiltersPanel';
 import Carousel from '../common/Carousel';
+import Footer from '../common/Footer';
 import allCards from '../../data/cards';
 import type { CardData } from '../../types';
 
@@ -85,9 +86,7 @@ export default function CategoryPage({
         ))}
       </section>
 
-      <footer className="global__footer">
-        <p className="global__footer-copyright">© 2026 Anich Cakes</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

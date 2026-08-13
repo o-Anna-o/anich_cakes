@@ -5,6 +5,7 @@ import BurgerMenu from '../common/BurgerMenu';
 import SearchPanel from '../common/SearchPanel';
 import FiltersPanel from '../common/FiltersPanel';
 import Lightbox from '../common/Lightbox';
+import Footer from '../common/Footer';
 import allCards from '../../data/cards';
 
 const pageNames: Record<string, string> = {
@@ -87,6 +88,7 @@ export default function DetailPage() {
             <div className="detail-global__card-name">Десерт не найден</div>
           </div>
         </section>
+        <Footer />
       </div>
     );
   }
@@ -194,9 +196,7 @@ export default function DetailPage() {
         </div>
       </section>
 
-      <footer className="global__footer">
-        <p className="global__footer-copyright">© 2026 Anich Cakes</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
