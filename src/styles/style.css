@@ -1535,6 +1535,19 @@ a:active {
   border-radius: 12px;
 }
 
+/* На маленьких экранах (<=450px) крестик и счётчик размещаем вплотную к фото */
+@media (max-width: 450px) {
+  .lightbox__close {
+    top: calc(10vh - 52px);
+    right: 8px;
+  }
+
+  .lightbox__counter {
+    top: calc(90vh + 8px);
+    bottom: auto;
+  }
+}
+
 /* Курсор-увеличение на изображениях карусели */
 .global__carousel-slide img {
   cursor: zoom-in;
