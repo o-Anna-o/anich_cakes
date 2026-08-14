@@ -28,6 +28,7 @@ export default function DetailPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
   const touchEndX = useRef(0);
   const isSwiping = useRef(false);
 
@@ -75,12 +76,26 @@ export default function DetailPage() {
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.changedTouches[0].screenX;
+    touchStartY.current = e.changedTouches[0].screenY;
+    touchEndX.current = touchStartX.current;
     isSwiping.current = true;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isSwiping.current) return;
-    touchEndX.current = e.changedTouches[0].screenX;
+    const currentX = e.changedTouches[0].screenX;
+    const currentY = e.changedTouches[0].screenY;
+    // Если движение больше вертикальное, чем горизонтальное — не перехватываем (даём скроллить страницу)
+    const diffX = Math.abs(currentX - touchStartX.current);
+    const diffY = Math.abs(currentY - touchStartY.current);
+    if (diffY > diffX && diffY > 10) {
+      isSwiping.current = false;
+      return;
+    }
+    if (diffX > 10) {
+      e.preventDefault();
+    }
+    touchEndX.current = currentX;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {

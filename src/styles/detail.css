@@ -22,6 +22,11 @@
   transition: transform 0.3s ease;
   width: 100%;
   height: 100%;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  cursor: grab;
 }
 
 .detail-global__carousel .global__carousel-slide {
