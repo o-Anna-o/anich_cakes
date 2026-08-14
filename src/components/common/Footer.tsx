@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__contacts">
         <a
-          className="footer__contact"
+          className="footer__contact footer__contact--telegram"
           href="https://t.me/Anna_Vegana"
           target="_blank"
           rel="noreferrer"

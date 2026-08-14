@@ -369,6 +369,15 @@ a:active {
   color: #F7DCCB;
   font-family: 'Gilroy', 'Montserrat', Arial, sans-serif;
 }
+.footer__contact--telegram,
+.footer__contact--telegram:link,
+.footer__contact--telegram:visited,
+.footer__contact--telegram:hover,
+.footer__contact--telegram:active,
+.footer__contact--telegram:focus {
+  color: #F7DCCB !important;
+}
+
 
 .footer__icon {
   width: var(--icon-header-height, 44px);
