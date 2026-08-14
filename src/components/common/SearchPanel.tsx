@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import allCards from '../../data/cards';
 import type { CardData } from '../../types';
+import Carousel from './Carousel';
 
 interface SearchPanelProps {
   isOpen: boolean;
@@ -86,19 +87,10 @@ export default function SearchPanel({ isOpen, onClose }: SearchPanelProps) {
           ) : (
             results.map((card, i) => (
               <article key={`${card.name}-${i}`} className="global__card search-result-card">
-                <div className="search-result-card__image-wrapper">
-                  <img
-                    className="search-result-card__image"
-                    src={card.images[0]}
-                    alt={card.name}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
+                <Carousel images={card.images} name={card.name} />
                 <div className="global__card-body">
                   <div className="global__card-name">{card.name}</div>
                   <div className="global__card-calories">{card.calories}</div>
-                  <div className="global__card-description">{card.description}</div>
                   <button className="detail-card__button" type="button" onClick={() => handleDetail(card.name)}>
                     Подробнее
                   </button>

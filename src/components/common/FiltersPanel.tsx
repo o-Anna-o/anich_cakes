@@ -97,7 +97,6 @@ export default function FiltersPanel({ isOpen, onClose }: FiltersPanelProps) {
                 <div className="global__card-body">
                   <div className="global__card-name">{card.name}</div>
                   <div className="global__card-calories">{card.calories}</div>
-                  <div className="global__card-description">{card.description}</div>
                   <button className="detail-card__button" type="button" onClick={() => handleDetail(card.name)}>
                     Подробнее
                   </button>
