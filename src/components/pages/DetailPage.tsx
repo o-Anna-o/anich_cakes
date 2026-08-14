@@ -27,6 +27,9 @@ export default function DetailPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+  const isSwiping = useRef(false);
 
   const cardName = searchParams.get('name');
   const fromPage = searchParams.get('from');
@@ -69,6 +72,27 @@ export default function DetailPage() {
     }
     manageVideos(newIndex);
   }, [slides.length, manageVideos]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.changedTouches[0].screenX;
+    isSwiping.current = true;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isSwiping.current) return;
+    touchEndX.current = e.changedTouches[0].screenX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!isSwiping.current) return;
+    isSwiping.current = false;
+    touchEndX.current = e.changedTouches[0].screenX;
+    const diff = touchStartX.current - touchEndX.current;
+    if (Math.abs(diff) > 30) {
+      if (diff > 0) goTo(currentSlide + 1);
+      else goTo(currentSlide - 1);
+    }
+  };
 
   useEffect(() => {
     goTo(0);
@@ -119,7 +143,14 @@ export default function DetailPage() {
 
       <section className="detail-card" id="detailCard">
         <div className="detail-global__carousel" id="detailCarousel">
-          <div className="global__carousel-track" ref={trackRef} id="detailCarouselTrack">
+          <div
+            className="global__carousel-track"
+            ref={trackRef}
+            id="detailCarouselTrack"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {slides.map((src, i) => (
               <div
                 className="global__carousel-slide"
