@@ -1,0 +1,20 @@
+{
+  "name": "Anich Cakes",
+  "short_name": "Anich Cakes",
+  "start_url": "/anich_cakes/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5a2d2d",
+  "icons": [
+    {
+      "src": "/anich_cakes/img/icon-app.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/anich_cakes/img/icon-app.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
