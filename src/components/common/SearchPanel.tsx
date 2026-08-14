@@ -89,7 +89,9 @@ export default function SearchPanel({ isOpen, onClose }: SearchPanelProps) {
               <article key={`${card.name}-${i}`} className="global__card search-result-card">
                 <Carousel images={card.images} name={card.name} />
                 <div className="global__card-body">
-                  <div className="global__card-name">{card.name}</div>
+                  <div className="global__card-name" onClick={() => handleDetail(card.name)}>
+                    {card.name}
+                  </div>
                   <div className="global__card-calories">{card.calories}</div>
                   <button className="detail-card__button" type="button" onClick={() => handleDetail(card.name)}>
                     Подробнее

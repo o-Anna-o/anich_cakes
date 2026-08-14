@@ -55,7 +55,7 @@ export default function HomePage() {
       <section className="products">
         <div className="products__grid">
           {categories.map((cat) => (
-            <article className="product-card" key={cat.title}>
+            <article className="product-card" key={cat.title} onClick={() => navigate(cat.link)}>
               <img className="product-card__img" src={cat.img} alt="" />
               <div className={`product-card__body ${cat.white ? 'title-white' : ''}`}>
                 <div className="product-card__title">{cat.title}</div>

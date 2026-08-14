@@ -286,6 +286,7 @@ a:active {
   border-radius: var(--radius-card);
   aspect-ratio: 106 / 99;
   width: 100%;
+  cursor: pointer;
 }
 
 .product-card__img {
@@ -1064,6 +1065,7 @@ a:active {
   align-items: center;
   justify-content: center;
   line-height: 1.2;
+  cursor: pointer;
 }
 
 .global__card-calories {

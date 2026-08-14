@@ -96,7 +96,11 @@ function CategoryCard({ card, onDetail }: { card: CardData; onDetail: (name: str
     <article className="global__card">
       <Carousel images={card.images} name={card.name} />
       <div className="global__card-body">
-        <div className="global__card-name" dangerouslySetInnerHTML={{ __html: card.name.replace(/\n/g, '<br>') }} />
+        <div
+          className="global__card-name"
+          dangerouslySetInnerHTML={{ __html: card.name.replace(/\n/g, '<br>') }}
+          onClick={() => onDetail(card.name)}
+        />
         <div className="global__card-calories">{card.calories}</div>
         <button className="detail-card__button" type="button" onClick={() => onDetail(card.name)}>
           Подробнее
