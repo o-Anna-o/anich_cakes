@@ -167,7 +167,7 @@ a:active {
   position: fixed;
   top: 0;
   left: 0;
-  width: 280px;
+  width: 308px;
   height: 100%;
   background-color: var(--color-back-search);
   z-index: 301;
@@ -177,6 +177,10 @@ a:active {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+}
+
+#filterMenuBtn {
+  margin-right: 16px;
 }
 
 .menu-nav--open {
@@ -354,12 +358,14 @@ a:active {
 }
 
 .footer__contacts {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 32px;
   padding: 16px;
+  position: sticky !important;
+  bottom: 0 !important;
 }
 
 .footer__contact {
